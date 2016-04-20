@@ -1,12 +1,25 @@
-#main-background-image{
-	background-image: url("/img/main_background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-	background-size:cover;
-	height:400px;
-	opacity:0.2;
-}
+#home_page{
+	#main-background-image{
+		background-image: url("/img/main_background.jpg");
+	    background-repeat: no-repeat;
+	    background-attachment: fixed;
+		background-size:cover;
+		height:400px;
+		opacity:0.5;
+	}
 
-.navbar{
-	height:800px;
-}
+	.blog-post-header{
+		border:1px solid black;
+		position:relative;
+		.blog-post-icon{
+			border:1px solid red;
+			height:200px;
+			width:200px; 
+			position:absolute;
+		}
+	}       
+
+	.navbar{
+		height:800px;
+	}	
+} 

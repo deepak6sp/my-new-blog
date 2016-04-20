@@ -38,14 +38,12 @@ gulp.task('copy-js',function(){
 
 });
 
-gulp.task('sassify',['watch'],function(){
+gulp.task('sassify',function(){
     return gulp.src(PATHS.source.scss)
         .pipe(sass())
         .pipe(mincss())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(PATHS.destination.css))
-        .pipe(browserSync.stream());
-
 });
 
 gulp.task('uglify', function() {
@@ -61,7 +59,7 @@ gulp.task('watch',function(){
     gulp.watch(PATHS.source.js,['uglify']).on("change", browserSync.reload);
 });
 
-gulp.task('serve', ['copy-css','copy-js','sassify','uglify','watch'], function () {
+gulp.task('serve', ['sassify','uglify','watch'], function () {
 
     // Serve files from the root of this project
     browserSync.init({
@@ -73,7 +71,6 @@ gulp.task('serve', ['copy-css','copy-js','sassify','uglify','watch'], function (
     
 });
 
-gulp.task("default",['serve'],function(){
+gulp.task('init',['copy-css','copy-js']);
 
-
-});
+gulp.task("default",['serve']);
