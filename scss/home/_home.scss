@@ -9,13 +9,26 @@
 	}
 
 	.blog-post-header{
-		border:1px solid black;
+		border:1px solid $grey;
 		position:relative;
 		.blog-post-icon{
-			border:1px solid red;
-			height:200px;
-			width:200px; 
+			background-color:$river-blue;
+			height:250px;
+			width:250px;
+			border-radius:50%;
 			position:absolute;
+			top:-70px;
+			left:0;
+			right:0;
+			margin:auto;
+			text-align:center;
+			color:$white; 
+			cursor: pointer;
+			.blog-text-1{
+				margin-top:30px;
+				font-size: 20px;
+				font-style: italic;
+			}
 		}
 	}       
 
