@@ -1,4 +1,5 @@
 #home_page{
+	z-index: 1;
 	#main-background-image{
 		background-image: url("/img/main_background.jpg");
 	    background-repeat: no-repeat;
@@ -7,12 +8,26 @@
 		height:400px;
 		opacity:0.5;
 	}
+	.navbar-default{
+		background-color:$main-primary;
+		border:none;
+		.navbar-nav{
+			li{
 
+				a{
+					color:$white;
+					background-color:$main-primary;
+					&:hover{
+						background-color:$main-hover;
+					}
+				}
+			}
+		}
+	}
 	.blog-post-header{
-		border:1px solid $grey;
 		position:relative;
 		.blog-post-icon{
-			background-color:$river-blue;
+			background-color:$main-primary;
 			height:250px;
 			width:250px;
 			border-radius:50%;
@@ -27,12 +42,7 @@
 			.blog-text-1{
 				margin-top:30px;
 				font-size: 20px;
-				font-style: italic;
 			}
 		}
-	}       
-
-	.navbar{
-		height:800px;
-	}	
+	}       	
 } 

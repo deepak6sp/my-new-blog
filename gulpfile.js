@@ -40,7 +40,7 @@ gulp.task('copy-js',function(){
 
 gulp.task('sassify',function(){
     return gulp.src(PATHS.source.scss)
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(mincss())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(PATHS.destination.css))
