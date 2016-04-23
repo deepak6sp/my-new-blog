@@ -15,4 +15,5 @@ $(document).ready(function(){
 function window_resize(){
 	var window_height=$(window).height();
 	$("#main-background-image").height(window_height);
+	$(".main-background-overlay").height(window_height);
 }
