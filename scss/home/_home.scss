@@ -60,7 +60,13 @@
 			}
 		}
 	}
-	.home-page-main{
-
-	}    	
+	.latest-post-section{
+		p{
+			color: $grey-high;
+			&:hover{
+				color:$grey-low;
+				cursor: pointer;
+			}
+		}
+	}   	
 } 
