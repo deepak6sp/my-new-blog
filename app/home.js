@@ -7,7 +7,7 @@ $(document).ready(function(){
     window_resize();
     $(window).resize(function(){
     	window_resize();
-    });
+    }); 
    
 });  
 

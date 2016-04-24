@@ -4,17 +4,17 @@ var sass= require("gulp-sass");
 var mincss = require("gulp-cssmin");
 var rename = require('gulp-rename');
 var uglify =  require('gulp-uglify');
+var nodemon = require('gulp-nodemon');
 
 var PATHS = {
     "source":{
     	html : '*.html',
     	js : './app/*.js',
-    	css : './css/*/.css',
         scss : './scss/**/*.scss'
     },
     "destination":{
-        css : "./css/",
-        js : "./js/"
+        css : "./public/css/",
+        js : "./public/js/"
     },
     "bootstrap":{
         css : './node_modules/bootstrap/dist/css/bootstrap.min.css',
@@ -59,18 +59,38 @@ gulp.task('watch',function(){
     gulp.watch(PATHS.source.js,['uglify']).on("change", browserSync.reload);
 });
 
-gulp.task('serve', ['sassify','uglify','watch'], function () {
-
-    // Serve files from the root of this project
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-
+gulp.task('nodemon', function (cb) {
     
+    var started = false;
+    
+    return nodemon({
+        script: 'server.js'
+    }).on('start', function () {
+        // to avoid nodemon being started multiple times
+        // thanks @matthisk
+        if (!started) {
+            cb();
+            started = true; 
+        } 
+    });
 });
 
-gulp.task('init',['copy-css','copy-js']);
+gulp.task('serve', ['nodemon','sassify','uglify','watch'], function () {
+
+    // Serve files from the root of this project
+    browserSync.init('null',{
+        /*
+        server: {
+            baseDir: "./"
+        },
+        */
+        proxy: "http://localhost:5000",
+        port:7000
+    });
+
+     
+});
+
+gulp.task('vendor',['copy-css','copy-js']);
 
 gulp.task("default",['serve']);
