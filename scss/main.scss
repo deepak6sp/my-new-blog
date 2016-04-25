@@ -1,4 +1,7 @@
-@import "./config/config";
-@import "./config/mixins";
-@import "./config/globals";
-@import "./home/home";
+@import "config/config";
+@import "config/mixins";
+@import "config/globals";
+@import "home/home";
+
+@import "vendor/bootstrap"; 
+@import "vendor/material-design-lite"; 

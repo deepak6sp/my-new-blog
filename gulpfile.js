@@ -5,6 +5,9 @@ var mincss = require("gulp-cssmin");
 var rename = require('gulp-rename');
 var uglify =  require('gulp-uglify');
 var nodemon = require('gulp-nodemon');
+var sourcemaps = require('gulp-sourcemaps');
+var htmlreplace = require('gulp-html-replace');
+ 
 
 var PATHS = {
     "source":{
@@ -13,11 +16,11 @@ var PATHS = {
         scss : './scss/**/*.scss'
     },
     "destination":{
-        css : "./public/css/",
+        css : "./css/",
+        minifycss : "./public/minifycss/",
         js : "./public/js/"
     },
     "bootstrap":{
-        css : './node_modules/bootstrap/dist/css/bootstrap.min.css',
         js : './node_modules/bootstrap/dist/js/bootstrap.min.js'
     },
     "jquery":{
@@ -38,11 +41,26 @@ gulp.task('copy-js',function(){
 
 });
 
-gulp.task('sassify',function(){
-    return gulp.src(PATHS.source.scss)
-        .pipe(sass().on('error', sass.logError))
+gulp.task('html-replace', function() {
+  gulp.src('./index.html')
+    .pipe(htmlreplace({
+        'css': 'main.min.css',
+    }))
+    .pipe(gulp.dest('./public/'));
+});
+
+gulp.task('minifycss',function(){
+    return gulp.src(PATHS.destination.css+"*.css")
         .pipe(mincss())
         .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(PATHS.destination.minifycss));
+});
+
+gulp.task('sassify',['minifycss'],function(){
+    return gulp.src(PATHS.source.scss)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest(PATHS.destination.css))
 });
 
@@ -75,23 +93,25 @@ gulp.task('nodemon', function (cb) {
     });
 });
 
-gulp.task('serve', ['sassify','uglify','watch'], function () {
+gulp.task('serve', ['nodemon','sassify','uglify','watch'], function () {
 
     // Serve files from the root of this project
     browserSync.init('null',{
-        
+        /*
         server: {
             baseDir: "./"
         },
-        /*
+        */
         proxy: "http://localhost:5000",
         port:7000
-        */
+        
     });
 
      
 });
 
 gulp.task('vendor',['copy-css','copy-js']);
+
+gulp.task('production',['minifycss','uglify','html-replace']);
 
 gulp.task("default",['serve']);

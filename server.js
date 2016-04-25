@@ -6,7 +6,8 @@ var port = process.env.port || 5000;
 
 //app.use(express.static(path.join(__dirname))); /* this is to get index.html */
 app.use(express.static(path.join(__dirname,"/img")));
-app.use(express.static(path.join(__dirname,"/public/css")));
+app.use(express.static(path.join(__dirname,"/css")));
+app.use(express.static(path.join(__dirname,"/public/minifycss")));
 app.use(express.static(path.join(__dirname,"/public/js")));
 
   
