@@ -18,7 +18,8 @@ var PATHS = {
     "destination":{
         css : "./css/",
         minifycss : "./public/minifycss/",
-        js : "./public/js/"
+        js : "./js/",
+        minifyjs : "./public/minifyjs/"
     },
     "bootstrap":{
         js : './node_modules/bootstrap/dist/js/bootstrap.min.js'
@@ -29,15 +30,10 @@ var PATHS = {
 
 };
 
-gulp.task('copy-css',function(){
-    return gulp.src(PATHS.bootstrap.css)
-    .pipe(gulp.dest(PATHS.destination.css));
-
-});
 
 gulp.task('copy-js',function(){
     return gulp.src([PATHS.bootstrap.js,PATHS.jquery.js])
-    .pipe(gulp.dest(PATHS.destination.js));
+    .pipe(gulp.dest(PATHS.destination.minifyjs));
 
 });
 
@@ -64,17 +60,19 @@ gulp.task('sassify',['minifycss'],function(){
         .pipe(gulp.dest(PATHS.destination.css))
 });
 
+/* using webpack instead of uglify*/
+/*
 gulp.task('uglify', function() {
   return gulp.src(PATHS.source.js)
     .pipe(uglify())
     .pipe(rename({basename:"main",suffix: '.min'}))
     .pipe(gulp.dest(PATHS.destination.js));
 });
-
+*/
 gulp.task('watch',function(){
     gulp.watch(PATHS.source.html).on("change", browserSync.reload);
     gulp.watch(PATHS.source.scss,['sassify']).on("change", browserSync.reload);
-    gulp.watch(PATHS.source.js,['uglify']).on("change", browserSync.reload);
+    /*gulp.watch(PATHS.source.js,['uglify']).on("change", browserSync.reload);*/
 });
 
 gulp.task('nodemon', function (cb) {
@@ -93,7 +91,7 @@ gulp.task('nodemon', function (cb) {
     });
 });
 
-gulp.task('serve', ['nodemon','sassify','uglify','watch'], function () {
+gulp.task('serve', ['nodemon','sassify','watch'], function () {
 
     // Serve files from the root of this project
     browserSync.init('null',{
@@ -110,7 +108,7 @@ gulp.task('serve', ['nodemon','sassify','uglify','watch'], function () {
      
 });
 
-gulp.task('vendor',['copy-css','copy-js']);
+gulp.task('vendor',['copy-js']);
 
 gulp.task('production',['minifycss','uglify','html-replace']);
 
