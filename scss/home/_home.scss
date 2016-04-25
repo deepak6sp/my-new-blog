@@ -44,6 +44,7 @@
 	}
 	.blog-post-header{
 		position:relative;
+		width: 100%;
 		.blog-post-icon{
 			@include half-circle($main-primary,100px);
 			position:absolute;
