@@ -72,7 +72,7 @@ gulp.task('uglify', function() {
 gulp.task('watch',function(){
     gulp.watch(PATHS.source.html).on("change", browserSync.reload);
     gulp.watch(PATHS.source.scss,['sassify']).on("change", browserSync.reload);
-    gulp.watch(PATHS.source.minifyjs).on("change", browserSync.reload);
+    gulp.watch("*.js").on("change", browserSync.reload);
 });
 
 gulp.task('nodemon', function (cb) {
@@ -91,17 +91,19 @@ gulp.task('nodemon', function (cb) {
     });
 });
 
-gulp.task('serve', ['nodemon','sassify','watch'], function () {
+gulp.task('serve', ['sassify','watch'], function () {
 
     // Serve files from the root of this project
     browserSync.init('null',{
-        /*
+        
         server: {
             baseDir: "./"
-        },
-        */
+        }
+        /*
         proxy: "http://localhost:5000",
         port:7000
+        */
+        
         
     });
 

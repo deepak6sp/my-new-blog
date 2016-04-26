@@ -3,7 +3,9 @@ var paths = require("path");
 var node_mod = __dirname + '/node_modules'
 
 var config = {
-  entry: "./app/react_components.js",
+  entry: {
+    app:"./app/layout.js"
+  },
   output: {
   	path: paths.join(__dirname, '/public/minifyjs/'),
     filename: "bundle.min.js"
@@ -32,7 +34,8 @@ var config = {
     ]
   },
   resolve:{
-  	extensions: ['','.js']
+  	extensions: ['','.js'],
+    moduleDirectories : ['./app']
   },
    devtool: "sourcemap",
     debug: true

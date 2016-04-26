@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MainPage extends React.Component {
+class MainBlogPage extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -35,7 +35,7 @@ class MainPage extends React.Component {
                     </div>
                     <div className="col-sm-3">
                         <div className="latest-post-section">
-                            <h1>What's new</h1>
+                            <h1>Whats new</h1>
                             <p>This is my lastest post one ... </p>
                             <p>This is my lastest post one ... </p>
                             <p>This is my lastest post one ... </p>
@@ -48,4 +48,4 @@ class MainPage extends React.Component {
     }
 }
 
-export default MainPage;
+export default MainBlogPage;

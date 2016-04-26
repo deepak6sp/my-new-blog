@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, Route, Link, browserHistory } from 'react-router';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -27,9 +28,9 @@ class Navbar extends React.Component {
                     </div>
                   </form>
                   <ul className="nav navbar-nav navbar-right">
-                    <li><a href="#">Blog<span className="sr-only">(current)</span></a></li>
+                    <li><Link to="blog">Blog<span className="sr-only">(current)</span></Link></li>
                     <li><a href="#">Resume</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><Link to="contact">Contact</Link></li>
                     
                   </ul>
                 </div>
