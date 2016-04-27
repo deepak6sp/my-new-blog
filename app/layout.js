@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 
-
 import BackgroundPage from './components/shared_components/backgroundPage';
 import Navbar from './components/shared_components/navbar';
 import MainBlogPage from './components/mainBlogPage';

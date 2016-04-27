@@ -1,6 +1,6 @@
 #home-page{
 	#main-background-image{
-		background-image: url("../img/main_background.jpg");
+		background-image: url("main_background.jpg");
 	    background-repeat: no-repeat;
 	    background-attachment: fixed;
 		background-size:cover;
@@ -69,5 +69,8 @@
 				cursor: pointer;
 			}
 		}
-	}   	
+	}
+	.contact-page{
+		min-height: 100%;
+	}  	
 }

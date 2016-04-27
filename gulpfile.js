@@ -91,19 +91,17 @@ gulp.task('nodemon', function (cb) {
     });
 });
 
-gulp.task('serve', ['sassify','watch'], function () {
+gulp.task('serve', ['nodemon','sassify','watch'], function () {
 
     // Serve files from the root of this project
     browserSync.init('null',{
-        
+        /*
         server: {
             baseDir: "./"
-        }
-        /*
+        },
+        */
         proxy: "http://localhost:5000",
         port:7000
-        */
-        
         
     });
 
