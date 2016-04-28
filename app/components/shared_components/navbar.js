@@ -4,7 +4,14 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
-    } 
+    }
+    componentDidMount() {
+        $(".navbar li a").click(function(e){
+          $(".navbar li").removeClass("active");
+          $(e.target).parent().addClass("active");
+
+        }); 
+    }
     render() {
         return  (
         	<nav className="navbar navbar-default">
@@ -28,8 +35,8 @@ class Navbar extends React.Component {
                     </div>
                   </form>
                   <ul className="nav navbar-nav navbar-right">
-                    <li><Link to="blog">Blog<span className="sr-only">(current)</span></Link></li>
-                    <li><a href="#">Resume</a></li>
+                    <li className="active"><Link to="blog">Blog<span className="sr-only">(current)</span></Link></li>
+                    <li><Link to="about">About</Link></li>
                     <li><Link to="contact">Contact</Link></li>
                     
                   </ul>

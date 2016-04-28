@@ -29,7 +29,6 @@
 		}
 		.navbar-nav{
 			li{
-
 				a{
 					color:$white;
 					background-color:$main-primary;
@@ -38,7 +37,15 @@
 					&:hover{
 						background-color:$main-hover;
 					}
+					&:focus{
+						outline: none;
+					}
 				}
+			}
+			li.active{
+				a{
+					color:$grey-low;
+					background-color:$silver;				}
 			}
 		}
 	}
@@ -72,5 +79,10 @@
 	}
 	.contact-page{
 		min-height: 100%;
-	}  	
+	}
+	.footer{
+		margin-top: 50px;
+		height:200px;
+		background-color: $main-primary;
+	}
 }
