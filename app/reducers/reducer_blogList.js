@@ -1,4 +1,4 @@
-export default function(){
+let blogListReducer = function(){
 	return [
 		{title: 'post1', content: 'post1 details'},
 		{title: 'post2', content: 'post2 details'},
@@ -6,3 +6,5 @@ export default function(){
 
 	]
 }
+
+export default blogListReducer;
