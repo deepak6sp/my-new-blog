@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MainBlogPage extends React.Component {
+class BlogList extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -48,4 +48,4 @@ class MainBlogPage extends React.Component {
     }
 }
 
-export default MainBlogPage;
+export default BlogList;

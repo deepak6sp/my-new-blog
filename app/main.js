@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 
 import BackgroundPage from './components/shared_components/backgroundPage';
 import Navbar from './components/shared_components/navbar';
-import MainBlogPage from './components/mainBlogPage';
+import BlogList from './components/blogList';
 import About from './components/about';
 import Contact from './components/contact';
 import Footer from './components/shared_components/footer';
@@ -25,8 +25,8 @@ class MainLayout extends React.Component {
 ReactDOM.render(
 	<Router history={browserHistory}>
 	    <Route path="/" component={MainLayout}>
-	    	<IndexRoute component={MainBlogPage} />
-	    	<Route path="blog" component={MainBlogPage}/>
+	    	<IndexRoute component={BlogList} />
+	    	<Route path="blog" component={BlogList}/>
             <Route path="about" component={About}/>
 	    	<Route path="contact" component={Contact}/>
 	    </Route>

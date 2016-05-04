@@ -4,7 +4,7 @@ var node_mod = __dirname + '/node_modules'
 
 var config = {
   entry: {
-    app:"./app/layout.js"
+    app:"./app/main.js"
   },
   output: {
   	path: paths.join(__dirname, '/public/minifyjs/'),
