@@ -1,19 +1,19 @@
-import React from 'react';
+import React,{ Component } from 'react';
 
-function window_resize(){
-    var window_height=$(window).height();
+const window_resize = () => {
+    let window_height=$(window).height();
     $("#main-background-image").height(window_height);
     $(".main-background-overlay").height(window_height);
 }
 
-class BackgroundPage extends React.Component {
+class BackgroundPage extends Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount(){
         $(this).scrollTop(0);
-        var window_height=$(window).height();
+        let window_height=$(window).height();
         $(".blog-post-icon").click(function(){
             $('html, body').animate({scrollTop: window_height+2}, 1000);
         });

@@ -1,7 +1,7 @@
-import React from 'react';
+import React,{ Component } from 'react';
 import { Router, Route, Link, browserHistory } from 'react-router';
 
-class Navbar extends React.Component {
+class Navbar extends Component {
     constructor(props) {
         super(props);
     }

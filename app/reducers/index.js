@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
-import blogListReducer from './reducer_mainBlogPage';
+import BlogListReducer from './reducer_blogList';
+import whatsNewListReducer from './reducer_blogList';
 
 const rootReducer =  combineReducers({
-	blogLists : blogListReducer
+	blogLists : BlogListReducer,
+	whatsNewLists : whatsNewListReducer
+
 
 });
 

@@ -6,7 +6,6 @@ class BlogList extends Component {
         super(props);
     }
     render() {
-      console.log(dee);
         return  (
         	<main>
             <div className="container-fluid">
@@ -51,9 +50,12 @@ class BlogList extends Component {
 }
 
 function mapStateToProps(state){
+  console.log(state);
   return {
-    dee: "123";
+    blogList : state.blogLists,
+    whatsNewList : state.whatsNewLists
   };
 }
 
-export default BlogList;
+
+export default connect(mapStateToProps)(BlogList);
