@@ -5,33 +5,32 @@ class BlogList extends Component {
     constructor(props) {
         super(props);
     }
+    /*
+     list(){
+        return this.props.blogList.map((blog) => {
+          return (<div className="blog-post">
+                  <h1>{blog.title}</h1>
+                  <p>{blog.content}</p>
+                  <p><a className="btn btn-primary btn-small" href="#" role="button">Read more</a></p>
+                </div>);
+        });
+     }
+     */
     render() {
+        var blogListData  = this.props.blogList.map((blog,index) => {
+          return (<div className="blog-post" key={index}>
+                  <h1>{blog.title}</h1>
+                  <p>{blog.content}</p>
+                  <p><a className="btn btn-primary btn-small" href="#" role="button">Read more</a></p>
+                </div>);
+        });
         return  (
         	<main>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-9">
                         <div className="blog-posts-section">
-                            <div className="blog-post">
-                              <h1>Hello, world!</h1>
-                              <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>
-                              <p><a className="btn btn-primary btn-small" href="#" role="button">Read more</a></p>
-                            </div>
-                            <div className="blog-post">
-                              <h1>Hello, world!</h1>
-                              <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>
-                              <p><a className="btn btn-primary btn-small" href="#" role="button">Read more</a></p>
-                            </div>
-                            <div className="blog-post">
-                              <h1>Hello, world!</h1>
-                              <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>
-                              <p><a className="btn btn-primary btn-small" href="#" role="button">Read more</a></p>
-                            </div>
-                            <div className="blog-post">
-                              <h1>Hello, world!</h1>
-                              <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker</p>
-                              <p><a className="btn btn-primary btn-small" href="#" role="button">Read more</a></p>
-                            </div>
+                           {blogListData}
                         </div>
                     </div>
                     <div className="col-sm-3">
@@ -50,7 +49,6 @@ class BlogList extends Component {
 }
 
 function mapStateToProps(state){
-  console.log(state);
   return {
     blogList : state.blogLists,
     whatsNewList : state.whatsNewLists
