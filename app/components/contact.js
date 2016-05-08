@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import { Row, Col, Button} from 'react-bootstrap';
 
 class Contact extends Component {
     constructor(props) {
@@ -9,10 +10,9 @@ class Contact extends Component {
 
     render() {
         return  (
-        	<div className="contact-page">
-	        	<div className="container-fluid">
-	        		<div className="row">
-	        			<div className="col-sm-12 col-md-8">
+	        	<div className="container-fluid contact-page">
+	        		<Row>
+	        			<Col sm={12} md={8}>
 	        				<h1>Got a project ? or drop me a line ?</h1>
 			        		<form>
 			        			<div className="form-group">
@@ -30,16 +30,15 @@ class Contact extends Component {
 								</div>
 								<button type="submit" className="btn btn-default">Submit</button>
 							</form>
-						</div>
-						<div className="col-sm-12 col-md-offset-1 col-md-3">
+						</Col>
+						<Col sm={12} mdOffset={1} md={3}>
 							<h1>Get in touch</h1>
 							<p>You can also contact me at</p>
 							<p>0422596332</p>
 							<p>deepak6sp@gmail.com</p>
-						</div>
-					</div>
+						</Col>
+					</Row>
 				</div>
-			</div>
         );
     }
 }

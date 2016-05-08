@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 const window_resize = () => {
     let window_height=$(window).height();
@@ -27,11 +28,11 @@ class BackgroundPage extends Component {
         	<header className="home-page-header">
 	            <div className="main-background-overlay"></div>
 	            <div id="main-background-image"></div>
-	            <div className="row blog-post-header">
+	            <Row className="blog-post-header">
 	                <div className="blog-post-icon">
 	                    <div className="blog-text-1"><strong>Latest blog</strong></div>
 	                </div>
-	            </div> 
+	            </Row> 
         	</header>
         );
     }

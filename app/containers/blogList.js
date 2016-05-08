@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
+import { Row, Col, Button } from 'react-bootstrap';
 
 class BlogList extends Component {
     constructor(props) {
@@ -8,10 +9,10 @@ class BlogList extends Component {
     render() {
         let blogListData  = this.props.blogList.map((blog,index) => {
           return (<div className="blog-post" key={index}>
-                  <h1>{blog.title}</h1>
-                  <p>{blog.content}</p>
-                  <p><a className="btn btn-primary btn-small" href="#" role="button">Read more</a></p>
-                </div>);
+                    <h1>{blog.title}</h1>
+                    <p>{blog.content}</p>
+                    <p><Button bsStyle="primary">Success</Button></p>
+                  </div>);
         });
         let WhatsNewData = this.props.whatsNewList.map((WhatsNew,index) => {
           return (<p key={index}>{WhatsNew.title}</p>);
@@ -19,19 +20,15 @@ class BlogList extends Component {
         return  (
         	<main>
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col-sm-9">
-                        <div className="blog-posts-section">
-                           {blogListData}
-                        </div>
-                    </div>
-                    <div className="col-sm-3">
-                        <div className="latest-post-section">
-                            <h1>Whats new</h1>
-                            {WhatsNewData}
-                        </div>
-                    </div>
-                </div>
+                <Row>
+                    <Col sm={9} className="blog-posts-section">
+                         {blogListData}
+                    </Col>
+                    <Col sm={3} className="latest-post-section">
+                          <h1>Whats new</h1>
+                          {WhatsNewData}
+                    </Col>
+                </Row>
             </div>
           </main>
         );
