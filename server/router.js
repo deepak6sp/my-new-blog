@@ -1,21 +1,26 @@
 //router setup
-var path = require('path');
-var bodyParser= require('body-parser');
 var express = require('express');
 var blogRouter = express.Router();
-var myBlogPosts = require("./model");
-blogRouter.use(bodyParser.json());
+var BlogPost = require("./model/blogPost");
 
 blogRouter.route('/')
-.get(function (req, res, next) {
-	//console.log("req:");
-	//res.end("router added now");
-	// res.setHeader("Content-Type", "text/html");
-	myBlogPosts.find({},function(err,blogPost){
-		if(err) throw err;
-		res.json(blogPost);
+// .post(function (req, res, next) {
+// 	var blogPost = new BlogPost({
+// 		id : '1',
+// 		title : 'post1',
+// 		content : 'post1 details'
+
+// 	});
+// 	blogPost.save(function(err,blogPost){
+// 		if(err) throw console.err(err);
+// 	});
+//  })
+.get(function(req,res,next){
+	BlogPost.find(function(err,posts){
+		if (err) res.send(err);
+		res.json(posts);
+
 	});
- 	//res.sendFile(path.join(__dirname,'../index.html'));
 });
 
 module.exports = blogRouter;
