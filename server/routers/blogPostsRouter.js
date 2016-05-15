@@ -1,9 +1,9 @@
 //router setup
 var express = require('express');
-var blogRouter = express.Router();
-var BlogPost = require("./model/blogPost");
+var blogPostsRouter = express.Router();
+var BlogPost = require("../model/blogPost");
 
-blogRouter.route('/')
+blogPostsRouter.route('/')
 // .post(function (req, res, next) {
 // 	var blogPost = new BlogPost({
 // 		id : '1',
@@ -23,4 +23,4 @@ blogRouter.route('/')
 	});
 });
 
-module.exports = blogRouter;
+module.exports = blogPostsRouter;

@@ -72,7 +72,7 @@ gulp.task('uglify', function() {
 gulp.task('watch',function(){
     gulp.watch(PATHS.source.html).on("change", browserSync.reload);
     gulp.watch(PATHS.source.scss,['sassify']).on("change", browserSync.reload);
-    gulp.watch("./public/minifyjs/*.js").on("change", browserSync.reload);
+    //gulp.watch("./public/minifyjs/*.js").on("change", browserSync.reload);
 });
 
 gulp.task('nodemon', function (cb) {

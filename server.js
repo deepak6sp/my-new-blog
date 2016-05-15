@@ -1,13 +1,14 @@
-var express = require('express');
-var bodyParser= require('body-parser');
-var path = require('path');
-var http = require('http');
-var morgan = require('morgan');
-var app = express();
-var blogRouter = require('./server/router');
+const express = require('express');
+const bodyParser= require('body-parser');
+const path = require('path');
+const http = require('http');
+const morgan = require('morgan');
+const app = express();
+const mainRouter = require('./server/routers/mainRouter');
+const blogPostsRouter = require('./server/routers/blogPostsRouter');
 
-//Base Setup
-var mongoose = require('mongoose');
+//db Setup
+const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/myBlog');
  
  
@@ -19,11 +20,12 @@ app.use(express.static(path.join(__dirname,"/css")));
 app.use(express.static(path.join(__dirname,"/public/minifycss")));
 app.use(express.static(path.join(__dirname,"/public/minifyjs")));
 
-app.use('/',blogRouter);
+app.use('/',mainRouter);
+app.use('/api',blogPostsRouter);
 
 //Server setup
-var port = process.env.PORT || 5000;
-var server = http.createServer(app);
+const port = process.env.PORT || 5000;
+const server = http.createServer(app);
 server.listen(port);
 console.log('Example app listening on port '+port);
 
