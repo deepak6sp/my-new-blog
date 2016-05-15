@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 //import { bindActionCreators } from 'redux';
 import { Row, Col, Button } from 'react-bootstrap';
 
-class BlogList extends Component {
+class Blog extends Component {
     constructor(props) {
         super(props);
         this.state= {blogLists: ""};
@@ -60,5 +60,5 @@ function mapStateToProps(state){
 }
 
 
-export default connect(mapStateToProps)(BlogList);
+export default connect(mapStateToProps)(Blog);
 
