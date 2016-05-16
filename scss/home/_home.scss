@@ -38,6 +38,45 @@
 			}
 		}
 	}
+	#home{
+		text-align: center;
+		margin-bottom: 100px;
+		.avatar{
+			background: url('display.jpg');
+			background-size: contain;
+			border:1px solid $grey;
+		    height: 100px;
+		    width: 100px;
+		    border-radius: 50%;
+		    margin: 0 auto;
+		    margin-top: 100px;
+		}
+		.myName{
+			text-align: center;
+
+		}
+		.profile{
+			div:first-child{
+				color:$grey-mid;
+			}
+			.social-links{
+				span{
+					font-size: 12px;
+    				padding:0px 20px;
+				}
+				.github{
+					color:$github;
+				}
+				.twitter{
+					color:$twitter;
+				}
+				.stackoverflow{
+					color:$stackoverflow;
+				}
+			}
+		}
+	}
+	
 	.blog-post-header{
 		position:relative;
 		width: 100%;

@@ -12,7 +12,7 @@ class Contact extends Component {
         return  (
 	        	<div className="container-fluid contact-page">
 	        		<Row>
-	        			<Col sm={12} md={8}>
+	        			<Col sm={8}>
 	        				<h1>Got a project ? or drop me a line ?</h1>
 			        		<form>
 			        			<div className="form-group">
@@ -31,7 +31,7 @@ class Contact extends Component {
 								<button type="submit" className="btn btn-default">Submit</button>
 							</form>
 						</Col>
-						<Col sm={12} mdOffset={1} md={3}>
+						<Col sm={4}>
 							<h1>Get in touch</h1>
 							<p>You can also contact me at</p>
 							<p>0422596332</p>

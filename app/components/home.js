@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
-
+import SocialLinks from './shared_components/socialLinks';
 
 class Home extends Component {
     constructor(props) {
@@ -8,7 +8,13 @@ class Home extends Component {
     }
     render() {
         return  (
-        	<header className="home-page-header">
+        	<header id="home">
+        		<div className="avatar"></div>
+        		<h2 className="myName">Deepak Prakash</h2>
+        		<h4 className="profile">
+        			<div>UI / Front End / Web developer</div>
+        			<SocialLinks />
+        		</h4>
         	</header>
         );
     }
