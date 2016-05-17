@@ -10,10 +10,10 @@ class Blog extends Component {
         this.state= {blogLists: ""};
     }
     componentWillMount() {
-        axios.get('http://localhost:7000/api')
-        .then(response => {
-            this.setState ({ blogLists : response.data});
-        });
+        // axios.get('http://localhost:7000/api')
+        // .then(response => {
+        //     this.setState ({ blogLists : response.data});
+        // });
     }
     render() {
         let blogListData = "";
@@ -54,7 +54,7 @@ class Blog extends Component {
 
 function mapStateToProps(state){
   return {
-    //blogList : state.blogLists,
+    blogList : state.blogLists,
     whatsNewList : state.whatsNewLists
   };
 }

@@ -1,9 +1,15 @@
+import axios from 'axios';
 export const GET_BLOG_POSTS = 'GET_BLOG_POSTS';
 
-export default function getBlogPosts(){	  
-	return {
-		type : GET_BLOG_POSTS,
-		payload : request
-
+export function getBlogPosts(){
+	return dispatch => {
+		axios.get('http://localhost:7000/api')
+        .then(response => {
+           dispatch({
+				type : GET_BLOG_POSTS,
+				payload : response.data
+			});
+        });
+		
 	}; 
 }  
