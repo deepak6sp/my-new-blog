@@ -60,7 +60,7 @@
 				color:$grey-mid;
 			}
 			.social-links{
-				span{
+				a{
 					font-size: 12px;
     				padding:0px 20px;
 				}
@@ -72,6 +72,9 @@
 				}
 				.stackoverflow{
 					color:$stackoverflow;
+				}
+				.linkdin{
+					color:$linkdin;
 				}
 			}
 		}
