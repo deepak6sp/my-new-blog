@@ -3,7 +3,7 @@ import BlogListReducer from './reducer_blogList';
 import whatsNewListReducer from './reducer_whatsNewList';
 
 const RootReducer =  combineReducers({
-	//blogLists : BlogListReducer,
+	blogLists : BlogListReducer,
 	whatsNewLists : whatsNewListReducer
 
 

@@ -26,15 +26,17 @@
 // 	]
 // }
 
-// let BlogListReducer = (state = null,action) => {
-// 	switch(action.type){
-// 		case 'GET_BLOG_POSTS' : 
-// 			console.log(action.payload);
-// 			return action.payload;
-// 		default :
-// 			return state;
-// 	}
+import GET_BLOG_POSTS from '../actions/index';
+
+let BlogListReducer = (state = null,action) => {
+	switch(action.type){
+		case 'GET_BLOG_POSTS' : 
+			console.log(action.payload);
+			return action.payload;
+		default :
+			return state;
+	}
 	
-// }
+}
  
-//export default BlogListReducer;
+export default BlogListReducer;
