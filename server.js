@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname,"/img")));
 app.use(express.static(path.join(__dirname,"/css")));
 app.use(express.static(path.join(__dirname,"/public/minifycss")));
 app.use(express.static(path.join(__dirname,"/public/minifyjs")));
+app.use(express.static(path.join(__dirname,"/public/fonts")));
 
 app.use('/',mainRouter);
 app.use('/api',blogPostsRouter);
