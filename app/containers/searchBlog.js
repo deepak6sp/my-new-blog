@@ -4,32 +4,34 @@ import React,{ Component } from 'react';
 //import { bindActionCreators } from 'redux';
 import { Row, Col, Button, FormGroup, FormControl, Navbar, Glyphicon } from 'react-bootstrap';
 //import { FontAwesome } from 'react-fontawesome';
-var FontAwesome = require('react-fontawesome');
+import FontAwesome from 'react-fontawesome';
+import { getBlogPostsBasedOnSearchTerm } from '../actions/index';
+
 
 class SearchBlog extends Component {
 	constructor(props){
 		super(props);
-		this.state = {value:""};
-	}
-	getValidationState() {
-	    const length = this.state.value.length;
-	    // if (length > 10) return 'success';
-	    // else if (length > 5) return 'warning';
-	    // else if (length > 0) return 'error';
+		this.state = {searchTerm:""};
 	}
 
 	handleChange(e) {
-	    this.setState({ value: e.target.value });
+	    this.setState({ searchTerm: e.target.value });
 	}
-
+	searchFormSubmit(e){
+		e.preventDefault();
+		getBlogPostsBasedOnSearchTerm();
+	    console.log(this.state.searchTerm);
+	}
 	render() {
 	    return (
-	      	<Navbar.Form pullLeft>
-		        <FormGroup>
-		          	<FormControl type="text" placeholder="Search" />
-		          	<a class="btn btn-default" type="submit"><FontAwesome name='search' /></a>
-		        </FormGroup>
-		    </Navbar.Form>
+	    	<form onSubmit={this.searchFormSubmit.bind(this)}>
+		      	<Navbar.Form pullLeft>
+			        <FormGroup>
+			          	<FormControl type="text" placeholder="Search blog" value={this.state.searchTerm} onChange={this.handleChange.bind(this)}/>
+			          	<a class="btn btn-default" type="submit"><FontAwesome name='search' /></a>
+			        </FormGroup>
+			    </Navbar.Form>
+			</form>
 	    );
 	}
 }

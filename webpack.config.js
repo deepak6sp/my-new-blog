@@ -8,16 +8,16 @@ var config = {
   },
   output: {
   	path: paths.join(__dirname, '/public/minifyjs/'),
-    filename: "bundle.min.js"
+    filename: "bundle.js"
   },
-   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-    	minimize: true,
-    	compress: {
-    		warnings:false
-    	}
-    })
-  ],
+  // plugins: [
+  //   new webpack.optimize.UglifyJsPlugin({
+  //   	minimize: true,
+  //   	compress: {
+  //   		warnings:false
+  //   	}
+  //   })
+  // ],
   module: {
     loaders: [
       { 

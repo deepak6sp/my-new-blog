@@ -23,6 +23,8 @@ app.use(express.static(path.join(__dirname,"/public/minifycss")));
 app.use(express.static(path.join(__dirname,"/public/minifyjs")));
 app.use(express.static(path.join(__dirname,"/public/fonts")));
 
+app.use(bodyParser.json());  
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',mainRouter);
 app.use('/api',blogPostsRouter);
 

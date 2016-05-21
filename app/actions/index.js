@@ -13,3 +13,7 @@ export function getBlogPosts(){
 		
 	}; 
 }  
+
+export function getBlogPostsBasedOnSearchTerm(){
+	alert("getBlogPostsBasedOnSearchTerm");
+}

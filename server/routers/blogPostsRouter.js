@@ -23,4 +23,14 @@ blogPostsRouter.route('/')
 	});
 });
 
+
+blogPostsRouter.route('/search')
+.get(function(req, res, next){
+	BlogPost.find(function(err,posts){
+		if (err) res.send(err);
+		console.log("search router");
+
+	});
+});
+
 module.exports = blogPostsRouter;

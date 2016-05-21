@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 import AppRoutes from './routes';
 import RootReducer from './reducers/index';
 import MainLayout from './components/MainLayout';
 
-let store = createStore(RootReducer, {});
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+const store = createStoreWithMiddleware(RootReducer, {});
 
 class Main extends React.Component {
     render() {
@@ -16,5 +17,5 @@ class Main extends React.Component {
         );
     }
 }
-
+ 
 ReactDOM.render(<Provider store={store}>{AppRoutes}</Provider>,document.getElementById("main")); 
