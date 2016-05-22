@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import ReduxPromise from 'redux-promise';
 
 import AppRoutes from './routes';
 import RootReducer from './reducers/index';
 import MainLayout from './components/MainLayout';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
-const store = createStoreWithMiddleware(RootReducer, {});
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const store = createStoreWithMiddleware(RootReducer);
 
 class Main extends React.Component {
     render() {

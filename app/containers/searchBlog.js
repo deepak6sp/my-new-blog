@@ -1,10 +1,9 @@
 //import axios from 'axios';
 import React,{ Component } from 'react';
-//import { connect } from 'react-redux';
-//import { bindActionCreators } from 'redux';
 import { Row, Col, Button, FormGroup, FormControl, Navbar, Glyphicon } from 'react-bootstrap';
-//import { FontAwesome } from 'react-fontawesome';
 import FontAwesome from 'react-fontawesome';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { getBlogPostsBasedOnSearchTerm } from '../actions/index';
 
 
@@ -19,8 +18,7 @@ class SearchBlog extends Component {
 	}
 	searchFormSubmit(e){
 		e.preventDefault();
-		getBlogPostsBasedOnSearchTerm();
-	    console.log(this.state.searchTerm);
+		this.props.getBlogPostsBasedOnSearchTerm(this.state.searchTerm);
 	}
 	render() {
 	    return (
@@ -36,4 +34,9 @@ class SearchBlog extends Component {
 	}
 }
 
-export default SearchBlog;
+
+function mapDispatchToProps(dispatch){
+	return bindActionCreators({ getBlogPostsBasedOnSearchTerm }, dispatch);
+}
+
+export default connect(null,mapDispatchToProps)(SearchBlog);

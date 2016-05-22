@@ -10,7 +10,7 @@ class Blog extends Component {
         this.state= {blogLists: ""};
     }
     componentWillMount() {
-        axios.get('http://localhost:7000/api')
+        axios.get('/api/blogPostList')
         .then(response => {
             this.setState ({ blogLists : response.data});
         });

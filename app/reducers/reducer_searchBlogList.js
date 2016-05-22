@@ -27,16 +27,18 @@
 // }
 
 import GET_BLOG_POSTS from '../actions/index';
+import GET_SEARCH_BASED_BLOG_POSTS from '../actions/index';
 
-let BlogListReducer = (state = null,action) => {
+
+let SearchBlogListReducer = (state = [],action) => {
 	switch(action.type){
-		case 'GET_BLOG_POSTS' : 
+		case 'GET_SEARCH_BASED_BLOG_POSTS' : 
 			console.log(action.payload);
-			return action.payload;
+			return [action.payload.data, ...state];
 		default :
 			return state;
 	}
 	
 }
  
-export default BlogListReducer;
+export default SearchBlogListReducer;

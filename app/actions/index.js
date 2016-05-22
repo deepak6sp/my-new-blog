@@ -1,5 +1,6 @@
 import axios from 'axios';
 export const GET_BLOG_POSTS = 'GET_BLOG_POSTS';
+export const GET_SEARCH_BASED_BLOG_POSTS = 'GET_SEARCH_BASED_BLOG_POSTS';
 
 export function getBlogPosts(){
 	return dispatch => {
@@ -14,6 +15,10 @@ export function getBlogPosts(){
 	}; 
 }  
 
-export function getBlogPostsBasedOnSearchTerm(){
-	alert("getBlogPostsBasedOnSearchTerm");
+export function getBlogPostsBasedOnSearchTerm(searchTerm){
+	const response = axios.get('http://localhost:7000/api/search');
+    return({
+    	type : GET_SEARCH_BASED_BLOG_POSTS,
+		payload : response
+    });
 }
