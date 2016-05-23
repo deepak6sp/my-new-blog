@@ -1,8 +1,12 @@
 import axios from 'axios';
 import React,{ Component } from 'react';
-import { connect } from 'react-redux';
-//import { bindActionCreators } from 'redux';
 import { Row, Col, Button } from 'react-bootstrap';
+
+import SearchBlog from './searchBlog';
+import { getBlogPosts } from '../actions/index';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 
 class Blog extends Component {
     constructor(props) {
@@ -10,18 +14,18 @@ class Blog extends Component {
         this.state= {blogLists: ""};
     }
     componentWillMount() {
-        axios.get('/api/blogPostList')
-        .then(response => {
-            this.setState ({ blogLists : response.data});
-        });
+        this.props.getBlogPosts();
     }
     render() {
         let blogListData = "";
-        if (!this.state.blogLists){
+        if (!this.props.blogList){
            blogListData = "No blog posts available";
         }
+        else if (this.props.blogList == ""){
+           blogListData = "No blog posts matching search keyword";
+        }
         else{
-            blogListData  = this.state.blogLists.map((blog,index) => {
+            blogListData  = this.props.blogList.map((blog,index) => {
               return (<div className="blog-post" key={index}>
                         <h1>{blog.title}</h1>
                         <p>{blog.content}</p>
@@ -35,6 +39,11 @@ class Blog extends Component {
         return  (
         	<main>
             <div className="container-fluid">
+                <Row>
+                  <Col sm={4} className="blog-posts-search">
+                    <SearchBlog />
+                  </Col>
+                </Row>
                 <Row>
                     <Col sm={9} className="blog-posts-section">
                          { blogListData }
@@ -51,6 +60,10 @@ class Blog extends Component {
     }
 }
 
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({ getBlogPosts }, dispatch);
+}
+
 
 function mapStateToProps(state){
   return {
@@ -60,5 +73,5 @@ function mapStateToProps(state){
 }
 
 
-export default connect(mapStateToProps)(Blog);
+export default connect(mapStateToProps,mapDispatchToProps)(Blog);
 

@@ -15,7 +15,9 @@ class SearchBlog extends Component {
 
 	handleChange(e) {
 	    this.setState({ searchTerm: e.target.value });
+	    this.props.getBlogPostsBasedOnSearchTerm(this.state.searchTerm);
 	}
+
 	searchFormSubmit(e){
 		e.preventDefault();
 		this.props.getBlogPostsBasedOnSearchTerm(this.state.searchTerm);
@@ -23,12 +25,10 @@ class SearchBlog extends Component {
 	render() {
 	    return (
 	    	<form onSubmit={this.searchFormSubmit.bind(this)}>
-		      	<Navbar.Form pullLeft>
-			        <FormGroup>
-			          	<FormControl type="text" placeholder="Search blog" value={this.state.searchTerm} onChange={this.handleChange.bind(this)}/>
-			          	<a class="btn btn-default" type="submit"><FontAwesome name='search' /></a>
-			        </FormGroup>
-			    </Navbar.Form>
+		        <FormGroup>
+		          	<FormControl type="text" placeholder="Search blog" value={this.state.searchTerm} onChange={this.handleChange.bind(this)}/>
+		          	{/*<a class="btn btn-default" type="submit" onClick={this.handleChange.bind(this)}><FontAwesome name='search' /></a>*/}
+		        </FormGroup>
 			</form>
 	    );
 	}

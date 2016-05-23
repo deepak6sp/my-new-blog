@@ -26,13 +26,12 @@ blogPostsRouter.route('/blogPostList')
 
 blogPostsRouter.route('/search')
 .get(function(req, res, next){
-	var regex = new RegExp("post1","i");
+	var searchVariable = req.param('searchTerm');
+	var regex = new RegExp(searchVariable,"i");
 	BlogPost.find(
 		{$or:[{"title": regex},{"content":regex}]},function(err,posts){
 		if (err) res.send(err);
 		res.json(posts);
-		console.log("search router");
-
 	});
 });
 

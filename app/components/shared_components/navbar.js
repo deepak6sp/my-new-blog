@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { Router, Route, Link, browserHistory } from 'react-router';
-import SearchBlog from '../../containers/SearchBlog';
+
 class Navbar extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +29,7 @@ class Navbar extends Component {
 
                 {/* Collect the nav links, forms, and other content for toggling */}
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <SearchBlog />
+                  
                   <ul className="nav navbar-nav navbar-right">
                     <li><Link to="home">Home</Link></li>
                     <li className="active"><Link to="blog">Blog<span className="sr-only">(current)</span></Link></li>

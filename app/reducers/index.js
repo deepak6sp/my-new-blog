@@ -3,7 +3,7 @@ import SearchBlogListReducer from './reducer_searchBlogList';
 import whatsNewListReducer from './reducer_whatsNewList';
 
 const RootReducer =  combineReducers({
-	searchBlogLists : SearchBlogListReducer,
+	blogLists : SearchBlogListReducer,
 	whatsNewLists : whatsNewListReducer
 
 

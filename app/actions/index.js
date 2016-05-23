@@ -3,20 +3,15 @@ export const GET_BLOG_POSTS = 'GET_BLOG_POSTS';
 export const GET_SEARCH_BASED_BLOG_POSTS = 'GET_SEARCH_BASED_BLOG_POSTS';
 
 export function getBlogPosts(){
-	return dispatch => {
-		axios.get('http://localhost:7000/api')
-        .then(response => {
-           dispatch({
-				type : GET_BLOG_POSTS,
-				payload : response.data
-			});
-        });
-		
-	}; 
+	const response = axios.get('/api/blogPostList');
+    return({
+    	type : GET_BLOG_POSTS,
+		payload : response
+    });
 }  
 
 export function getBlogPostsBasedOnSearchTerm(searchTerm){
-	const response = axios.get('http://localhost:7000/api/search');
+	const response = axios.get("/api/search?"+"searchTerm="+searchTerm);
     return({
     	type : GET_SEARCH_BASED_BLOG_POSTS,
 		payload : response
