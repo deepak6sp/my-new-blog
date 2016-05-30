@@ -6,8 +6,8 @@ var BlogPost = require("../model/blogPost");
 blogPostsRouter.route('/blogPostList')
 .post(function (req, res, next) {
 	var blogPost = new BlogPost({
-		title : 'post4',
-		content : 'post4 details'
+		title : 'post6',
+		content : 'post6 details'
 
 	});
 	blogPost.save(function(err,blogPost){

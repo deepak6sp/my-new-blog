@@ -32,7 +32,7 @@ class Navbar extends Component {
                   
                   <ul className="nav navbar-nav navbar-right">
                     <li><Link to="home">Home</Link></li>
-                    <li className="active"><Link to="blog">Blog<span className="sr-only">(current)</span></Link></li>
+                    <li><Link to="blog">Blog<span className="sr-only">(current)</span></Link></li>
                     <li><Link to="about">About</Link></li>
                     <li><Link to="contact">Contact</Link></li>
                     

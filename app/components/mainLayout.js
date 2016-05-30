@@ -1,18 +1,19 @@
-import React from 'react';
+import React,{ Component} from 'react';
 import ReactDOM from 'react-dom';
 
 
 import Navbar from './shared_components/navbar';
 import Footer from './shared_components/footer';
 
-class MainLayout extends React.Component {
+class MainLayout extends Component {
+	
     render() {
         return ( 
-        	<div id="home-page">
+        	<main>
 	        	<Navbar />
         		{this.props.children}
         		<Footer />
-        	</div>
+        	</main>
         );
     }
 }

@@ -1,4 +1,4 @@
-#home-page{
+#main{
 	.container-fluid{
 		max-width: 1024px;
 		h1{
@@ -7,7 +7,7 @@
 	
 	}
 	.navbar-default{
-		background-color:$main-primary;
+		background-color:transparent;
 		border-top:none;
 		border: none;
 		border-radius: 0px;
@@ -36,7 +36,7 @@
 			li{
 				a{
 					color:$white;
-					background-color:$main-primary;
+					background-color:transparent;
 					-webkit-transition: background .3s;
 					transition: background .3s;
 					&:hover{
@@ -55,8 +55,12 @@
 		}
 	}
 	#home{
+		background-image: url('main_bg.jpg');
+		background-size: cover;
+	    width: 100%;
+	    z-index: -1;
 		text-align: center;
-		margin-bottom: 100px;
+		padding-top: 100px;
 		.avatar{
 			background: url('display.jpg');
 			background-size: contain;
@@ -65,7 +69,6 @@
 		    width: 100px;
 		    border-radius: 50%;
 		    margin: 0 auto;
-		    margin-top: 100px;
 		}
 		.myName{
 			text-align: center;
@@ -130,11 +133,8 @@
 		min-height: 100%;
 	}
 	.footer{
-		margin-top: 50px;
 		height:50px;
 		background-color: $main-primary;
-		bottom:0;
-		position: fixed;
     	width: 100%;
 	}
 }

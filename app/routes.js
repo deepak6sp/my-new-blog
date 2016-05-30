@@ -9,7 +9,7 @@ import Blog from './containers/blogList';
 
 const AppRoutes = (<Router history={browserHistory}>
 	    <Route path="/" component={MainLayout}>
-	    	<IndexRoute component={Blog} />
+	    	<IndexRoute component={Home} />
 	    	<Route path="home" component={Home}/>
 	    	<Route path="blog" component={Blog}/>
             <Route path="about" component={About}/>
