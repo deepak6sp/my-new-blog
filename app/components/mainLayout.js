@@ -9,11 +9,14 @@ class MainLayout extends Component {
 	
     render() {
         return ( 
-        	<main>
+        	<div id="MainLayout">
 	        	<Navbar />
+	        	<main>
         		{this.props.children}
+        		</main>
         		<Footer />
-        	</main>
+        	</div>
+        	
         );
     }
 }

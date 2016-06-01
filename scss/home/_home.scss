@@ -6,99 +6,48 @@
 		}
 	
 	}
-	.navbar-default{
-		background-color:transparent;
-		border-top:none;
-		border: none;
-		border-radius: 0px;
-		.navbar-form{
-			border-top: none;
-			border-bottom: none;
-			box-shadow: none;
-			position: relative;
-			.form-control{
-				display: inline-block;
-				padding-right:2.5rem;
-			}
-			a{
-				display: inline-block;
-				position: absolute;
-				right: 2.5rem;
-				&:hover{
-					cursor: pointer;
-				}
-			}
-			.fa-search{
-				padding-top: 9px;			
-			}
-		}
-		.navbar-nav{
-			li{
-				a{
-					color:$white;
-					background-color:transparent;
-					-webkit-transition: background .3s;
-					transition: background .3s;
-					&:hover{
-						background-color:$main-hover;
-					}
-					&:focus{
-						outline: none;
-					}
-				}
-			}
-			li.active{
-				a{
-					color:$grey-low;
-					background-color:$silver;				}
-			}
-		}
-	}
+	
 	#home{
 		background-image: url('main_bg.jpg');
 		background-size: cover;
 	    width: 100%;
-	    z-index: -1;
 		text-align: center;
 		padding-top: 100px;
-		.avatar{
-			background: url('display.jpg');
-			background-size: contain;
-			border:1px solid $grey;
-		    height: 100px;
-		    width: 100px;
-		    border-radius: 50%;
-		    margin: 0 auto;
+		position: relative;
+		.home_bg{
+			position: absolute;
+			top:0;
+			width: 100%;
+			height:100%;
+			background-color: #14212A;
+			opacity: 0.5;
 		}
-		.myName{
-			text-align: center;
+		.myInfo{
+			position: absolute;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+			.avatar{
+				//background: url('display.jpg');
+				background-size: contain;
+				//border:1px solid $grey;
+			    height: 100px;
+			    width: 100px;
+			    border-radius: 50%;
+			    margin: 0 auto;
+			}
+			.myName{
+				text-align: center;
+				color:$white;
+			}
+			.profile{
+				margin-top: 10px;
+				color:$white;
+				font-style: italic;
+			}
 
 		}
-		.profile{
-			margin-top: 10px;
-			div:first-child{
-				color:$grey-mid;
-			}
-			.social-links{
-				margin-top: 10px;
-				a{
-					font-size: 1.5rem;
-    				padding:0px 20px;
-				}
-				.github{
-					color:$github;
-				}
-				.twitter{
-					color:$twitter;
-				}
-				.stackoverflow{
-					color:$stackoverflow;
-				}
-				.linkdin{
-					color:$linkdin;
-				}
-			}
-		}
+		
 	}
 	
 	.blog-post-header{
@@ -130,11 +79,6 @@
 		}
 	}
 	.contact-page{
-		min-height: 100%;
 	}
-	.footer{
-		height:50px;
-		background-color: $main-primary;
-    	width: 100%;
-	}
+
 }

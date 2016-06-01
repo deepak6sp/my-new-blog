@@ -1,0 +1,21 @@
+.social-links{
+	padding-top:10px;	
+	a{
+		font-size: 2rem;
+		padding:0px 20px;
+		cursor: pointer;
+	}
+	.github{
+		color:$github;
+	}
+	.twitter{
+		color:$twitter;
+	}
+	.linkedin{
+		color:$linkdin;
+	}
+	.stackoverflow{
+		color:$stackoverflow;
+	}
+		
+}

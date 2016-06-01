@@ -17,7 +17,7 @@ const socialLinks=[{
                     "icon" : "stack-overflow"
                 },
                 {
-                    "name":"linkedIn",
+                    "name":"linkedin",
                     "url":"https://au.linkedin.com/in/deepak-prakash-a1bb2825",
                     "icon": "linkedin"
                 }];

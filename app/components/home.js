@@ -23,12 +23,13 @@ class Home extends Component {
     render() {
         return  (
         	<header id="home" style={{"height":this.state.windowHeight}}>
-        		<div className="avatar"></div>
-        		<h2 className="myName">Deepak Prakash</h2>
-        		<h4 className="profile">
-        			<div>UI / Front End / Web developer</div>
-        			<SocialLinks />
-        		</h4>
+                <div className="home_bg"></div>
+                <div className="myInfo">
+            		<div className="avatar"></div>
+            		<h2 className="myName">Deepak Prakash</h2>
+            		<h4 className="profile">UI - Front End - Web Developer</h4>
+                    <SocialLinks />
+                </div>          
         	</header>
         );
     }
