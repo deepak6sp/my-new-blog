@@ -1,13 +1,14 @@
-@import "config/colors";
-@import "config/mixins";
-@import "config/globals";
 @import "vendor/bootstrap";
 @import "vendor/fontAwesome/font-awesome";
 
+@import "config/colors";
+@import "config/mixins";
+@import "config/globals";
 @import "components/navbar";
 @import "components/footer";
 @import "components/social_links";
-@import "home/home";
+@import "specifics/home";
+@import "specifics/blog";
 
 
 

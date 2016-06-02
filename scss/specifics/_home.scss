@@ -1,18 +1,12 @@
 #main{
 	.container-fluid{
 		max-width: 1024px;
-		h1{
-			color: $h1;		
-		}
-	
 	}
-	
 	#home{
 		background-image: url('main_bg.jpg');
 		background-size: cover;
 	    width: 100%;
 		text-align: center;
-		padding-top: 100px;
 		position: relative;
 		.home_bg{
 			position: absolute;
@@ -22,6 +16,7 @@
 			background-color: #14212A;
 			opacity: 0.5;
 		}
+   
 		.myInfo{
 			position: absolute;
 		    left: 0;
@@ -45,40 +40,6 @@
 				color:$white;
 				font-style: italic;
 			}
-
-		}
-		
+		}		
 	}
-	
-	.blog-post-header{
-		position:relative;
-		width: 100%;
-		.blog-post-icon{
-			@include half-circle($main-primary,100px);
-			position:absolute;
-			top:-70px;
-			left:0;
-			right:0;
-			margin:auto;
-			text-align:center;
-			color:$white; 
-			cursor: pointer;
-			.blog-text-1{
-				margin-top:30px;
-				font-size: 20px;
-			}
-		}
-	}
-	.latest-post-section{
-		p{
-			color: $grey-high;
-			&:hover{
-				color:$grey-low;
-				cursor: pointer;
-			}
-		}
-	}
-	.contact-page{
-	}
-
 }

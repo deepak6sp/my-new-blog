@@ -1,5 +1,5 @@
 .navbar-default{
-	background-color:#14212A;
+	background-color:$main-primary;
 	border-top:none;
 	border: none;
 	border-radius: 0px;
@@ -33,7 +33,8 @@
 				-webkit-transition: background .3s;
 				transition: background .3s;
 				&:hover{
-					background-color:$white;
+					color:$white;
+					background-color:lighten( $main-primary, 3% );
 				}
 				&:focus{
 					outline: none;
@@ -42,8 +43,17 @@
 		}
 		li.active{
 			a{
-				color:$grey-low;
-				background-color:$silver;				}
+				color:$white;
+				background-color:darken( $main-primary, 5% );	
+				&:hover{
+					color:$white;
+					background-color:darken( $main-primary, 1% );
+				}
+				&:focus{
+					color:$white;
+					background-color:darken( $main-primary, 5% );
+				}			
+			}
 		}
 	}
 }

@@ -11,9 +11,7 @@ class MainLayout extends Component {
         return ( 
         	<div id="MainLayout">
 	        	<Navbar />
-	        	<main>
         		{this.props.children}
-        		</main>
         		<Footer />
         	</div>
         	
