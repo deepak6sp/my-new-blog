@@ -26,8 +26,9 @@ class Home extends Component {
                 <div className="home_bg"></div>
                 <div className="myInfo">
             		<div className="avatar"></div>
-            		<h2 className="myName">Deepak Prakash</h2>
-            		<h4 className="profile">UI - Front End - Web Developer</h4>
+            		<h1 className="myName">Deepak Prakash</h1>
+            		<div className="profile">UI - Front End - Web Developer</div>
+                    <div className="location">Based in the heart of melbourne</div>
                     <SocialLinks />
                 </div>          
         	</header>
