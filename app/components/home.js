@@ -1,8 +1,9 @@
 import React,{ Component } from 'react';
-import { Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
-import SplitBar from "./shared_components/splitBar";
+import About from "./about";
+
 
 class Home extends Component {
     constructor(props){
@@ -28,31 +29,16 @@ class Home extends Component {
             	{/*<header id="header" style={{"height":this.state.windowHeight}}>*/}
                 <header id="header" >
                     <div className="home_bg"></div>
-                    <div className="myInfo">
+                    <Row className="myInfo">
                 		<div className="avatar"></div>
                 		<h1 className="myName">Deepak Prakash</h1>
                 		<div className="profile">UI - Front End - Web Developer</div>
                         <div className="location">Based in the heart of melbourne</div>
-                    </div>          
+                        
+                    </Row>          
             	</header>
-                <main id="about" className="container-fluid">
-                    <Row>
-                        <Col sm={12}>
-                            <h3>About this blog</h3>
-                            <p>This blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. </p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col sm={12}>
-                            <h3>About me</h3>
-                            <p>I am a freelance web Developer. I develop with skills of minimal usability designs and using core XHTML/HTML5, CSS3 and Javascript but not limited to using frameworks such as Foundation, Bootstrap, React and Angular
-                            for single page applications. Have worked on PHP frameworks and have knowledge of ruby on rails. I love node technologies and how the way they have reformed the full stack development. I am ready to work on 
-                            node technologies, to continously learn and contribute. I have passion for what i do, love web technologies, and hope to do this forever.</p>
-                        </Col>
-                    </Row>  
-                    
-                </main>
-                <SplitBar text="My Blog" link="/blog" icon="arrow-circle-right" />
+                <About />
+                
                 <Row>
                     <Col sm={12}>
                         <h3>Resume (Download pdf)</h3>

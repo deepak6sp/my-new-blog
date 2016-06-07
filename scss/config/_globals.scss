@@ -1,5 +1,17 @@
+body{
+	overflow-x: hidden;
+	@media screen and (max-width: 800px) {
+		font-size: 10%;
+	}
+	@media screen and (min-width: 800px) {
+		font-size: 100%;
+	}
+}
+a{
+	font-size: 1.6rem;
+}
 p{
-	font-size: 16px;
+	font-size: 1.6rem;
     line-height: 1.5;
     font-family: $vani;
     text-align: justify;

@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 class Blog extends Component {
     constructor(props) {
         super(props);
+        window.scrollTo(0,0);
         this.state= {blogLists: ""};
     }
     componentWillMount() {
