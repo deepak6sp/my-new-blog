@@ -58,6 +58,12 @@
 			.container-fluid{
 				margin-top: 20px;
 			}
+			p{
+				text-align: center;
+			}
+			.fa-cogs{
+				transform: rotate(90deg);
+			}
 		}
 	}	
 }
@@ -73,7 +79,7 @@
 		display: block;
 		&:hover{
 			background-color: darken($blue,10%);
-			height: 50px;
+			height: 48px;
 		}
 		&:before{
 			content: "";

@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 import { Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
 
 import SplitBar from "./shared_components/splitBar";
 
@@ -24,18 +25,28 @@ class About extends Component {
                     </Row>
                 </div>
                 <SplitBar text="Skills" link="/blog" iconName="arrow-circle-down" />
-                <div className="container-fluid">
+                <center className="container-fluid">
                     <Row>
-                        <Col sm={12}>
+                        <Col sm={12} md={4}>
+                            <FontAwesome className='super-crazy-colors' name="cubes" size='5x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
                             <h3> Design and Wireframes </h3>
-                            <p> Write my design akills here</p>
+                            <p> I have enormous experience using photoshop and converting designs to complete web solution. I use moqups for wireframes, Howerver, recently I have
+                               been using Goole drawings for mockups and loving it.</p>
+                        </Col>
+                        <Col sm={12} md={4}>
+                            <FontAwesome className='super-crazy-colors' name="connectdevelop" size='5x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
                             <h3> Development </h3>
-                            <p> Write my development skills here</p>
+                            <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as 
+                            npm, bower, webpack, gulp, sass to speed up developement process.</p>
+                        </Col>
+                        <Col sm={12} md={4}>
+                            <FontAwesome className='super-crazy-colors' name="cogs" size='5x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
                             <h3> Testing </h3>
-                            <p> Write my testing skills here</p>
+                            <p> I consider testing to be as important as design and development, so I believe in Agile test driven development. Also, I will make sure the 
+                                web application works fine accross multi browser.</p>
                         </Col>
                     </Row>
-                </div>
+                </center>
                 <SplitBar text="Visit my blog" link="/blog" iconName="arrow-circle-right" />
                 <Row>
                         <Col sm={12}>
