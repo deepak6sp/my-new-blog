@@ -3,6 +3,7 @@ import { Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
 import About from "./about";
+import Contact from "./contact";
 
 
 class Home extends Component {
@@ -29,22 +30,23 @@ class Home extends Component {
             	{/*<header id="header" style={{"height":this.state.windowHeight}}>*/}
                 <header id="header" >
                     <div className="home_bg"></div>
-                    <Row className="myInfo">
-                		<div className="avatar"></div>
-                		<h1 className="myName">Deepak Prakash</h1>
-                		<div className="profile">UI - Front End - Web Developer</div>
-                        <div className="location">Based in the heart of melbourne</div>
-                        
+                    <Row className="myInfo container-fluid">
+                        <Col xs={12} md={4}>
+                		  <div className="avatar"></div>
+                        </Col>
+                        <Col xs={12} md={8}>
+                    		<h1 className="myName">Hi, I'm Deepak</h1>
+                    		<div className="profile">UI and Front End Developer <span className="location">based in Melbourne, Australia.</span></div>
+                            <p> While I specialize in Front end, I also do a lot of work on Javascript and Node technologies
+                                developing rich web applications</p>
+                        </Col>
                     </Row>          
             	</header>
+
                 <About />
                 
-                <Row>
-                    <Col sm={12}>
-                        <h3>Resume (Download pdf)</h3>
-                        <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has surviv</p>
-                    </Col>
-                </Row>
+                <Contact />
+                
             </div>
         );
     }

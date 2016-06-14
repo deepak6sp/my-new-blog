@@ -1,6 +1,6 @@
 body{
 	overflow-x: hidden;
-		font-size: 100%;
+	font-size: 100%;
 }
 a{
 	font-size: 1.6rem;
@@ -11,8 +11,17 @@ p{
     font-family: $vani;
     text-align: justify;
 }
-h3{
-	color: $h3;		
+
+li{
+	font-size: 1.4rem;
+    line-height: 1.4;
+    font-family: $vani;
+}
+
+h4{
+	color: $red;
+	font-family: $arial;	
+	font-size: 1.6rem;	
 }
 .container-fluid {
     margin-right: auto;

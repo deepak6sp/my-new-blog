@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import { Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import { Row, Col, ListGroup, ListGroupItem, Button, Panel } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
 import SplitBar from "./shared_components/splitBar";
@@ -18,32 +18,81 @@ class About extends Component {
                 <div className="container-fluid">
                     <Row>
                         <Col sm={12}>
-                            <p>I am a freelance web Developer. I develop with skills of minimal usability designs and using core XHTML/HTML5, CSS3 and Javascript but not limited to using frameworks such as Foundation, Bootstrap, React and Angular
-                            for single page applications. Have worked on PHP frameworks and have knowledge of ruby on rails. I love node technologies and how the way they have reformed the full stack development. I am ready to work on 
-                            node technologies, to continously learn and contribute. I have passion for what i do, love web technologies, and hope to do this forever.</p>
+                            <p>I am an IT graduate, freelance Web Developer having 4 years of user experience and front end development. 
+                                I develop with skills of minimal usability designs and using core XHTML/HTML5, CSS3 and Javascript. 
+                                Have experince working on PHP frameworks and have knowledge of ruby on rails. I love node technologies and how 
+                                the way they have reformed the full stack development. I use following technologies when developing websites:
+                            </p>
+                        </Col>
+                       
+                        <Col xs={12} sm={6} md={3}>
+                            <Panel header="Web languages">
+                                <li> XHtml / Html5 </li>
+                                <li> Css3 / Sass </li>
+                                <li> Javascript / Jquery </li>
+                                <li> PHP </li>
+                            </Panel>
+                        </Col>
+
+                        <Col xs={12} sm={6} md={3}>
+                            <Panel header="Libraries / Frameworks">
+                                <li> React / Redux / Flux</li>
+                                <li> Angular / Express / Meteor</li>
+                                <li> CodeIginiter / Laravel</li>
+                                <li> Wordpress / Drupal </li>
+                            </Panel>
+                        </Col>
+
+                        <Col xs={12} sm={6} md={3}>
+                            <Panel header="Collaboration">
+                                <li> Node Modules (NPM) </li>
+                                <li> Bower </li>
+                                <li> Gulp / Grunt </li>
+                                <li> Webpack </li>
+                            </Panel>
+                        </Col>
+
+                        <Col xs={12} sm={6} md={3}>
+                            <Panel header="Test Utilities">
+                                <li> Mocha </li>
+                                <li> Chai </li>
+                                <li> Jasmine </li>
+                                <li> Selenium </li>
+                            </Panel>
+                        </Col>
+
+
+
+                        <Col sm={12}>
+                            <p>I love web technologies, self learner, have passion for what I do, and hope to do this forever.</p>
                         </Col>
                     </Row>
                 </div>
                 <SplitBar text="Skills" link="/blog" iconName="arrow-circle-down" />
-                <center className="container-fluid">
+                <center className="container-fluid skills">
                     <Row>
                         <Col sm={12} md={4}>
                             <FontAwesome className='super-crazy-colors' name="cubes" size='5x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
-                            <h3> Design and Wireframes </h3>
-                            <p> I have enormous experience using photoshop and converting designs to complete web solution. I use moqups for wireframes, Howerver, recently I have
-                               been using Goole drawings for mockups and loving it.</p>
+                            <h4> Design and Wireframes </h4>
+                            <p> I use photoshop for designs and convert them to complete web solution. Recently, I have
+                               been using my favourite Google drawings for mockups and wireframes, and loving it.</p>
                         </Col>
                         <Col sm={12} md={4}>
                             <FontAwesome className='super-crazy-colors' name="connectdevelop" size='5x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
-                            <h3> Development </h3>
+                            <h4> Development </h4>
                             <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as 
                             npm, bower, webpack, gulp, sass to speed up developement process.</p>
                         </Col>
                         <Col sm={12} md={4}>
                             <FontAwesome className='super-crazy-colors' name="cogs" size='5x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
-                            <h3> Testing </h3>
+                            <h4> Testing </h4>
                             <p> I consider testing to be as important as design and development, so I believe in Agile test driven development. Also, I will make sure the 
-                                web application works fine accross multi browser.</p>
+                                web application works fine accross multi browsers and devices.</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={12}>
+                            <Button bsStyle="warning">Download Resume</Button>
                         </Col>
                     </Row>
                 </center>

@@ -10,8 +10,8 @@ class Contact extends Component {
 
     render() {
         return  (
-	        	<div className="container-fluid contact-page">
-	        		<Row>
+	        	<div id="contact">
+	        		<Row className="container-fluid">
 	        			<Col sm={8}>
 	        				<h1>Got a project ? or drop me a line ?</h1>
 			        		<form>

@@ -1,5 +1,6 @@
 import React,{ Component } from 'react';
 import { Router, Route, Link, browserHistory } from 'react-router';
+import FontAwesome from 'react-fontawesome';
 
 class Navbar extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class Navbar extends Component {
     }
     render() {
         return  (
-        	<nav className="navbar navbar-default">
+        	<nav className="navbar navbar-default navbar-fixed-top">
               <div className="container-fluid">
                 {/* Brand and toggle get grouped for better mobile display */}
                 <div className="navbar-header">
@@ -31,8 +32,18 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   
                   <ul className="nav navbar-nav navbar-right">
-                    <li className="active"><Link to="home">Home</Link></li>
-                    <li><Link to="blog">Blog<span className="sr-only">(current)</span></Link></li>
+                    <li className="active">
+                      <Link to="home">
+                        <FontAwesome className='super-crazy-colors' name="home" size='lg' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
+                         Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="blog">
+                        <FontAwesome className='super-crazy-colors' name="tags" size='lg' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
+                        Blog
+                      </Link>
+                    </li>
                     <li><Link to="about">About</Link></li>
                     <li><Link to="contact">Contact</Link></li>
                     
