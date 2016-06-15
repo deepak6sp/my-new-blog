@@ -1,8 +1,9 @@
 import React,{ Component } from 'react';
 import { Row, Col, ListGroup, ListGroupItem, Button, Panel } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-
+import ListSkills from "./shared_components/listSkills";
 import SplitBar from "./shared_components/splitBar";
+
 
 class About extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class About extends Component {
     }
 
     render() {
+       
         return  (
         	<main id="about">
                 <SplitBar text="About me" link="/blog" iconName="arrow-circle-down" />
@@ -24,45 +26,9 @@ class About extends Component {
                                 the way they have reformed the full stack development. I use following technologies when developing websites:
                             </p>
                         </Col>
-                       
-                        <Col xs={12} sm={6} md={3}>
-                            <Panel header="Web languages">
-                                <li> XHtml / Html5 </li>
-                                <li> Css3 / Sass </li>
-                                <li> Javascript / Jquery </li>
-                                <li> PHP </li>
-                            </Panel>
-                        </Col>
-
-                        <Col xs={12} sm={6} md={3}>
-                            <Panel header="Libraries / Frameworks">
-                                <li> React / Redux / Flux</li>
-                                <li> Angular / Express / Meteor</li>
-                                <li> CodeIginiter / Laravel</li>
-                                <li> Wordpress / Drupal </li>
-                            </Panel>
-                        </Col>
-
-                        <Col xs={12} sm={6} md={3}>
-                            <Panel header="Collaboration">
-                                <li> Node Modules (NPM) </li>
-                                <li> Bower </li>
-                                <li> Gulp / Grunt </li>
-                                <li> Webpack </li>
-                            </Panel>
-                        </Col>
-
-                        <Col xs={12} sm={6} md={3}>
-                            <Panel header="Test Utilities">
-                                <li> Mocha </li>
-                                <li> Chai </li>
-                                <li> Jasmine </li>
-                                <li> Selenium </li>
-                            </Panel>
-                        </Col>
-
-
-
+                    </Row>
+                    <ListSkills/>
+                    <Row>
                         <Col sm={12}>
                             <p>I love web technologies, self learner, have passion for what I do, and hope to do this forever.</p>
                         </Col>

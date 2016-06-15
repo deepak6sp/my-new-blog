@@ -2,18 +2,7 @@ import React,{ Component } from 'react';
 import { Router, Route, Link, browserHistory } from 'react-router';
 import FontAwesome from 'react-fontawesome';
 
-class Navbar extends Component {
-    constructor(props) {
-        super(props);
-    }
-    componentDidMount() {
-        $(".navbar li a").click(function(e){
-          $(".navbar li").removeClass("active");
-          $(e.target).parent().addClass("active");
-
-        }); 
-    }
-    render() {
+const Navbar = () => {
         return  (
         	<nav className="navbar navbar-default navbar-fixed-top">
               <div className="container-fluid">
@@ -52,7 +41,6 @@ class Navbar extends Component {
               </div>
         	</nav>
         );
-    }
 }
 
 export default Navbar;
