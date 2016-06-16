@@ -4,12 +4,27 @@ import FontAwesome from 'react-fontawesome';
 import ListSkills from "./shared_components/listSkills";
 import SplitBar from "./shared_components/splitBar";
 
+const isScrolledIntoView = (elem) => {
+    var $elem = $(elem);
+    var $window = $(window);
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop + $window.height();
+    var elemTop = $elem.offset().top;
+    var elemBottom = elemTop + $elem.height();
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
 
 class About extends Component {
     constructor(props) {
         super(props);
     }
     componentDidMount(){
+        $(window).scroll(function(){
+            if(isScrolledIntoView($(".about"))){
+                console.log("reached");
+                $(".skillSet").addClass("bounceInLeft");
+            }
+        });
     }
 
     render() {
@@ -17,7 +32,7 @@ class About extends Component {
         return  (
         	<main id="about">
                 <SplitBar text="About me" link="/blog" iconName="arrow-circle-down" />
-                <div className="container-fluid">
+                <div className="container-fluid about">
                     <Row>
                         <Col sm={12}>
                             <p>I am an IT graduate, freelance Web Developer having 4 years of user experience and front end development. 

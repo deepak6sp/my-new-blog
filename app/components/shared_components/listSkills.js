@@ -11,7 +11,7 @@ const list = (props) =>{
 
 const ListSkills = () => {
 	return(
-		<Row>
+		<Row className="skillSet">
 			<Col xs={12} sm={6} md={3}>
 	            <Panel header="Web languages">
 	               {list(languages)}

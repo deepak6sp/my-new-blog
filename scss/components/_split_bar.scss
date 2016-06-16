@@ -1,0 +1,30 @@
+.split-bar{
+	height:48px;
+	background-color: $blue;
+	text-align: center;	
+	color:$white;
+	a{	
+		color:$white;
+		text-decoration: none;
+		display: block;
+		&:hover{
+			background-color: darken($blue,10%);
+			height: 48px;
+		}
+		&:before{
+			content: "";
+			vertical-align: middle;
+		    display: inline-block;
+		    height: 50px;
+		}
+		span{
+			padding-left: 10px;
+			&:before{
+				vertical-align: middle;
+			    display: inline-block;
+			    height: 25px;
+			}
+		}
+		
+	}
+}

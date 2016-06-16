@@ -30,6 +30,7 @@ class Home extends Component {
             	{/*<header id="header" style={{"height":this.state.windowHeight}}>*/}
                 <header id="header" >
                     <div className="home_bg"></div>
+                    <div className="overlay_bg"></div>
                     <Row className="myInfo container-fluid">
                         <Col xs={12} md={4}>
                 		  <div className="avatar"></div>
