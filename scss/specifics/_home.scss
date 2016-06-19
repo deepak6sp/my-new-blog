@@ -1,7 +1,8 @@
 #main{
-	.container-fluid{
+	.container{
 		max-width: 1024px;
-	}	
+	}
+
 }
 
 #header{
@@ -29,6 +30,11 @@
 	    padding-top: 175px;
 	    height:500px;
 	    color:$white;
+	    -webkit-animation-name: dBounceIn;  /* Chrome, Safari, Opera */
+		    -webkit-animation-duration: 5s;  /* Chrome, Safari, Opera */
+		    animation-name: dBounceIn;
+		    animation-duration: 2s;
+		//@include dBounceIn();
 		// .avatar{
 		// 	background: url('avatar.jpg');
 		// 	background-size: contain;
@@ -40,8 +46,9 @@
 		// }
 		.myName{
 			font-family: $verdana;
-			@include bounceIn();
+			
 		}
+
 		.profile{
 			margin-top: 10px;
 			color:$white;
@@ -60,22 +67,28 @@
 #about{
 	background:$white;
 	position: relative;
-	.bounceInLeft{
-		@include bounceInLeft();
+	section{
+		padding: 20px 0px;
 	}
-	.container-fluid{
-		margin-top: 20px;
-	}
+	
 	p{
 		text-align: justify;
+	}
+	.dev-modules{
+		.fa{
+		   @include circle(80px);
+		    color: $white;
+		    background: $red;
+		}
+		.fa-cogs{
+			transform: rotate(90deg);
+		}
 	}
 	.panel-heading{
 		font-size: 1.6rem;
 		color: $red;
 	}
-	.fa-cogs{
-		transform: rotate(90deg);
-	}
+	
 }
 
 #contact{

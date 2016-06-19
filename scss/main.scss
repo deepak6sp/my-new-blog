@@ -1,12 +1,13 @@
 @import "vendor/bootstrap";
 @import "vendor/fontAwesome/font-awesome";
-@import "../bower_components/animatewithsass/animate.scss";
+//@import "../bower_components/animatewithsass/animate.scss";
 
 
 @import "config/colors";
 @import "config/fonts";
 @import "config/globals";
 @import "config/mixins";
+@import "config/animation";
 @import "components/navbar";
 @import "components/footer";
 @import "components/social_links";

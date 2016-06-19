@@ -6,3 +6,13 @@
 	-moz-border-radius: $size*2 $size*2 0 0;
 	-webkit-border-radius: $size*2 $size*2 0 0;
 }
+
+@mixin circle($size){
+	width: $size;
+    height: $size;
+    line-height: $size;
+    border-radius: 50%;
+    -moz-border-radius: $size;
+	-webkit-border-radius: $size;
+}
+

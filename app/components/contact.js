@@ -11,7 +11,7 @@ class Contact extends Component {
     render() {
         return  (
 	        	<div id="contact">
-	        		<Row className="container-fluid">
+	        		<Row className="container container-fluid">
 	        			<Col sm={8}>
 	        				<h1>Got a project ? or drop me a line ?</h1>
 			        		<form>
