@@ -61,8 +61,8 @@ class About extends Component {
                         <Col sm={12}>
                             <p> This blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
                                 favourite front end framework, and react-scroll for animations.</p>
-                            <p> I am doing this blog to focus mainly on latest technologies involving Javascript and Node. However, I would not hesitate
-                                to include tips and tricks about UX/UI, front end and backend technologies </p>
+                            <p> I am doing this blog to share knowledge that focuses mainly on latest web technologies involving Javascript and Node. However, I would not hesitate
+                                to include tips and tricks about UX/UI, front end and back end technologies </p>
                         </Col>
                     </Row>
                     <Button>Visit Blog</Button>
