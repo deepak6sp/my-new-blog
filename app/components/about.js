@@ -1,8 +1,12 @@
 import React,{ Component } from 'react';
 import { Row, Col, ListGroup, ListGroupItem, Button, Panel } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import LazyLoad from 'react-lazy-load';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import ListSkills from "./shared_components/listSkills";
 import SplitBar from "./shared_components/splitBar";
+
 
 
 class About extends Component {
@@ -16,8 +20,10 @@ class About extends Component {
        
         return  (
         	<main id="about">
-                
-                <section className="container container-fluid scrollflow -pop -opacity">
+                <LazyLoad min-height={300} offset={20}>
+                <ReactCSSTransitionGroup transitionName = "example"
+               transitionAppear = {true} transitionAppearTimeout = {500}>
+                <section className="container container-fluid">
                     <Row>
                         <Col sm={12}>
                             <p>I am an IT graduate, freelance Web Developer having 4 years of user experience and front end development. 
@@ -35,7 +41,7 @@ class About extends Component {
                                been using my favourite Google drawings for mockups and wireframes, and loving it.</p>
                         </Col>
                         <Col sm={12} md={4}>
-                            <FontAwesome className='super-crazy-colors' name="connectdevelop" size='4x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
+                            <FontAwesome className='super-crazy-colors' name="desktop" size='4x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
                             <h4> Development </h4>
                             <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as 
                             npm, bower, webpack, gulp, sass to speed up developement process.</p>
@@ -48,6 +54,8 @@ class About extends Component {
                         </Col>
                     </Row>
                 </section>
+                </ReactCSSTransitionGroup>
+                </LazyLoad>
                 <SplitBar text="Skills" link="/blog" iconName="arrow-circle-down" />
                 <section className="container container-fluid scrollflow -slide-right -opacity">
                     <p> My projects involve use of technologies such as:</p>
@@ -56,7 +64,7 @@ class About extends Component {
                      <Button>Download Resume</Button>
                 </section>
                 <SplitBar text="Blog" link="/blog" iconName="arrow-circle-right" />
-                <section className="container container-fluid scrollflow -pop -opacity">
+                <section className="container container-fluid scrollflow -slide-top -opacity">
                     <Row>
                         <Col sm={12}>
                             <p> This blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my

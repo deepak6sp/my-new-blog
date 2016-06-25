@@ -4,7 +4,7 @@ import FontAwesome from 'react-fontawesome';
 
 const Navbar = () => {
         return  (
-        	<nav className="navbar navbar-default navbar-fixed-top">
+        	<nav className="navbar navbar-inverse navbar-fixed-top">
               <div className="container-fluid container">
                 {/* Brand and toggle get grouped for better mobile display */}
                 <div className="navbar-header">

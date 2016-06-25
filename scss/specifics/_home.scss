@@ -7,33 +7,27 @@
 
 #header{
 	.home_bg{
-		background-image: url('bg.jpg');
-		//background-color: $blue;
+		background-image:  linear-gradient(
+      rgba(29, 31, 33, 0.45), 
+      rgba(29, 31, 33, 0.45)
+    ), url('bg2.jpg');
 		background-size: cover;
 		position: fixed;
 	    width: 100%;
-		height:500px;
+		height:100vh;
 
-	}
-	.overlay_bg{
-		background-color: $black;
-		background-size: cover;
-		position: fixed;
-	    width: 100%;
-		height:500px;
-		opacity: 0.5;
 	}
 
 	.myInfo{
 		position: relative;
 	    text-align: left;
-	    padding-top: 175px;
-	    height:500px;
+	    padding-top: 100px;
+	    height:100vh;
 	    color:$white;
 	    -webkit-animation-name: dBounceIn;  /* Chrome, Safari, Opera */
-		    -webkit-animation-duration: 5s;  /* Chrome, Safari, Opera */
-		    animation-name: dBounceIn;
-		    animation-duration: 2s;
+	    -webkit-animation-duration: 5s;  /* Chrome, Safari, Opera */
+	    animation-name: dBounceIn;
+	    animation-duration: 2s;
 		//@include dBounceIn();
 		// .avatar{
 		// 	background: url('avatar.jpg');
@@ -56,16 +50,30 @@
 		    font-family: $algerian;
 		    font-size: 2.4rem;
 		}
+		.description{
+			margin-top:10px;
+		}
 		.location{
 			font-family: $verdana;
 			font-size: 1.4rem;
 		}
-		
+	}
+	.scroll-down{
+		text-align:center;
+		position: absolute;
+    	bottom: 30px;
+    	&:hover{
+    		cursor:pointer;
+    	}
+    	.fa{
+    		color:$white;
+    	}
 	}		
 }
 
 #about{
 	background:$white;
+
 	position: relative;
 	section{
 		padding: 20px 0px;
@@ -73,6 +81,14 @@
 	
 	p{
 		text-align: justify;
+	}
+	.example-appear {
+	   opacity: 0.01;
+	}
+
+	.example-appear.example-appear-active {
+	   opacity: 1;
+	   transition: opacity 500ms ease-in;
 	}
 	.dev-modules{
 		.fa{

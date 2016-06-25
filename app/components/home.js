@@ -31,16 +31,20 @@ class Home extends Component {
             	{/*<header id="header" style={{"height":this.state.windowHeight}}>*/}
                 <header id="header" >
                     <div className="home_bg"></div>
-                    <div className="overlay_bg"></div>
                     <Row className="myInfo container-fluid container">
-                        <Col xs={12} md={4}>
+                        <Col xs={12} md={7}>
                 		  <div className="avatar"></div>
                         </Col>
-                        <Col xs={12} md={8}>
+                        <Col xs={12} md={5}>
                     		<h1 className="myName">Hi, I'm Deepak</h1>
                     		<div className="profile">UI and Front End Developer <span className="location">based in Melbourne, Australia.</span></div>
-                            <p> While I specialize in Front end, I do a lot of work on Javascript and Node technologies
+                            <p className="description"> While I specialize in Front end, I do a lot of work on Javascript and Node technologies
                                 developing rich web applications</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} className="scroll-down">
+                            <FontAwesome className='super-crazy-colors' name="hand-o-down" size='5x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
                         </Col>
                     </Row>          
             	</header>
