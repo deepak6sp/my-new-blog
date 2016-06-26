@@ -1,8 +1,7 @@
 import React,{ Component } from 'react';
 import { Row, Col, ListGroup, ListGroupItem, Button, Panel } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import LazyLoad from 'react-lazy-load';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import ListSkills from "./shared_components/listSkills";
 import SplitBar from "./shared_components/splitBar";
@@ -12,18 +11,27 @@ import SplitBar from "./shared_components/splitBar";
 class About extends Component {
     constructor(props) {
         super(props);
+        this.state = {fadeInLeft : "",fadeInDown : ""};
     }
     componentDidMount(){
+    }
+    _fadeInLeft(isVisible){
+        if(isVisible){
+            this.setState({ fadeInLeft:"fadeInLeft"});
+        }
+    }
+    _fadeInDown(isVisible){
+        if(isVisible){
+            this.setState({ fadeInDown : "fadeInDown"});
+        }
     }
 
     render() {
        
         return  (
         	<main id="about">
-                <LazyLoad min-height={300} offset={20}>
-                <ReactCSSTransitionGroup transitionName = "example"
-               transitionAppear = {true} transitionAppearTimeout = {500}>
-                <section className="container container-fluid">
+                
+                <section className="container container-fluid ">
                     <Row>
                         <Col sm={12}>
                             <p>I am an IT graduate, freelance Web Developer having 4 years of user experience and front end development. 
@@ -33,7 +41,8 @@ class About extends Component {
                             </p>
                         </Col>
                     </Row>
-                    <Row className="text-center dev-modules">
+                    <VisibilitySensor onChange={this._fadeInLeft.bind(this)}/>
+                    <Row className={"text-center dev-modules " + this.state.fadeInLeft}>
                         <Col sm={12} md={4}>
                             <FontAwesome className='super-crazy-colors' name="cubes" size='4x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
                             <h4> Design and Wireframes </h4>
@@ -54,18 +63,22 @@ class About extends Component {
                         </Col>
                     </Row>
                 </section>
-                </ReactCSSTransitionGroup>
-                </LazyLoad>
+
                 <SplitBar text="Skills" link="/blog" iconName="arrow-circle-down" />
-                <section className="container container-fluid scrollflow -slide-right -opacity">
-                    <p> My projects involve use of technologies such as:</p>
-                    <ListSkills/>
+                
+                <section className="container container-fluid ">
+                     <p> My projects involve use of technologies such as:</p>
+                     <VisibilitySensor onChange={this._fadeInDown.bind(this)} />
+                     <section className={ "skills " + this.state.fadeInDown}><ListSkills/></section>
                      <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
                      <Button>Download Resume</Button>
                 </section>
+
                 <SplitBar text="Blog" link="/blog" iconName="arrow-circle-right" />
-                <section className="container container-fluid scrollflow -slide-top -opacity">
-                    <Row>
+                
+                <section className="container container-fluid">
+                    <VisibilitySensor onChange={this._fadeInDown.bind(this)} />
+                    <Row className={this.state.fadeInDown}>
                         <Col sm={12}>
                             <p> This blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
                                 favourite front end framework, and react-scroll for animations.</p>

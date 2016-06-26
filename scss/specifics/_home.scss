@@ -24,11 +24,7 @@
 	    padding-top: 100px;
 	    height:100vh;
 	    color:$white;
-	    -webkit-animation-name: dBounceIn;  /* Chrome, Safari, Opera */
-	    -webkit-animation-duration: 5s;  /* Chrome, Safari, Opera */
-	    animation-name: dBounceIn;
-	    animation-duration: 2s;
-		//@include dBounceIn();
+		@include bounceInDown();
 		// .avatar{
 		// 	background: url('avatar.jpg');
 		// 	background-size: contain;
@@ -82,15 +78,14 @@
 	p{
 		text-align: justify;
 	}
-	.example-appear {
-	   opacity: 0.01;
+	.fadeInLeft {
+	   @include fadeInLeft();
 	}
-
-	.example-appear.example-appear-active {
-	   opacity: 1;
-	   transition: opacity 500ms ease-in;
+	.fadeInDown{
+		@include fadeInDown();
 	}
-	.dev-modules{
+	.dev-modules,.skills{
+		opacity:0;
 		.fa{
 		   @include circle(80px);
 		    color: $white;
