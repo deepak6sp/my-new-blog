@@ -7,8 +7,9 @@ const SplitBar = (props) => {
         return  (
         	 <Row >
                 <Col sm={12} className="split-bar">
-                    <Link to="blog">{props.text}
-                        <FontAwesome className='super-crazy-colors' name={props.iconName} size='2x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
+                    <Link to="#">
+                        <FontAwesome className='super-crazy-colors' name={props.iconName} size='lg'/>
+                         {props.text}
                     </Link>
                 </Col>
             </Row>

@@ -14209,8 +14209,9 @@ h4 {
     -webkit-transition: background .3s;
     transition: background .3s; }
     .navbar-inverse .navbar-nav li a:hover {
+      cursor: pointer;
       color: #ffffff;
-      background-color: #192934; }
+      background-color: #44BBFF; }
     .navbar-inverse .navbar-nav li a:focus {
       outline: none; }
   .navbar-inverse .navbar-nav li.active a {
@@ -14251,23 +14252,21 @@ h4 {
   text-align: center;
   color: #ffffff; }
   .split-bar a {
+    cursor: default;
     color: #ffffff;
     text-decoration: none;
     display: block; }
-    .split-bar a:hover {
-      background-color: #11a8ff;
-      height: 48px; }
     .split-bar a:before {
       content: "";
       vertical-align: middle;
       display: inline-block;
       height: 50px; }
     .split-bar a span {
-      padding-left: 10px; }
+      padding-right: 5px; }
       .split-bar a span:before {
         vertical-align: middle;
         display: inline-block;
-        height: 25px; }
+        height: 22px; }
 
 #main .container {
   max-width: 1024px; }
@@ -14337,11 +14336,81 @@ h4 {
 #header .scroll-down {
   text-align: center;
   position: absolute;
-  bottom: 30px; }
-  #header .scroll-down:hover {
-    cursor: pointer; }
+  bottom: 30px;
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -ms-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden; }
   #header .scroll-down .fa {
     color: #ffffff; }
+  #header .scroll-down a span:hover {
+    cursor: pointer;
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -ms-animation-name: pulse;
+    -o-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; }
 
 #about {
   background: #ffffff;

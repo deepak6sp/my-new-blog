@@ -35,8 +35,9 @@
 				-webkit-transition: background .3s;
 				transition: background .3s;
 				&:hover{
+					cursor:pointer;
 					color:$white;
-					background-color:lighten( $main-primary, 3% );
+					background-color:$blue;
 				}
 				&:focus{
 					outline: none;

@@ -4,13 +4,10 @@
 	text-align: center;	
 	color:$white;
 	a{	
+		cursor:default;
 		color:$white;
 		text-decoration: none;
 		display: block;
-		&:hover{
-			background-color: darken($blue,10%);
-			height: 48px;
-		}
 		&:before{
 			content: "";
 			vertical-align: middle;
@@ -18,11 +15,11 @@
 		    height: 50px;
 		}
 		span{
-			padding-left: 10px;
+			padding-right: 5px;
 			&:before{
 				vertical-align: middle;
 			    display: inline-block;
-			    height: 25px;
+			    height: 22px;
 			}
 		}
 		

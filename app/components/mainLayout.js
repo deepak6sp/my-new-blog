@@ -2,7 +2,7 @@ import React,{ Component} from 'react';
 import ReactDOM from 'react-dom';
 
 
-import Navbar from './shared_components/navbar';
+import Navigation from './shared_components/navigation';
 import Footer from './shared_components/footer';
 
 class MainLayout extends Component {
@@ -10,7 +10,7 @@ class MainLayout extends Component {
     render() {
         return ( 
         	<div id="MainLayout">
-	        	<Navbar />
+	        	<Navigation />
         		{this.props.children}
         		<Footer />
         	</div>
