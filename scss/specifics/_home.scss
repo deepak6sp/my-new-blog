@@ -78,13 +78,13 @@
 	p{
 		text-align: justify;
 	}
-	.fadeInLeft {
+	.devModulesVisible {
 	   @include fadeInLeft();
 	}
-	.fadeInDown{
+	.skillsVisible,.blogVisible{
 		@include fadeInDown();
 	}
-	.dev-modules,.skills{
+	.dev-modules,.skills,.blog{
 		opacity:0;
 		.fa{
 		   @include circle(80px);

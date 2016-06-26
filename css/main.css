@@ -14350,7 +14350,7 @@ h4 {
     padding: 20px 0px; }
   #about p {
     text-align: justify; }
-  #about .fadeInLeft {
+  #about .devModulesVisible {
     -webkit-animation-name: fadeInLeft;
     -moz-animation-name: fadeInLeft;
     -ms-animation-name: fadeInLeft;
@@ -14386,7 +14386,7 @@ h4 {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden; }
-  #about .fadeInDown {
+  #about .skillsVisible, #about .blogVisible {
     -webkit-animation-name: fadeInDown;
     -moz-animation-name: fadeInDown;
     -ms-animation-name: fadeInDown;
@@ -14422,9 +14422,9 @@ h4 {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden; }
-  #about .dev-modules, #about .skills {
+  #about .dev-modules, #about .skills, #about .blog {
     opacity: 0; }
-    #about .dev-modules .fa, #about .skills .fa {
+    #about .dev-modules .fa, #about .skills .fa, #about .blog .fa {
       width: 80px;
       height: 80px;
       line-height: 80px;
@@ -14433,7 +14433,7 @@ h4 {
       -webkit-border-radius: 80px;
       color: #ffffff;
       background: #FC575E; }
-    #about .dev-modules .fa-cogs, #about .skills .fa-cogs {
+    #about .dev-modules .fa-cogs, #about .skills .fa-cogs, #about .blog .fa-cogs {
       transform: rotate(90deg); }
   #about .panel-heading {
     font-size: 1.6rem;

@@ -11,20 +11,26 @@ import SplitBar from "./shared_components/splitBar";
 class About extends Component {
     constructor(props) {
         super(props);
-        this.state = {fadeInLeft : "",fadeInDown : ""};
+        this.state = {devModulesVisibleClass: "", skillsVisibleClass:"", blogVisibleClass:""};
     }
     componentDidMount(){
     }
-    _fadeInLeft(isVisible){
+    _devModules(isVisible){
         if(isVisible){
-            this.setState({ fadeInLeft:"fadeInLeft"});
+            this.setState({ devModulesVisibleClass:"devModulesVisible"});
         }
     }
-    _fadeInDown(isVisible){
+    _skills(isVisible){
         if(isVisible){
-            this.setState({ fadeInDown : "fadeInDown"});
+            this.setState({ skillsVisibleClass : "skillsVisible"});
         }
     }
+    _blog(isVisible){
+        if(isVisible){
+            this.setState({ blogVisibleClass : "blogVisible"});
+        }
+    }
+
 
     render() {
        
@@ -41,8 +47,8 @@ class About extends Component {
                             </p>
                         </Col>
                     </Row>
-                    <VisibilitySensor onChange={this._fadeInLeft.bind(this)}/>
-                    <Row className={"text-center dev-modules " + this.state.fadeInLeft}>
+                    <VisibilitySensor onChange={this._devModules.bind(this)}/>
+                    <Row className={"text-center dev-modules " + this.state.devModulesVisibleClass}>
                         <Col sm={12} md={4}>
                             <FontAwesome className='super-crazy-colors' name="cubes" size='4x' style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
                             <h4> Design and Wireframes </h4>
@@ -68,17 +74,17 @@ class About extends Component {
                 
                 <section className="container container-fluid ">
                      <p> My projects involve use of technologies such as:</p>
-                     <VisibilitySensor onChange={this._fadeInDown.bind(this)} />
-                     <section className={ "skills " + this.state.fadeInDown}><ListSkills/></section>
+                     <VisibilitySensor onChange={this._skills.bind(this)} />
+                     <section className={ "skills " + this.state.skillsVisibleClass}><ListSkills/></section>
                      <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
                      <Button>Download Resume</Button>
                 </section>
 
-                <SplitBar text="Blog" link="/blog" iconName="arrow-circle-right" />
+                <SplitBar text="Blog" link="/blog" iconName="arrow-circle-down" />
                 
                 <section className="container container-fluid">
-                    <VisibilitySensor onChange={this._fadeInDown.bind(this)} />
-                    <Row className={this.state.fadeInDown}>
+                    <VisibilitySensor onChange={this._blog.bind(this)} />
+                    <Row className={ "blog "+ this.state.blogVisibleClass}>
                         <Col sm={12}>
                             <p> This blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
                                 favourite front end framework, and react-scroll for animations.</p>

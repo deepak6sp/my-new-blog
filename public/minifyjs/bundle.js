@@ -68,7 +68,7 @@
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _index = __webpack_require__(566);
+	var _index = __webpack_require__(551);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -22789,11 +22789,11 @@
 	
 	var _about2 = _interopRequireDefault(_about);
 	
-	var _contact = __webpack_require__(544);
+	var _contact = __webpack_require__(528);
 	
 	var _contact2 = _interopRequireDefault(_contact);
 	
-	var _blogList = __webpack_require__(545);
+	var _blogList = __webpack_require__(530);
 	
 	var _blogList2 = _interopRequireDefault(_blogList);
 	
@@ -47865,11 +47865,11 @@
 	
 	var _about2 = _interopRequireDefault(_about);
 	
-	var _contact = __webpack_require__(544);
+	var _contact = __webpack_require__(528);
 	
 	var _contact2 = _interopRequireDefault(_contact);
 	
-	var _splitBar = __webpack_require__(543);
+	var _splitBar = __webpack_require__(529);
 	
 	var _splitBar2 = _interopRequireDefault(_splitBar);
 	
@@ -48000,15 +48000,15 @@
 	
 	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 	
-	var _reactVisibilitySensor = __webpack_require__(576);
+	var _reactVisibilitySensor = __webpack_require__(554);
 	
 	var _reactVisibilitySensor2 = _interopRequireDefault(_reactVisibilitySensor);
 	
-	var _listSkills = __webpack_require__(541);
+	var _listSkills = __webpack_require__(555);
 	
 	var _listSkills2 = _interopRequireDefault(_listSkills);
 	
-	var _splitBar = __webpack_require__(543);
+	var _splitBar = __webpack_require__(529);
 	
 	var _splitBar2 = _interopRequireDefault(_splitBar);
 	
@@ -48028,7 +48028,7 @@
 	
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(About).call(this, props));
 	
-	        _this.state = { fadeInLeft: "", fadeInDown: "" };
+	        _this.state = { devModulesVisibleClass: "", skillsVisibleClass: "", blogVisibleClass: "" };
 	        return _this;
 	    }
 	
@@ -48036,17 +48036,24 @@
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {}
 	    }, {
-	        key: '_fadeInLeft',
-	        value: function _fadeInLeft(isVisible) {
+	        key: '_devModules',
+	        value: function _devModules(isVisible) {
 	            if (isVisible) {
-	                this.setState({ fadeInLeft: "fadeInLeft" });
+	                this.setState({ devModulesVisibleClass: "devModulesVisible" });
 	            }
 	        }
 	    }, {
-	        key: '_fadeInDown',
-	        value: function _fadeInDown(isVisible) {
+	        key: '_skills',
+	        value: function _skills(isVisible) {
 	            if (isVisible) {
-	                this.setState({ fadeInDown: "fadeInDown" });
+	                this.setState({ skillsVisibleClass: "skillsVisible" });
+	            }
+	        }
+	    }, {
+	        key: '_blog',
+	        value: function _blog(isVisible) {
+	            if (isVisible) {
+	                this.setState({ blogVisibleClass: "blogVisible" });
 	            }
 	        }
 	    }, {
@@ -48072,10 +48079,10 @@
 	                            )
 	                        )
 	                    ),
-	                    _react2.default.createElement(_reactVisibilitySensor2.default, { onChange: this._fadeInLeft.bind(this) }),
+	                    _react2.default.createElement(_reactVisibilitySensor2.default, { onChange: this._devModules.bind(this) }),
 	                    _react2.default.createElement(
 	                        _reactBootstrap.Row,
-	                        { className: "text-center dev-modules " + this.state.fadeInLeft },
+	                        { className: "text-center dev-modules " + this.state.devModulesVisibleClass },
 	                        _react2.default.createElement(
 	                            _reactBootstrap.Col,
 	                            { sm: 12, md: 4 },
@@ -48132,10 +48139,10 @@
 	                        null,
 	                        ' My projects involve use of technologies such as:'
 	                    ),
-	                    _react2.default.createElement(_reactVisibilitySensor2.default, { onChange: this._fadeInDown.bind(this) }),
+	                    _react2.default.createElement(_reactVisibilitySensor2.default, { onChange: this._skills.bind(this) }),
 	                    _react2.default.createElement(
 	                        'section',
-	                        { className: "skills " + this.state.fadeInDown },
+	                        { className: "skills " + this.state.skillsVisibleClass },
 	                        _react2.default.createElement(_listSkills2.default, null)
 	                    ),
 	                    _react2.default.createElement(
@@ -48149,14 +48156,14 @@
 	                        'Download Resume'
 	                    )
 	                ),
-	                _react2.default.createElement(_splitBar2.default, { text: 'Blog', link: '/blog', iconName: 'arrow-circle-right' }),
+	                _react2.default.createElement(_splitBar2.default, { text: 'Blog', link: '/blog', iconName: 'arrow-circle-down' }),
 	                _react2.default.createElement(
 	                    'section',
 	                    { className: 'container container-fluid' },
-	                    _react2.default.createElement(_reactVisibilitySensor2.default, { onChange: this._fadeInDown.bind(this) }),
+	                    _react2.default.createElement(_reactVisibilitySensor2.default, { onChange: this._blog.bind(this) }),
 	                    _react2.default.createElement(
 	                        _reactBootstrap.Row,
-	                        { className: this.state.fadeInDown },
+	                        { className: "blog " + this.state.blogVisibleClass },
 	                        _react2.default.createElement(
 	                            _reactBootstrap.Col,
 	                            { sm: 12 },
@@ -48188,152 +48195,7 @@
 	exports.default = About;
 
 /***/ },
-/* 528 */,
-/* 529 */,
-/* 530 */,
-/* 531 */,
-/* 532 */,
-/* 533 */,
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */,
-/* 538 */,
-/* 539 */,
-/* 540 */,
-/* 541 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactBootstrap = __webpack_require__(263);
-	
-	var _variables = __webpack_require__(542);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var list = function list(props) {
-		return props.map(function (element, index) {
-			return _react2.default.createElement(
-				'li',
-				{ key: index },
-				element
-			);
-		});
-	};
-	
-	var ListSkills = function ListSkills() {
-		return _react2.default.createElement(
-			_reactBootstrap.Row,
-			{ className: 'skillSet' },
-			_react2.default.createElement(
-				_reactBootstrap.Col,
-				{ xs: 12, sm: 6, md: 3 },
-				_react2.default.createElement(
-					_reactBootstrap.Panel,
-					{ header: 'Web languages' },
-					list(_variables.languages)
-				)
-			),
-			_react2.default.createElement(
-				_reactBootstrap.Col,
-				{ xs: 12, sm: 6, md: 3 },
-				_react2.default.createElement(
-					_reactBootstrap.Panel,
-					{ header: 'Libraries / Frameworks' },
-					list(_variables.libraries)
-				)
-			),
-			_react2.default.createElement(
-				_reactBootstrap.Col,
-				{ xs: 12, sm: 6, md: 3 },
-				_react2.default.createElement(
-					_reactBootstrap.Panel,
-					{ header: 'Collaboration' },
-					list(_variables.collaboration)
-				)
-			),
-			_react2.default.createElement(
-				_reactBootstrap.Col,
-				{ xs: 12, sm: 6, md: 3 },
-				_react2.default.createElement(
-					_reactBootstrap.Panel,
-					{ header: 'Test Utilities' },
-					list(_variables.test)
-				)
-			)
-		);
-	};
-	
-	exports.default = ListSkills;
-
-/***/ },
-/* 542 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var languages = exports.languages = ["XHtml, Html5", "Css3, Sass", "Javascript, Jquery", "PHP"];
-	var libraries = exports.libraries = ["React, Redux, Flux", "Angular, Express, Meteor", "CodeIginiter, Laravel", "Wordpress, Drupal"];
-	var collaboration = exports.collaboration = ["Node Modules (NPM)", "Bower", "Gulp / Grunt", "Webpack"];
-	var test = exports.test = ["Mocha", "Chai", "Jasmine", "Selenium"];
-
-/***/ },
-/* 543 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactBootstrap = __webpack_require__(263);
-	
-	var _reactRouter = __webpack_require__(198);
-	
-	var _reactFontawesome = __webpack_require__(260);
-	
-	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var SplitBar = function SplitBar(props) {
-	    return _react2.default.createElement(
-	        _reactBootstrap.Row,
-	        null,
-	        _react2.default.createElement(
-	            _reactBootstrap.Col,
-	            { sm: 12, className: 'split-bar' },
-	            _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: 'blog' },
-	                props.text,
-	                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: props.iconName, size: '2x', style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' } })
-	            )
-	        )
-	    );
-	};
-	
-	exports.default = SplitBar;
-
-/***/ },
-/* 544 */
+/* 528 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48462,7 +48324,50 @@
 	exports.default = Contact;
 
 /***/ },
-/* 545 */
+/* 529 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(263);
+	
+	var _reactRouter = __webpack_require__(198);
+	
+	var _reactFontawesome = __webpack_require__(260);
+	
+	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var SplitBar = function SplitBar(props) {
+	    return _react2.default.createElement(
+	        _reactBootstrap.Row,
+	        null,
+	        _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { sm: 12, className: 'split-bar' },
+	            _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: 'blog' },
+	                props.text,
+	                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: props.iconName, size: '2x', style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' } })
+	            )
+	        )
+	    );
+	};
+	
+	exports.default = SplitBar;
+
+/***/ },
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48473,7 +48378,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _axios = __webpack_require__(546);
+	var _axios = __webpack_require__(531);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
@@ -48483,11 +48388,11 @@
 	
 	var _reactBootstrap = __webpack_require__(263);
 	
-	var _searchBlog = __webpack_require__(564);
+	var _searchBlog = __webpack_require__(549);
 	
 	var _searchBlog2 = _interopRequireDefault(_searchBlog);
 	
-	var _index = __webpack_require__(565);
+	var _index = __webpack_require__(550);
 	
 	var _reactRedux = __webpack_require__(181);
 	
@@ -48614,25 +48519,25 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Blog);
 
 /***/ },
-/* 546 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(547);
+	module.exports = __webpack_require__(532);
 
 /***/ },
-/* 547 */
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var defaults = __webpack_require__(548);
-	var utils = __webpack_require__(549);
-	var dispatchRequest = __webpack_require__(550);
-	var InterceptorManager = __webpack_require__(559);
-	var isAbsoluteURL = __webpack_require__(560);
-	var combineURLs = __webpack_require__(561);
-	var bind = __webpack_require__(562);
-	var transformData = __webpack_require__(554);
+	var defaults = __webpack_require__(533);
+	var utils = __webpack_require__(534);
+	var dispatchRequest = __webpack_require__(535);
+	var InterceptorManager = __webpack_require__(544);
+	var isAbsoluteURL = __webpack_require__(545);
+	var combineURLs = __webpack_require__(546);
+	var bind = __webpack_require__(547);
+	var transformData = __webpack_require__(539);
 	
 	function Axios(defaultConfig) {
 	  this.defaults = utils.merge({}, defaultConfig);
@@ -48718,7 +48623,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(563);
+	axios.spread = __webpack_require__(548);
 	
 	// Provide aliases for supported request methods
 	utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
@@ -48746,12 +48651,12 @@
 
 
 /***/ },
-/* 548 */
+/* 533 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(549);
+	var utils = __webpack_require__(534);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -48818,7 +48723,7 @@
 
 
 /***/ },
-/* 549 */
+/* 534 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49090,7 +48995,7 @@
 
 
 /***/ },
-/* 550 */
+/* 535 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -49112,10 +49017,10 @@
 	        adapter = config.adapter;
 	      } else if (typeof XMLHttpRequest !== 'undefined') {
 	        // For browsers use XHR adapter
-	        adapter = __webpack_require__(551);
+	        adapter = __webpack_require__(536);
 	      } else if (typeof process !== 'undefined') {
 	        // For node use HTTP adapter
-	        adapter = __webpack_require__(551);
+	        adapter = __webpack_require__(536);
 	      }
 	
 	      if (typeof adapter === 'function') {
@@ -49131,18 +49036,18 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 551 */
+/* 536 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(549);
-	var buildURL = __webpack_require__(552);
-	var parseHeaders = __webpack_require__(553);
-	var transformData = __webpack_require__(554);
-	var isURLSameOrigin = __webpack_require__(555);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(556);
-	var settle = __webpack_require__(557);
+	var utils = __webpack_require__(534);
+	var buildURL = __webpack_require__(537);
+	var parseHeaders = __webpack_require__(538);
+	var transformData = __webpack_require__(539);
+	var isURLSameOrigin = __webpack_require__(540);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(541);
+	var settle = __webpack_require__(542);
 	
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  var requestData = config.data;
@@ -49239,7 +49144,7 @@
 	  // This is only done if running in a standard browser environment.
 	  // Specifically not if we're in a web worker, or react-native.
 	  if (utils.isStandardBrowserEnv()) {
-	    var cookies = __webpack_require__(558);
+	    var cookies = __webpack_require__(543);
 	
 	    // Add xsrf header
 	    var xsrfValue = config.withCredentials || isURLSameOrigin(config.url) ?
@@ -49300,12 +49205,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 552 */
+/* 537 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(549);
+	var utils = __webpack_require__(534);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -49373,12 +49278,12 @@
 
 
 /***/ },
-/* 553 */
+/* 538 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(549);
+	var utils = __webpack_require__(534);
 	
 	/**
 	 * Parse headers into an object
@@ -49416,12 +49321,12 @@
 
 
 /***/ },
-/* 554 */
+/* 539 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(549);
+	var utils = __webpack_require__(534);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -49442,12 +49347,12 @@
 
 
 /***/ },
-/* 555 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(549);
+	var utils = __webpack_require__(534);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -49516,7 +49421,7 @@
 
 
 /***/ },
-/* 556 */
+/* 541 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49558,7 +49463,7 @@
 
 
 /***/ },
-/* 557 */
+/* 542 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49582,12 +49487,12 @@
 
 
 /***/ },
-/* 558 */
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(549);
+	var utils = __webpack_require__(534);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -49641,12 +49546,12 @@
 
 
 /***/ },
-/* 559 */
+/* 544 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(549);
+	var utils = __webpack_require__(534);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -49699,7 +49604,7 @@
 
 
 /***/ },
-/* 560 */
+/* 545 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49719,7 +49624,7 @@
 
 
 /***/ },
-/* 561 */
+/* 546 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49737,7 +49642,7 @@
 
 
 /***/ },
-/* 562 */
+/* 547 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49754,7 +49659,7 @@
 
 
 /***/ },
-/* 563 */
+/* 548 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -49787,7 +49692,7 @@
 
 
 /***/ },
-/* 564 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49812,7 +49717,7 @@
 	
 	var _redux = __webpack_require__(168);
 	
-	var _index = __webpack_require__(565);
+	var _index = __webpack_require__(550);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -49872,7 +49777,7 @@
 	exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(SearchBlog);
 
 /***/ },
-/* 565 */
+/* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49884,7 +49789,7 @@
 	exports.getBlogPosts = getBlogPosts;
 	exports.getBlogPostsBasedOnSearchTerm = getBlogPostsBasedOnSearchTerm;
 	
-	var _axios = __webpack_require__(546);
+	var _axios = __webpack_require__(531);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
@@ -49910,7 +49815,7 @@
 	}
 
 /***/ },
-/* 566 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49921,11 +49826,11 @@
 	
 	var _redux = __webpack_require__(168);
 	
-	var _reducer_searchBlogList = __webpack_require__(567);
+	var _reducer_searchBlogList = __webpack_require__(552);
 	
 	var _reducer_searchBlogList2 = _interopRequireDefault(_reducer_searchBlogList);
 	
-	var _reducer_whatsNewList = __webpack_require__(568);
+	var _reducer_whatsNewList = __webpack_require__(553);
 	
 	var _reducer_whatsNewList2 = _interopRequireDefault(_reducer_whatsNewList);
 	
@@ -49940,7 +49845,7 @@
 	exports.default = RootReducer;
 
 /***/ },
-/* 567 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49949,7 +49854,7 @@
 		value: true
 	});
 	
-	var _index = __webpack_require__(565);
+	var _index = __webpack_require__(550);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -50000,7 +49905,7 @@
 	exports.default = SearchBlogListReducer;
 
 /***/ },
-/* 568 */
+/* 553 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -50015,14 +49920,7 @@
 	exports.default = whatsNewListReducer;
 
 /***/ },
-/* 569 */,
-/* 570 */,
-/* 571 */,
-/* 572 */,
-/* 573 */,
-/* 574 */,
-/* 575 */,
-/* 576 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50173,6 +50071,95 @@
 	  }
 	});
 
+
+/***/ },
+/* 555 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(263);
+	
+	var _variables = __webpack_require__(556);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var list = function list(props) {
+		return props.map(function (element, index) {
+			return _react2.default.createElement(
+				'li',
+				{ key: index },
+				element
+			);
+		});
+	};
+	
+	var ListSkills = function ListSkills() {
+		return _react2.default.createElement(
+			_reactBootstrap.Row,
+			{ className: 'skillSet' },
+			_react2.default.createElement(
+				_reactBootstrap.Col,
+				{ xs: 12, sm: 6, md: 3 },
+				_react2.default.createElement(
+					_reactBootstrap.Panel,
+					{ header: 'Web languages' },
+					list(_variables.languages)
+				)
+			),
+			_react2.default.createElement(
+				_reactBootstrap.Col,
+				{ xs: 12, sm: 6, md: 3 },
+				_react2.default.createElement(
+					_reactBootstrap.Panel,
+					{ header: 'Libraries / Frameworks' },
+					list(_variables.libraries)
+				)
+			),
+			_react2.default.createElement(
+				_reactBootstrap.Col,
+				{ xs: 12, sm: 6, md: 3 },
+				_react2.default.createElement(
+					_reactBootstrap.Panel,
+					{ header: 'Collaboration' },
+					list(_variables.collaboration)
+				)
+			),
+			_react2.default.createElement(
+				_reactBootstrap.Col,
+				{ xs: 12, sm: 6, md: 3 },
+				_react2.default.createElement(
+					_reactBootstrap.Panel,
+					{ header: 'Test Utilities' },
+					list(_variables.test)
+				)
+			)
+		);
+	};
+	
+	exports.default = ListSkills;
+
+/***/ },
+/* 556 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var languages = exports.languages = ["XHtml, Html5", "Css3, Sass", "Javascript, Jquery", "PHP"];
+	var libraries = exports.libraries = ["React, Redux, Flux", "Angular, Express, Meteor", "CodeIginiter, Laravel", "Wordpress, Drupal"];
+	var collaboration = exports.collaboration = ["Node Modules (NPM)", "Bower", "Gulp / Grunt", "Webpack"];
+	var test = exports.test = ["Mocha", "Chai", "Jasmine", "Selenium"];
 
 /***/ }
 /******/ ]);
