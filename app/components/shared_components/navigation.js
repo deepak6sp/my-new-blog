@@ -32,11 +32,11 @@ const Navigation = () => {
                     </li>
 
                     <li>
-                      <ScrollLink activeClass="skills" to="skills" spy={true} smooth={true} offset={-95} duration={500}>Skills</ScrollLink>
+                      <ScrollLink activeClass="active" to="skills" spy={true} smooth={true} offset={-95} duration={500}>Skills</ScrollLink>
                     </li>
 
                     <li>
-                      <Link to="contact">Contact</Link>
+                      <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} offset={-95} duration={500}>Contact</ScrollLink>
                     </li>
 
                     <li>

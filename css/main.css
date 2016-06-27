@@ -14216,17 +14216,17 @@ h4 {
       outline: none; }
   .navbar-inverse .navbar-nav li.active a {
     color: #ffffff;
-    background-color: #0c1319; }
+    background-color: #151515; }
     .navbar-inverse .navbar-nav li.active a:hover {
       color: #ffffff;
-      background-color: #121e27; }
+      background-color: #1f1f1f; }
     .navbar-inverse .navbar-nav li.active a:focus {
       color: #ffffff;
-      background-color: #0c1319; }
+      background-color: #151515; }
 
 .footer {
   height: 50px;
-  background-color: #14212A;
+  background-color: #222222;
   width: 100%;
   position: relative;
   bottom: 0; }
@@ -14267,6 +14267,18 @@ h4 {
         vertical-align: middle;
         display: inline-block;
         height: 22px; }
+
+.testimonial {
+  position: relative;
+  height: 400px;
+  border: 1px solid #44BBFF;
+  text-align: center;
+  overflow: hidden; }
+  .testimonial img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
 
 #main .container {
   max-width: 1024px; }
@@ -14415,7 +14427,7 @@ h4 {
 #about {
   background: #ffffff;
   position: relative; }
-  #about section {
+  #about .container {
     padding: 20px 0px; }
   #about p {
     text-align: justify; }
