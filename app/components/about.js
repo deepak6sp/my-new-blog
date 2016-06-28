@@ -7,6 +7,7 @@ import Scroll from 'react-scroll';
 
 import ListSkills from "./shared_components/listSkills";
 import SplitBar from "./shared_components/splitBar";
+import Testimonial from "./shared_components/testimonial";
 
 
 
@@ -20,6 +21,8 @@ class About extends Component {
     _devModules(isVisible){
         if(isVisible){
             this.setState({ devModulesVisibleClass:"devModulesVisible"});
+        }else{
+            this.setState({ devModulesVisibleClass : ""});
         }
     }
     _skills(isVisible){
@@ -82,11 +85,10 @@ class About extends Component {
                 </section>
 
                 
-                <section className="testimonial">
-                    <img src="parallex1.jpeg"/>
-                    <p> Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
-                        He is a team player; I like working with him and I recommend him with pleasure</p>
-                </section>
+               <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
+                    He is a team player; I like working with him and I recommend him with pleasure."
+                    recommendedBy = "Clauidiu - Senior Developer @ mycause.com.au"
+               />
 
                 <SplitBar text="About my blog" iconName="pencil" />
                 

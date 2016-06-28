@@ -48685,6 +48685,10 @@
 	
 	var _splitBar2 = _interopRequireDefault(_splitBar);
 	
+	var _testimonial2 = __webpack_require__(570);
+	
+	var _testimonial3 = _interopRequireDefault(_testimonial2);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48713,6 +48717,8 @@
 	        value: function _devModules(isVisible) {
 	            if (isVisible) {
 	                this.setState({ devModulesVisibleClass: "devModulesVisible" });
+	            } else {
+	                this.setState({ devModulesVisibleClass: "" });
 	            }
 	        }
 	    }, {
@@ -48814,16 +48820,9 @@
 	                        )
 	                    )
 	                ),
-	                _react2.default.createElement(
-	                    'section',
-	                    { className: 'testimonial' },
-	                    _react2.default.createElement('img', { src: 'parallex1.jpeg' }),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        ' Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. He is a team player; I like working with him and I recommend him with pleasure'
-	                    )
-	                ),
+	                _react2.default.createElement(_testimonial3.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
+	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
+	                }),
 	                _react2.default.createElement(_splitBar2.default, { text: 'About my blog', iconName: 'pencil' }),
 	                _react2.default.createElement(
 	                    'section',
@@ -50854,6 +50853,62 @@
 	};
 	
 	exports.default = whatsNewListReducer;
+
+/***/ },
+/* 570 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(261);
+	
+	var _reactFontawesome = __webpack_require__(260);
+	
+	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Testimonial = function Testimonial(props) {
+	    return _react2.default.createElement(
+	        'section',
+	        { className: 'testimonial' },
+	        _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            { className: 'container container-fluid' },
+	            _react2.default.createElement(
+	                _reactBootstrap.Col,
+	                { sm: 6, smOffset: 3 },
+	                _react2.default.createElement(
+	                    'h4',
+	                    { className: 'quotation' },
+	                    _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'quote-left', size: '2x' }),
+	                    _react2.default.createElement(
+	                        'span',
+	                        null,
+	                        props.text
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'h4',
+	                    { className: 'recommendation' },
+	                    ' ',
+	                    props.recommendedBy,
+	                    ' '
+	                )
+	            )
+	        )
+	    );
+	};
+	
+	exports.default = Testimonial;
 
 /***/ }
 /******/ ]);
