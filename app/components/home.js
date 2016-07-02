@@ -48,16 +48,15 @@ class Home extends Component {
                     </Row>
                     <Row>
                         <Col xs={12} className="scroll-down">
-                            <ScrollLink activeClass="active" to="about" spy={true} smooth={true} offset={-95} duration={500}>
+                            <ScrollLink activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500}>
                                 <FontAwesome className='super-crazy-colors' name="arrow-circle-down" size='3x'/>
                             </ScrollLink>
                         </Col>
                     </Row>          
             	</header>
               
-                <SplitBar text="About me" link="/blog" iconName="user" />
                 <About />
-                <SplitBar text="Contact" link="/blog" iconName="arrow-circle-down" />
+                
                 <Contact />
                 
             </div>

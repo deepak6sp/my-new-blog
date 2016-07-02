@@ -4,7 +4,7 @@ import FontAwesome from 'react-fontawesome';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Link } from 'react-router';
 import Scroll from 'react-scroll';
-
+import LazyLoad from 'react-lazy-load';
 import ListSkills from "./shared_components/listSkills";
 import SplitBar from "./shared_components/splitBar";
 import Testimonial from "./shared_components/testimonial";
@@ -14,34 +14,17 @@ import Testimonial from "./shared_components/testimonial";
 class About extends Component {
     constructor(props) {
         super(props);
-        this.state = {devModulesVisibleClass: "", skillsVisibleClass:"", blogVisibleClass:"", testimonialVisibleClass:""};
+        this.state = {devModulesVisibleClass: "", blogModulesVisibleClass:"", skillsModulesVisibleClass:"", testimonialVisibleClass:""};
     }
     componentDidMount(){
     }
-    _devModules(isVisible){
-        if(isVisible){
+    _animate(module){
+        if( module == "devModules" ){
             this.setState({ devModulesVisibleClass:"devModulesVisible"});
-        }else{
-            this.setState({ devModulesVisibleClass : ""});
-        }
-    }
-    _skills(isVisible){
-        if(isVisible){
-            this.setState({ skillsVisibleClass : "skillsVisible"});
-        }else{
-            this.setState({ skillsVisibleClass : ""});
-        }
-    }
-    _blog(isVisible){
-        if(isVisible){
-            this.setState({ blogVisibleClass : "blogVisible"});
-        }else{
-            this.setState({ blogVisibleClass : ""});
-        }
-    }
-    _testimonial(isVisible){
-        if(isVisible){
-            this.setState({ testimonialVisibleClass:"testimonialVisible"});
+        } else if ( module == "blogModules"){
+            this.setState({ blogModulesVisibleClass:"blogModulesVisible"});
+        } else if ( module == "skillsModules"){
+            this.setState({ skillsModulesVisibleClass:"skillsModulesVisible"});
         }
     }
 
@@ -50,7 +33,7 @@ class About extends Component {
        
         return  (
         	<main id="about">
-               
+                <SplitBar text="About me" link="" iconName="user" />
                 <section className="container container-fluid ">
                     <Row>
                         <Col sm={12}>
@@ -61,27 +44,28 @@ class About extends Component {
                             </p>
                         </Col>
                     </Row>
-                    <VisibilitySensor onChange={this._devModules.bind(this)} />
-                    <Row className={"text-center dev-modules " + this.state.devModulesVisibleClass}>
-                        <Col sm={12} md={4}>
-                            <FontAwesome className='super-crazy-colors' name="mobile" size='4x'/>
-                            <h4> Design and Wireframes </h4>
-                            <p> I use photoshop for designs and convert them to complete web solution. Recently, I have
-                               been using my favourite Google drawings for mockups and wireframes, and loving it.</p>
-                        </Col>
-                        <Col sm={12} md={4}>
-                            <FontAwesome className='super-crazy-colors' name="code" size='4x'/>
-                            <h4> Development </h4>
-                            <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as 
-                            npm, bower, webpack, gulp, sass to speed up developement process.</p>
-                        </Col>
-                        <Col sm={12} md={4}>
-                            <FontAwesome className='super-crazy-colors' name="cogs" size='4x'/>
-                            <h4> Testing </h4>
-                            <p> I consider testing to be as important as design and development, so I believe in Agile test driven development. Also, I will make sure the 
-                                web application works fine accross multi browsers and devices.</p>
-                        </Col>
-                    </Row>
+                    <LazyLoad onContentVisible={() => this._animate("devModules")} offset={0} throttle={0}>
+                        <Row className={"text-center dev-modules " + this.state.devModulesVisibleClass}>
+                            <Col sm={12} md={4}>
+                                <FontAwesome className='super-crazy-colors' name="mobile" size='4x'/>
+                                <h4> Design and Wireframes </h4>
+                                <p> I use photoshop for designs and convert them to complete web solution. Recently, I have
+                                   been using my favourite Google drawings for mockups and wireframes, and loving it.</p>
+                            </Col>
+                            <Col sm={12} md={4}>
+                                <FontAwesome className='super-crazy-colors' name="code" size='4x'/>
+                                <h4> Development </h4>
+                                <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as 
+                                npm, bower, webpack, gulp, sass to speed up developement process.</p>
+                            </Col>
+                            <Col sm={12} md={4}>
+                                <FontAwesome className='super-crazy-colors' name="cogs" size='4x'/>
+                                <h4> Testing </h4>
+                                <p> I consider testing to be as important as design and development, so I believe in Agile test driven development. Also, I will make sure the 
+                                    web application works fine accross multi browsers and devices.</p>
+                            </Col>
+                        </Row>
+                    </LazyLoad>
                 </section>
 
                 
@@ -93,29 +77,33 @@ class About extends Component {
                 <SplitBar text="About my blog" iconName="pencil" />
                 
                 <section className="container container-fluid">
-                    <VisibilitySensor onChange={this._blog.bind(this)} />
-                    <Row className={ "blog "+ this.state.blogVisibleClass}>
-                        <Col sm={12}>
-                            <p> My blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
-                                favourite front end framework, and react way of animations.</p>
-                            <p> I am doing this blog to share knowledge that focuses mainly on latest web technologies involving Javascript and Node. However, I would not hesitate
-                                to include tips and tricks about UX/UI, front end and back end technologies </p>
-                        </Col>
-                    </Row>
+                    <LazyLoad onContentVisible={() => this._animate("blogModules")} offset={0} throttle={0}>
+                        <Row className={ "blog "+ this.state.blogModulesVisibleClass}>
+                            <Col sm={12}>
+                                <p> My blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
+                                    favourite front end framework, and react way of animations.</p>
+                                <p> I am doing this blog to share knowledge that focuses mainly on latest web technologies involving Javascript and Node. However, I would not hesitate
+                                    to include tips and tricks about UX/UI, front end and back end technologies </p>
+                            </Col>
+                        </Row>
+                    </LazyLoad>
                     <Link to="blog" className="btn btn-default">Visit Blog</Link>
                 </section>
+                
 
                 <SplitBar text="Skills" iconName="star" />
                 
                 <section className="container container-fluid " id="skills">
-                     <p> My projects involve use of technologies such as:</p>
-                     <VisibilitySensor onChange={this._skills.bind(this)} />
-                     <section className={ "skills " + this.state.skillsVisibleClass}><ListSkills/></section>
-                     <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
-                     <Button>Download Resume</Button>
+                    <p> My projects involve use of technologies such as:</p>
+                    <section className={ "skills " + this.state.skillsModulesVisibleClass}>
+                        <LazyLoad onContentVisible={() => this._animate("skillsModules")} offset={0} throttle={0}>
+                            <ListSkills/>
+                        </LazyLoad>
+                    </section>
+                    <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
+                    <Button>Download Resume</Button>
                 </section>
-                
-               
+                <SplitBar text="Contact" link="/blog" iconName="arrow-circle-down" />
 			</main>
         );
     }

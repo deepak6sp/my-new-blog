@@ -28,19 +28,19 @@ const Navigation = () => {
                     </li>
                     
                     <li>
-                      <ScrollLink activeClass="active" to="about" spy={true} smooth={true} offset={-95} duration={500}>About</ScrollLink>
+                      <ScrollLink activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500}>About</ScrollLink>
                     </li>
 
                     <li>
-                      <ScrollLink activeClass="active" to="skills" spy={true} smooth={true} offset={-95} duration={500}>Skills</ScrollLink>
+                      <ScrollLink activeClass="active" to="skills" spy={true} smooth={true} offset={-50} duration={500}>Skills</ScrollLink>
                     </li>
 
                     <li>
-                      <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} offset={-95} duration={500}>Contact</ScrollLink>
+                      <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} offset={-50} duration={500}>Contact</ScrollLink>
                     </li>
 
                     <li>
-                      <ScrollLink activeClass="blog" to="blog" spy={true} smooth={true} offset={-95} duration={500}>
+                      <ScrollLink activeClass="blog" to="blog" spy={true} smooth={true} offset={-50} duration={500}>
                         <FontAwesome className='super-crazy-colors' name="mail-forward" size='lg'/>
                         Blog
                       </ScrollLink>

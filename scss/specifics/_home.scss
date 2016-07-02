@@ -2,7 +2,6 @@
 	.container{
 		max-width: 1024px;
 	}
-
 }
 
 #header{
@@ -77,17 +76,19 @@
 
 	position: relative;
 	.container{
-		padding: 20px 0px;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 	
 	p{
 		text-align: justify;
 	}
-	.devModulesVisible {
-	   @include fadeInLeft();
-	}
-	.skillsVisible,.blogVisible{
+	
+	.skillsModulesVisible,.blogModulesVisible{
 		@include fadeInDown();
+	}
+	.fadeInLeft{
+		@include fadeInLeft();
 	}
 	.dev-modules,.skills,.blog{
 		opacity:0;
@@ -110,5 +111,19 @@
 #contact{
 	background:$white;
 	position: relative;
+}
+
+@media (min-width: $screen-md-min) {
+	.devModulesVisible {
+	   @include fadeInLeft();
+	}
+
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-md-min) {
+	.devModulesVisible {
+	   @include fadeInUp();
+	}
+
 }
 
