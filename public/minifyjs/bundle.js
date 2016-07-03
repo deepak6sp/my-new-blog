@@ -49883,7 +49883,7 @@
 	
 	var _reactBootstrap = __webpack_require__(261);
 	
-	var _constants = __webpack_require__(577);
+	var _constants = __webpack_require__(549);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -49943,7 +49943,20 @@
 	exports.default = ListSkills;
 
 /***/ },
-/* 549 */,
+/* 549 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var languages = exports.languages = ["XHtml, Html5", "Css3, Sass", "Javascript, Jquery", "PHP"];
+	var libraries = exports.libraries = ["React, Redux, Flux", "Angular, Express", "CodeIginiter, Laravel", "Wordpress, Drupal"];
+	var collaboration = exports.collaboration = ["Node Modules (NPM)", "Bower", "Gulp / Grunt", "Webpack"];
+	var test = exports.test = ["Mocha", "Chai", "Jasmine", "Selenium"];
+
+/***/ },
 /* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -51723,20 +51736,6 @@
 	};
 	
 	exports.default = whatsNewListReducer;
-
-/***/ },
-/* 577 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var languages = exports.languages = ["XHtml, Html5", "Css3, Sass", "Javascript, Jquery", "PHP"];
-	var libraries = exports.libraries = ["React, Redux, Flux", "Angular, Express", "CodeIginiter, Laravel", "Wordpress, Drupal"];
-	var collaboration = exports.collaboration = ["Node Modules (NPM)", "Bower", "Gulp / Grunt", "Webpack"];
-	var test = exports.test = ["Mocha", "Chai", "Jasmine", "Selenium"];
 
 /***/ }
 /******/ ]);
