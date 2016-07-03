@@ -8,7 +8,7 @@ var ScrollLink = Scroll.Link;
 
 const Navigation = () => {
         return  (
-        	<Navbar inverse fixedTop>
+        	<Navbar fixedTop>
               <div className="container-fluid">
                 {/* Brand and toggle get grouped for better mobile display */}
                 <Navbar.Header>
@@ -36,14 +36,14 @@ const Navigation = () => {
                     </li>
 
                     <li>
-                      <ScrollLink activeClass="active" to="contact" spy={true} smooth={true} offset={-50} duration={500}>Contact</ScrollLink>
+                      <Link to="contact">Contact</Link>
                     </li>
 
                     <li>
-                      <ScrollLink activeClass="blog" to="blog" spy={true} smooth={true} offset={-50} duration={500}>
+                      <Link to="blog">
                         <FontAwesome className='super-crazy-colors' name="mail-forward" size='lg'/>
                         Blog
-                      </ScrollLink>
+                      </Link>
                     </li>
                   </Nav>
                   

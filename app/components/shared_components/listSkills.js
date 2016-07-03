@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { Row, Col, ListGroup, ListGroupItem, Button, Panel } from 'react-bootstrap';
-import {languages, libraries, collaboration, test} from "../variables/variables";
+import {languages, libraries, collaboration, test} from "../constants/constants";
 
 const list = (props) =>{
     return ( props.map( (element,index) => {

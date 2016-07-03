@@ -44,7 +44,7 @@ class About extends Component {
                             </p>
                         </Col>
                     </Row>
-                    <LazyLoad onContentVisible={() => this._animate("devModules")} offset={0} throttle={0}>
+                    <LazyLoad onContentVisible={() => this._animate("devModules")} offsetTop={-100} throttle={0}>
                         <Row className={"text-center dev-modules " + this.state.devModulesVisibleClass}>
                             <Col sm={12} md={4}>
                                 <FontAwesome className='super-crazy-colors' name="mobile" size='4x'/>
@@ -77,7 +77,7 @@ class About extends Component {
                 <SplitBar text="About my blog" iconName="pencil" />
                 
                 <section className="container container-fluid">
-                    <LazyLoad onContentVisible={() => this._animate("blogModules")} offset={0} throttle={0}>
+                    <LazyLoad onContentVisible={() => this._animate("blogModules")} offset={-100} throttle={0}>
                         <Row className={ "blog "+ this.state.blogModulesVisibleClass}>
                             <Col sm={12}>
                                 <p> My blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
@@ -89,21 +89,24 @@ class About extends Component {
                     </LazyLoad>
                     <Link to="blog" className="btn btn-default">Visit Blog</Link>
                 </section>
-                
+
+                <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
+                    He is a team player; I like working with him and I recommend him with pleasure."
+                    recommendedBy = "Clauidiu - Senior Developer @ mycause.com.au"
+                />
 
                 <SplitBar text="Skills" iconName="star" />
                 
                 <section className="container container-fluid " id="skills">
                     <p> My projects involve use of technologies such as:</p>
                     <section className={ "skills " + this.state.skillsModulesVisibleClass}>
-                        <LazyLoad onContentVisible={() => this._animate("skillsModules")} offset={0} throttle={0}>
+                        <LazyLoad onContentVisible={() => this._animate("skillsModules")} offset={-100} throttle={0}>
                             <ListSkills/>
                         </LazyLoad>
                     </section>
                     <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
                     <Button>Download Resume</Button>
                 </section>
-                <SplitBar text="Contact" link="/blog" iconName="arrow-circle-down" />
 			</main>
         );
     }

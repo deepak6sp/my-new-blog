@@ -9,20 +9,26 @@
 		background-image:  linear-gradient(
       rgba(29, 31, 33, 0.45), 
       rgba(29, 31, 33, 0.45)
-    ), url('bg2.jpg');
+    ), url('IMG_0100.jpg');
 		background-size: cover;
+		background-repeat: no-repeat;
 		position: fixed;
 	    width: 100%;
 		height:100vh;
+		transition: 0.5s ease all;
+		&.blurred {
+		    filter: blur(2px);
+		    -webkit-filter: blur(2px);
+		}
 
 	}
 
 	.myInfo{
 		position: relative;
-	    text-align: left;
-	    padding-top: 100px;
+	    text-align: center;
 	    height:100vh;
 	    color:$white;
+
 		@include bounceInDown();
 		// .avatar{
 		// 	background: url('avatar.jpg');
@@ -34,7 +40,10 @@
 		//     margin: 0 auto;
 		// }
 		.myName{
-			font-family: $verdana;
+			font-family: $arial;
+			font-style: italic;
+		    font-size: 40px;
+		    line-height: 40px;
 			
 		}
 
@@ -80,10 +89,6 @@
 		padding-bottom: 20px;
 	}
 	
-	p{
-		text-align: justify;
-	}
-	
 	.skillsModulesVisible,.blogModulesVisible{
 		@include fadeInDown();
 	}
@@ -114,13 +119,19 @@
 }
 
 @media (min-width: $screen-md-min) {
+	.myInfo{
+		padding-top:30vh;
+	}
 	.devModulesVisible {
 	   @include fadeInLeft();
 	}
 
 }
 
-@media (min-width: $screen-xs-min) and (max-width: $screen-md-min) {
+@media only screen and (max-width: $screen-md-max) {
+	.myInfo{
+		padding-top:30vh;
+	}
 	.devModulesVisible {
 	   @include fadeInUp();
 	}

@@ -1,8 +1,31 @@
+.navbar-default{
+	background-color: transparent;
+	border: none;
+	height: 100px;
+	border:1px solid $grey-mid;
+	.container-fluid{
+		margin-top:25px;
+
+	}
+	.navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
+		color:$white;
+		cursor: pointer;
+	}
+	a{
+		color: $aquamarine !important;
+	}
+}
+
 .navbar-inverse{
-	border-top:none;
+	background-color: $main-primary;
 	border: none;
 	border-radius: 0px;
 	margin-bottom: 0px;
+	transition: all 0.5s ease;
+	.navbar-brand{
+		color:$red;
+		font-family: $kushan-arial;
+	}
 	.navbar-form{
 		border-top: none;
 		border-bottom: none;

@@ -14155,7 +14155,8 @@ p {
   font-size: 1.6rem;
   line-height: 1.6;
   font-family: Vani, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  text-align: justify; }
+  text-align: justify;
+  margin-top: 20px; }
 
 li {
   font-size: 1.5rem;
@@ -14164,7 +14165,7 @@ li {
 
 h4 {
   color: #FC575E;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.6rem; }
 
 .container-fluid {
@@ -14180,11 +14181,28 @@ h4 {
     background-color: #fc4850;
     color: #ffffff; }
 
+.navbar-default {
+  background-color: transparent;
+  border: none;
+  height: 100px;
+  border: 1px solid #666666; }
+  .navbar-default .container-fluid {
+    margin-top: 25px; }
+  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+    cursor: pointer; }
+  .navbar-default a {
+    color: aquamarine !important; }
+
 .navbar-inverse {
-  border-top: none;
+  background-color: #222222;
   border: none;
   border-radius: 0px;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  transition: all 0.5s ease; }
+  .navbar-inverse .navbar-brand {
+    color: #FC575E;
+    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive; }
   .navbar-inverse .navbar-form {
     border-top: none;
     border-bottom: none;
@@ -14278,7 +14296,7 @@ h4 {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 400px; }
+  height: 300px; }
   .testimonial .quotation {
     line-height: 1.6em;
     color: #ffffff;
@@ -14292,16 +14310,20 @@ h4 {
   max-width: 1024px; }
 
 #header .home_bg {
-  background-image: linear-gradient(rgba(29, 31, 33, 0.45), rgba(29, 31, 33, 0.45)), url("bg2.jpg");
+  background-image: linear-gradient(rgba(29, 31, 33, 0.45), rgba(29, 31, 33, 0.45)), url("IMG_0100.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   position: fixed;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  transition: 0.5s ease all; }
+  #header .home_bg.blurred {
+    filter: blur(2px);
+    -webkit-filter: blur(2px); }
 
 #header .myInfo {
   position: relative;
-  text-align: left;
-  padding-top: 100px;
+  text-align: center;
   height: 100vh;
   color: #ffffff;
   -webkit-animation-name: bounceInDown;
@@ -14340,7 +14362,10 @@ h4 {
   -o-backface-visibility: hidden;
   backface-visibility: hidden; }
   #header .myInfo .myName {
-    font-family: Verdana, Geneva, sans-serif; }
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    line-height: 40px; }
   #header .myInfo .profile {
     margin-top: 10px;
     color: #ffffff;
@@ -14438,8 +14463,6 @@ h4 {
   #about .container {
     padding-top: 20px;
     padding-bottom: 20px; }
-  #about p {
-    text-align: justify; }
   #about .skillsModulesVisible, #about .blogModulesVisible {
     -webkit-animation-name: fadeInDown;
     -moz-animation-name: fadeInDown;
@@ -14534,6 +14557,8 @@ h4 {
   position: relative; }
 
 @media (min-width: 992px) {
+  .myInfo {
+    padding-top: 30vh; }
   .devModulesVisible {
     -webkit-animation-name: fadeInLeft;
     -moz-animation-name: fadeInLeft;
@@ -14571,7 +14596,9 @@ h4 {
     -o-backface-visibility: hidden;
     backface-visibility: hidden; } }
 
-@media (min-width: 480px) and (max-width: 992px) {
+@media only screen and (max-width: 1199px) {
+  .myInfo {
+    padding-top: 30vh; }
   .devModulesVisible {
     -webkit-animation-name: fadeInUp;
     -moz-animation-name: fadeInUp;
