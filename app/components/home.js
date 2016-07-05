@@ -43,21 +43,28 @@ class Home extends Component {
             <div id="home">
                 <header id="header" >
                     <div className="home_bg"></div>
-                    <Row className="myInfo container-fluid container">
-                        <Col xs={12} md={8} mdOffset={2}>
-                    		<h1 className="myName">Hi, I'm Deepak</h1>
-                    		<div className="profile">UI and Front End Developer <span className="location">based in Melbourne, Australia.</span></div>
-                            <p className="description"> While I specialize in Front end, I do a lot of work on Javascript and Node technologies
-                                developing rich web applications</p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} className="scroll-down">
-                            <ScrollLink activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500}>
-                                <FontAwesome className='super-crazy-colors' name="arrow-circle-down" size='3x'/>
-                            </ScrollLink>
-                        </Col>
-                    </Row>          
+                    <div className="myInfo container-fluid container">
+                        <Row >
+                            <Col xs={12} md={8} mdOffset={4}>
+                        		<h1 className="myName">Hi, Im Deepak</h1>
+                        		<div className="profile">UI and Front End Developer <span className="location">based in Melbourne, Australia.</span></div>
+                                <p className="description"> While I specialize in Front end, I do a lot of work on Javascript and Node technologies
+                                    developing rich web applications</p>
+                            </Col>
+                        </Row>
+                        <Row className="scroll-down-block">
+                            <Col xs={12} md={2} mdOffset={8} className="scroll-down">
+                                <ScrollLink className="btn btn-default" activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500} >
+                                    About
+                                </ScrollLink>
+                            </Col>
+                            <Col xs={12} md={2} className="scroll-down">
+                                <ScrollLink className="btn btn-default" activeClass="active" to="skills" spy={true} smooth={true} offset={-50} duration={500}>
+                                    Skills
+                                </ScrollLink>
+                            </Col>
+                        </Row>
+                    </div>
             	</header>
               
                 <About />

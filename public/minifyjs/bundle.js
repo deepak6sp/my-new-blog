@@ -28382,9 +28382,9 @@
 	          _reactBootstrap.Navbar.Brand,
 	          null,
 	          _react2.default.createElement(
-	            'a',
-	            { href: '#' },
-	            'DSP'
+	            ScrollLink,
+	            { activeClass: 'home', to: 'home', spy: true, smooth: true, offset: 0, duration: 500 },
+	            'Deepak Prakash'
 	          )
 	        ),
 	        _react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
@@ -28399,36 +28399,9 @@
 	            'li',
 	            null,
 	            _react2.default.createElement(
-	              ScrollLink,
-	              { activeClass: 'home', to: 'home', spy: true, smooth: true, offset: 0, duration: 500 },
-	              'Home'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            _react2.default.createElement(
-	              ScrollLink,
-	              { activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
-	              'About'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            _react2.default.createElement(
-	              ScrollLink,
-	              { activeClass: 'active', to: 'skills', spy: true, smooth: true, offset: -50, duration: 500 },
-	              'Skills'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: 'contact' },
-	              'Contact'
+	              { to: 'home' },
+	              'Home'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -28439,6 +28412,15 @@
 	              { to: 'blog' },
 	              _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'mail-forward', size: 'lg' }),
 	              'Blog'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: 'contact' },
+	              'Contact'
 	            )
 	          )
 	        )
@@ -48591,43 +48573,56 @@
 	                    { id: 'header' },
 	                    _react2.default.createElement('div', { className: 'home_bg' }),
 	                    _react2.default.createElement(
-	                        _reactBootstrap.Row,
+	                        'div',
 	                        { className: 'myInfo container-fluid container' },
 	                        _react2.default.createElement(
-	                            _reactBootstrap.Col,
-	                            { xs: 12, md: 8, mdOffset: 2 },
+	                            _reactBootstrap.Row,
+	                            null,
 	                            _react2.default.createElement(
-	                                'h1',
-	                                { className: 'myName' },
-	                                'Hi, I\'m Deepak'
-	                            ),
-	                            _react2.default.createElement(
-	                                'div',
-	                                { className: 'profile' },
-	                                'UI and Front End Developer ',
+	                                _reactBootstrap.Col,
+	                                { xs: 12, md: 8, mdOffset: 4 },
 	                                _react2.default.createElement(
-	                                    'span',
-	                                    { className: 'location' },
-	                                    'based in Melbourne, Australia.'
+	                                    'h1',
+	                                    { className: 'myName' },
+	                                    'Hi, Im Deepak'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'profile' },
+	                                    'UI and Front End Developer ',
+	                                    _react2.default.createElement(
+	                                        'span',
+	                                        { className: 'location' },
+	                                        'based in Melbourne, Australia.'
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'description' },
+	                                    ' While I specialize in Front end, I do a lot of work on Javascript and Node technologies developing rich web applications'
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Row,
+	                            { className: 'scroll-down-block' },
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Col,
+	                                { xs: 12, md: 2, mdOffset: 8, className: 'scroll-down' },
+	                                _react2.default.createElement(
+	                                    ScrollLink,
+	                                    { className: 'btn btn-default', activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
+	                                    'About'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
-	                                'p',
-	                                { className: 'description' },
-	                                ' While I specialize in Front end, I do a lot of work on Javascript and Node technologies developing rich web applications'
-	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Row,
-	                        null,
-	                        _react2.default.createElement(
-	                            _reactBootstrap.Col,
-	                            { xs: 12, className: 'scroll-down' },
-	                            _react2.default.createElement(
-	                                ScrollLink,
-	                                { activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
-	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'arrow-circle-down', size: '3x' })
+	                                _reactBootstrap.Col,
+	                                { xs: 12, md: 2, className: 'scroll-down' },
+	                                _react2.default.createElement(
+	                                    ScrollLink,
+	                                    { className: 'btn btn-default', activeClass: 'active', to: 'skills', spy: true, smooth: true, offset: -50, duration: 500 },
+	                                    'Skills'
+	                                )
 	                            )
 	                        )
 	                    )

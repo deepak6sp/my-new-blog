@@ -4,6 +4,7 @@ body{
 }
 a{
 	font-size: 1.6rem;
+    font-family: $arial;
 }
 p{
 	font-size: 1.6rem;
@@ -34,6 +35,7 @@ h4{
 .btn-default{
     background-color: $red;
     color:$white;
+    font-family: $arial;
     &:hover{
         background-color: darken($red,3%);
         color: $white;

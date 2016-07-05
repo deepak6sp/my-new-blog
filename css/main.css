@@ -14149,7 +14149,8 @@ body {
   font-size: 100%; }
 
 a {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 p {
   font-size: 1.6rem;
@@ -14176,7 +14177,8 @@ h4 {
 
 .btn-default {
   background-color: #FC575E;
-  color: #ffffff; }
+  color: #ffffff;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .btn-default:hover {
     background-color: #fc4850;
     color: #ffffff; }
@@ -14185,14 +14187,33 @@ h4 {
   background-color: transparent;
   border: none;
   height: 100px;
-  border: 1px solid #666666; }
+  border-bottom: 1px solid #666666; }
+  .navbar-default .navbar-header {
+    height: 74px; }
+  .navbar-default .navbar-collapse {
+    border-color: transparent;
+    box-shadow: none; }
+  .navbar-default .navbar-brand {
+    font-family: "Kaushan Script", cursive, "Helvetica Neue", Helvetica, Arial;
+    color: #FC575E; }
+    @media (min-width: 992px) {
+      .navbar-default .navbar-brand {
+        font-size: 4rem; } }
+    @media only screen and (max-width: 1199px) {
+      .navbar-default .navbar-brand {
+        font-size: 3rem; } }
+    .navbar-default .navbar-brand:hover {
+      cursor: pointer;
+      color: #ffffff; }
   .navbar-default .container-fluid {
     margin-top: 25px; }
-  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #ffffff;
+  .navbar-default .navbar-nav > li > a {
+    color: #FC575E;
     cursor: pointer; }
-  .navbar-default a {
-    color: aquamarine !important; }
+    .navbar-default .navbar-nav > li > a:focus {
+      color: #FC575E; }
+    .navbar-default .navbar-nav > li > a:hover {
+      color: #ffffff; }
 
 .navbar-inverse {
   background-color: #222222;
@@ -14202,7 +14223,10 @@ h4 {
   transition: all 0.5s ease; }
   .navbar-inverse .navbar-brand {
     color: #FC575E;
-    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive; }
+    font-family: "Kaushan Script", cursive, "Helvetica Neue", Helvetica, Arial;
+    font-size: 2rem;
+    transition: all 0.5 ease;
+    cursor: pointer; }
   .navbar-inverse .navbar-form {
     border-top: none;
     border-bottom: none;
@@ -14326,6 +14350,7 @@ h4 {
   text-align: center;
   height: 100vh;
   color: #ffffff;
+  top: 20vh;
   -webkit-animation-name: bounceInDown;
   -moz-animation-name: bounceInDown;
   -ms-animation-name: bounceInDown;
@@ -14379,9 +14404,7 @@ h4 {
     font-size: 1.4rem; }
 
 #header .scroll-down {
-  text-align: center;
-  position: absolute;
-  bottom: 30px;
+  margin-top: 50px;
   -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
   -ms-animation-name: fadeInDown;
@@ -14417,45 +14440,53 @@ h4 {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden; }
-  #header .scroll-down .fa {
+  #header .scroll-down a {
+    width: 15rem;
+    height: 5rem;
+    line-height: 3.5rem;
+    font-size: 2rem;
+    border: 1px solid #FC575E;
+    background: transparent;
     color: #ffffff; }
-  #header .scroll-down a span:hover {
-    cursor: pointer;
-    -webkit-animation-name: pulse;
-    -moz-animation-name: pulse;
-    -ms-animation-name: pulse;
-    -o-animation-name: pulse;
-    animation-name: pulse;
-    -webkit-animation-iteration-count: 1;
-    -moz-animation-iteration-count: 1;
-    -ms-animation-iteration-count: 1;
-    -o-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -ms-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-delay: 0s;
-    -moz-animation-delay: 0s;
-    -ms-animation-delay: 0s;
-    -o-animation-delay: 0s;
-    animation-delay: 0s;
-    -webkit-animation-timing-function: ease;
-    -moz-animation-timing-function: ease;
-    -ms-animation-timing-function: ease;
-    -o-animation-timing-function: ease;
-    animation-timing-function: ease;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -ms-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden; }
+    #header .scroll-down a:hover {
+      cursor: pointer;
+      background: #FC575E;
+      color: #ffffff;
+      -webkit-animation-name: pulse;
+      -moz-animation-name: pulse;
+      -ms-animation-name: pulse;
+      -o-animation-name: pulse;
+      animation-name: pulse;
+      -webkit-animation-iteration-count: 1;
+      -moz-animation-iteration-count: 1;
+      -ms-animation-iteration-count: 1;
+      -o-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+      -o-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
+      -ms-animation-delay: 0s;
+      -o-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-timing-function: ease;
+      -ms-animation-timing-function: ease;
+      -o-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      -o-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden; }
 
 #about {
   background: #ffffff;
@@ -14557,8 +14588,6 @@ h4 {
   position: relative; }
 
 @media (min-width: 992px) {
-  .myInfo {
-    padding-top: 30vh; }
   .devModulesVisible {
     -webkit-animation-name: fadeInLeft;
     -moz-animation-name: fadeInLeft;
@@ -14597,8 +14626,6 @@ h4 {
     backface-visibility: hidden; } }
 
 @media only screen and (max-width: 1199px) {
-  .myInfo {
-    padding-top: 30vh; }
   .devModulesVisible {
     -webkit-animation-name: fadeInUp;
     -moz-animation-name: fadeInUp;
@@ -14634,6 +14661,11 @@ h4 {
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
-    backface-visibility: hidden; } }
+    backface-visibility: hidden; }
+  .scroll-down-block {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto; } }
 
 /*# sourceMappingURL=maps/main.css.map */

@@ -28,7 +28,7 @@
 	    text-align: center;
 	    height:100vh;
 	    color:$white;
-
+	    top:20vh;
 		@include bounceInDown();
 		// .avatar{
 		// 	background: url('avatar.jpg');
@@ -63,19 +63,25 @@
 		}
 	}
 	.scroll-down{
-		text-align:center;
-		position: absolute;
-    	bottom: 30px;
+		margin-top: 50px;
     	@include fadeInDown();
-    	.fa{
-    		color:$white;
-    	}
-    	a span{
+    	a {
+    		width: 15rem;
+		    height: 5rem;
+		    line-height: 3.5rem;
+		    font-size: 2rem;
+		    border:1px solid $red;
+		    background: transparent;
+		    color: $white;
     		&:hover{
     			cursor:pointer;
+    			background:$red;
+    			color:$white;
     			@include pulse();
     		}
+    		
     	}
+
     	
 	}		
 }
@@ -118,10 +124,8 @@
 	position: relative;
 }
 
+
 @media (min-width: $screen-md-min) {
-	.myInfo{
-		padding-top:30vh;
-	}
 	.devModulesVisible {
 	   @include fadeInLeft();
 	}
@@ -129,11 +133,14 @@
 }
 
 @media only screen and (max-width: $screen-md-max) {
-	.myInfo{
-		padding-top:30vh;
-	}
 	.devModulesVisible {
 	   @include fadeInUp();
+	}
+	.scroll-down-block{
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
 	}
 
 }
