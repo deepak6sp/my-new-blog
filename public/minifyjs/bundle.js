@@ -48583,23 +48583,18 @@
 	                                { xs: 12, md: 8, mdOffset: 4 },
 	                                _react2.default.createElement(
 	                                    'h1',
+	                                    { className: 'greetings' },
+	                                    'Hello'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'h3',
 	                                    { className: 'myName' },
-	                                    'Hi, Im Deepak'
+	                                    'I\'m Deepak'
 	                                ),
 	                                _react2.default.createElement(
 	                                    'div',
 	                                    { className: 'profile' },
-	                                    'UI and Front End Developer ',
-	                                    _react2.default.createElement(
-	                                        'span',
-	                                        { className: 'location' },
-	                                        'based in Melbourne, Australia.'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    'p',
-	                                    { className: 'description' },
-	                                    ' While I specialize in Front end, I do a lot of work on Javascript and Node technologies developing rich web applications'
+	                                    'UI and Front End Developer based in Melbourne, Australia. While I specialize in Front end, I do a lot of work on Javascript and Node technologies developing rich web applications.'
 	                                )
 	                            )
 	                        ),
@@ -48770,7 +48765,7 @@
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
 	                                { sm: 12, md: 4 },
-	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'code', size: '4x' }),
+	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'code', size: '3x' }),
 	                                _react2.default.createElement(
 	                                    'h4',
 	                                    null,
@@ -48785,7 +48780,7 @@
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
 	                                { sm: 12, md: 4 },
-	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'cogs', size: '4x' }),
+	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'cogs', size: '3x' }),
 	                                _react2.default.createElement(
 	                                    'h4',
 	                                    null,
@@ -48821,7 +48816,7 @@
 	                                _react2.default.createElement(
 	                                    'p',
 	                                    null,
-	                                    ' My blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my favourite front end framework, and react way of animations.'
+	                                    ' My website is developed on MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my favourite front end framework, and react way of animations.'
 	                                ),
 	                                _react2.default.createElement(
 	                                    'p',
@@ -48845,30 +48840,38 @@
 	                    'section',
 	                    { className: 'container container-fluid ', id: 'skills' },
 	                    _react2.default.createElement(
-	                        'p',
+	                        _reactBootstrap.Row,
 	                        null,
-	                        ' My projects involve use of technologies such as:'
-	                    ),
-	                    _react2.default.createElement(
-	                        'section',
-	                        { className: "skills " + this.state.skillsModulesVisibleClass },
 	                        _react2.default.createElement(
-	                            _reactLazyLoad2.default,
-	                            { onContentVisible: function onContentVisible() {
-	                                    return _this2._animate("skillsModules");
-	                                }, offset: -100, throttle: 0 },
-	                            _react2.default.createElement(_listSkills2.default, null)
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                ' My projects involve use of technologies such as:'
+	                            ),
+	                            _react2.default.createElement(
+	                                'section',
+	                                { className: "skills " + this.state.skillsModulesVisibleClass },
+	                                _react2.default.createElement(
+	                                    _reactLazyLoad2.default,
+	                                    { onContentVisible: function onContentVisible() {
+	                                            return _this2._animate("skillsModules");
+	                                        }, offset: -100, throttle: 0 },
+	                                    _react2.default.createElement(_listSkills2.default, null)
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'I am self learner, love web technologies, have passion for what I do, and hope to do this forever.'
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Button,
+	                                null,
+	                                'Download Resume'
+	                            )
 	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        null,
-	                        'I am self learner, love web technologies, have passion for what I do, and hope to do this forever.'
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Button,
-	                        null,
-	                        'Download Resume'
 	                    )
 	                )
 	            );

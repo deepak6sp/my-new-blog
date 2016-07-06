@@ -7,8 +7,8 @@
 #header{
 	.home_bg{
 		background-image:  linear-gradient(
-      rgba(29, 31, 33, 0.45), 
-      rgba(29, 31, 33, 0.45)
+      rgba(29, 31, 33, 0.7), 
+      rgba(29, 31, 33, 0.7)
     ), url('main_bg.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -28,7 +28,7 @@
 	    text-align: center;
 	    height:100vh;
 	    color:$white;
-	    top:20vh;
+	    top:15rem;
 		@include bounceInDown();
 		// .avatar{
 		// 	background: url('avatar.jpg');
@@ -39,27 +39,45 @@
 		//     border-radius: 50%;
 		//     margin: 0 auto;
 		// }
-		.myName{
+		.greetings{
 			font-family: $arial;
 			font-style: italic;
-		    font-size: 40px;
-		    line-height: 40px;
-			
+		    font-size: 5rem;
+		    span{
+		    	color:$red;
+		    }
+		}
+		.myName{
+			position: relative;
+			font-family: $arial;
+		    font-size: 4rem;
+		    span{
+		    	color:$red;
+		    }
+			&::before,&::after{
+				content: "";
+				border-top:1px solid $white;
+				position: absolute;
+				width: 30%;
+			    top: 20px;
+			    border-color:$red;
+			}
+			&::before{
+				left: 0;
+			}
+			&::after{
+				right: 0;
+			}
 		}
 
 		.profile{
-			margin-top: 10px;
+			margin-top: 20px;
 			color:$white;
-			font-weight: bold;
-		    font-family: $algerian;
-		    font-size: 2.4rem;
-		}
-		.description{
-			margin-top:10px;
-		}
-		.location{
-			font-family: $verdana;
-			font-size: 1.4rem;
+		    font-family: $arial;
+		    font-size: 2rem;
+		    span{
+		    	color:$red;
+		    }
 		}
 	}
 	.scroll-down{
@@ -112,11 +130,13 @@
 			transform: rotate(90deg);
 		}
 	}
-	.panel-heading{
-		font-size: 1.6rem;
-		color: $red;
+	.panel{
+		margin-bottom: 0px;
+		.panel-heading{
+			font-size: 1.6rem;
+			color: $red;
+		}
 	}
-	
 }
 
 #contact{

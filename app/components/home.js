@@ -46,10 +46,13 @@ class Home extends Component {
                     <div className="myInfo container-fluid container">
                         <Row >
                             <Col xs={12} md={8} mdOffset={4}>
-                        		<h1 className="myName">Hi, Im Deepak</h1>
-                        		<div className="profile">UI and Front End Developer <span className="location">based in Melbourne, Australia.</span></div>
-                                <p className="description"> While I specialize in Front end, I do a lot of work on Javascript and Node technologies
-                                    developing rich web applications</p>
+                                <h1 className="greetings">Hello</h1>
+                        		<h3 className="myName">I'm Deepak</h3>
+                        		<div className="profile">
+                                    UI and Front End Developer based in Melbourne, Australia.
+                                    While I specialize in Front end, I do a lot of work on Javascript and Node technologies
+                                    developing rich web applications.
+                                </div>
                             </Col>
                         </Row>
                         <Row className="scroll-down-block">

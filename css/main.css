@@ -14146,7 +14146,7 @@ button.list-group-item-danger {
 /* ------------- flat-colors use this as variables after declaring in colors section----------- */
 body {
   overflow-x: hidden;
-  font-size: 100%; }
+  font-size: 16px; }
 
 a {
   font-size: 1.6rem;
@@ -14290,7 +14290,7 @@ h4 {
 
 .split-bar {
   height: 48px;
-  background-color: #44BBFF;
+  background-color: #FC575E;
   text-align: center;
   color: #ffffff; }
   .split-bar a {
@@ -14334,7 +14334,7 @@ h4 {
   max-width: 1024px; }
 
 #header .home_bg {
-  background-image: linear-gradient(rgba(29, 31, 33, 0.45), rgba(29, 31, 33, 0.45)), url("main_bg.jpg");
+  background-image: linear-gradient(rgba(29, 31, 33, 0.7), rgba(29, 31, 33, 0.7)), url("main_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   position: fixed;
@@ -14350,7 +14350,7 @@ h4 {
   text-align: center;
   height: 100vh;
   color: #ffffff;
-  top: 20vh;
+  top: 15rem;
   -webkit-animation-name: bounceInDown;
   -moz-animation-name: bounceInDown;
   -ms-animation-name: bounceInDown;
@@ -14386,22 +14386,36 @@ h4 {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden; }
-  #header .myInfo .myName {
+  #header .myInfo .greetings {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: italic;
-    font-size: 40px;
-    line-height: 40px; }
+    font-size: 5rem; }
+    #header .myInfo .greetings span {
+      color: #FC575E; }
+  #header .myInfo .myName {
+    position: relative;
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 4rem; }
+    #header .myInfo .myName span {
+      color: #FC575E; }
+    #header .myInfo .myName::before, #header .myInfo .myName::after {
+      content: "";
+      border-top: 1px solid #ffffff;
+      position: absolute;
+      width: 30%;
+      top: 20px;
+      border-color: #FC575E; }
+    #header .myInfo .myName::before {
+      left: 0; }
+    #header .myInfo .myName::after {
+      right: 0; }
   #header .myInfo .profile {
-    margin-top: 10px;
+    margin-top: 20px;
     color: #ffffff;
-    font-weight: bold;
-    font-family: Algerian, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 2.4rem; }
-  #header .myInfo .description {
-    margin-top: 10px; }
-  #header .myInfo .location {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 1.4rem; }
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2rem; }
+    #header .myInfo .profile span {
+      color: #FC575E; }
 
 #header .scroll-down {
   margin-top: 50px;
@@ -14579,9 +14593,11 @@ h4 {
       background: #FC575E; }
     #about .dev-modules .fa-cogs, #about .skills .fa-cogs, #about .blog .fa-cogs {
       transform: rotate(90deg); }
-  #about .panel-heading {
-    font-size: 1.6rem;
-    color: #FC575E; }
+  #about .panel {
+    margin-bottom: 0px; }
+    #about .panel .panel-heading {
+      font-size: 1.6rem;
+      color: #FC575E; }
 
 #contact {
   background: #ffffff;

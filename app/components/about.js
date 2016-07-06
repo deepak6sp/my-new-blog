@@ -53,13 +53,13 @@ class About extends Component {
                                    been using my favourite Google drawings for mockups and wireframes, and loving it.</p>
                             </Col>
                             <Col sm={12} md={4}>
-                                <FontAwesome className='super-crazy-colors' name="code" size='4x'/>
+                                <FontAwesome className='super-crazy-colors' name="code" size='3x'/>
                                 <h4> Development </h4>
                                 <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as 
                                 npm, bower, webpack, gulp, sass to speed up developement process.</p>
                             </Col>
                             <Col sm={12} md={4}>
-                                <FontAwesome className='super-crazy-colors' name="cogs" size='4x'/>
+                                <FontAwesome className='super-crazy-colors' name="cogs" size='3x'/>
                                 <h4> Testing </h4>
                                 <p> I consider testing to be as important as design and development, so I believe in Agile test driven development. Also, I will make sure the 
                                     web application works fine accross multi browsers and devices.</p>
@@ -80,7 +80,7 @@ class About extends Component {
                     <LazyLoad onContentVisible={() => this._animate("blogModules")} offset={-100} throttle={0}>
                         <Row className={ "blog "+ this.state.blogModulesVisibleClass}>
                             <Col sm={12}>
-                                <p> My blog is developed using MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
+                                <p> My website is developed on MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
                                     favourite front end framework, and react way of animations.</p>
                                 <p> I am doing this blog to share knowledge that focuses mainly on latest web technologies involving Javascript and Node. However, I would not hesitate
                                     to include tips and tricks about UX/UI, front end and back end technologies </p>
@@ -98,14 +98,18 @@ class About extends Component {
                 <SplitBar text="Skills" iconName="star" />
                 
                 <section className="container container-fluid " id="skills">
-                    <p> My projects involve use of technologies such as:</p>
-                    <section className={ "skills " + this.state.skillsModulesVisibleClass}>
-                        <LazyLoad onContentVisible={() => this._animate("skillsModules")} offset={-100} throttle={0}>
-                            <ListSkills/>
-                        </LazyLoad>
-                    </section>
-                    <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
-                    <Button>Download Resume</Button>
+                    <Row>
+                        <Col sm={12}>
+                            <p> My projects involve use of technologies such as:</p>
+                            <section className={ "skills " + this.state.skillsModulesVisibleClass}>
+                                <LazyLoad onContentVisible={() => this._animate("skillsModules")} offset={-100} throttle={0}>
+                                    <ListSkills/>
+                                </LazyLoad>
+                            </section>
+                            <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
+                            <Button>Download Resume</Button>
+                        </Col>
+                    </Row>
                 </section>
 			</main>
         );
