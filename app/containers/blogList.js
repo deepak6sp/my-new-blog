@@ -38,21 +38,23 @@ class Blog extends Component {
           return (<p key={index}>{WhatsNew.title}</p>);
         }); 
         return  (
-        	<main className="container-fluid">
-            <Row>
-              <Col sm={4} className="blog-posts-search">
-                <SearchBlog />
-              </Col>
-            </Row>
-            <Row>
-                <Col sm={9} className="blog-posts-section">
-                     { blogListData }
+        	<main id="blog">
+            <div className="container-fluid container">
+              <Row>
+                <Col sm={4} className="blog-posts-search">
+                  <SearchBlog />
                 </Col>
-                <Col sm={3} className="latest-post-section">
-                      <h1>Whats new</h1>
-                      { WhatsNewData }
-                </Col>
-            </Row>
+              </Row>
+              <Row>
+                  <Col sm={9} className="blog-posts-section">
+                       { blogListData }
+                  </Col>
+                  <Col sm={3} className="latest-post-section">
+                        <h1>Whats new</h1>
+                        { WhatsNewData }
+                  </Col>
+              </Row>
+            </div>
           </main>
         );
         //return <div>adsasd</div>;

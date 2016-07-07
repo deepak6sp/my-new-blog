@@ -28382,8 +28382,8 @@
 	          _reactBootstrap.Navbar.Brand,
 	          null,
 	          _react2.default.createElement(
-	            ScrollLink,
-	            { activeClass: 'home', to: 'home', spy: true, smooth: true, offset: 0, duration: 500 },
+	            _reactRouter.Link,
+	            { to: 'home' },
 	            'Deepak Prakash'
 	          )
 	        ),
@@ -28400,18 +28400,8 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: 'home' },
-	              'Home'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            _react2.default.createElement(
-	              _reactRouter.Link,
 	              { to: 'blog' },
-	              _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'mail-forward', size: 'lg' }),
-	              'Blog'
+	              'BLOG'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -28420,7 +28410,7 @@
 	            _react2.default.createElement(
 	              _reactRouter.Link,
 	              { to: 'contact' },
-	              'Contact'
+	              'CONTACT'
 	            )
 	          )
 	        )
@@ -48537,7 +48527,6 @@
 	    _createClass(Home, [{
 	        key: '_handleScroll',
 	        value: function _handleScroll() {
-	            console.log("scrolling");
 	            var navBar = document.getElementsByClassName("navbar")[0],
 	                bgImage = document.getElementsByClassName("home_bg")[0],
 	                range = 170,
@@ -48566,7 +48555,7 @@
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
+	                'main',
 	                { id: 'home' },
 	                _react2.default.createElement(
 	                    'header',
@@ -48580,7 +48569,7 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
-	                                { xs: 12, md: 8, mdOffset: 4 },
+	                                { xs: 12, sm: 8, smOffset: 4 },
 	                                _react2.default.createElement(
 	                                    'h1',
 	                                    { className: 'greetings' },
@@ -48603,7 +48592,7 @@
 	                            { className: 'scroll-down-block' },
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
-	                                { xs: 12, md: 2, mdOffset: 8, className: 'scroll-down' },
+	                                { xs: 12, smOffset: 4, sm: 4, mdOffset: 8, md: 2, className: 'scroll-down' },
 	                                _react2.default.createElement(
 	                                    ScrollLink,
 	                                    { className: 'btn btn-default', activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
@@ -48612,7 +48601,7 @@
 	                            ),
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
-	                                { xs: 12, md: 2, className: 'scroll-down' },
+	                                { xs: 12, sm: 4, md: 2, className: 'scroll-down' },
 	                                _react2.default.createElement(
 	                                    ScrollLink,
 	                                    { className: 'btn btn-default', activeClass: 'active', to: 'skills', spy: true, smooth: true, offset: -50, duration: 500 },
@@ -50284,33 +50273,37 @@
 	      });
 	      return _react2.default.createElement(
 	        'main',
-	        { className: 'container-fluid' },
+	        { id: 'blog' },
 	        _react2.default.createElement(
-	          _reactBootstrap.Row,
-	          null,
+	          'div',
+	          { className: 'container-fluid container' },
 	          _react2.default.createElement(
-	            _reactBootstrap.Col,
-	            { sm: 4, className: 'blog-posts-search' },
-	            _react2.default.createElement(_searchBlog2.default, null)
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Row,
-	          null,
-	          _react2.default.createElement(
-	            _reactBootstrap.Col,
-	            { sm: 9, className: 'blog-posts-section' },
-	            blogListData
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { sm: 4, className: 'blog-posts-search' },
+	              _react2.default.createElement(_searchBlog2.default, null)
+	            )
 	          ),
 	          _react2.default.createElement(
-	            _reactBootstrap.Col,
-	            { sm: 3, className: 'latest-post-section' },
+	            _reactBootstrap.Row,
+	            null,
 	            _react2.default.createElement(
-	              'h1',
-	              null,
-	              'Whats new'
+	              _reactBootstrap.Col,
+	              { sm: 9, className: 'blog-posts-section' },
+	              blogListData
 	            ),
-	            WhatsNewData
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { sm: 3, className: 'latest-post-section' },
+	              _react2.default.createElement(
+	                'h1',
+	                null,
+	                'Whats new'
+	              ),
+	              WhatsNewData
+	            )
 	          )
 	        )
 	      );

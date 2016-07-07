@@ -16,7 +16,6 @@ class Home extends Component {
         this._handleScroll = this._handleScroll.bind(this);
     }
     _handleScroll(){
-        console.log("scrolling");
         var navBar= document.getElementsByClassName("navbar")[0],
             bgImage = document.getElementsByClassName("home_bg")[0],
             range = 170,
@@ -40,12 +39,12 @@ class Home extends Component {
     }
     render() {
         return  (
-            <div id="home">
+            <main id="home">
                 <header id="header" >
                     <div className="home_bg"></div>
                     <div className="myInfo container-fluid container">
                         <Row >
-                            <Col xs={12} md={8} mdOffset={4}>
+                            <Col xs={12} sm={8} smOffset={4}>
                                 <h1 className="greetings">Hello</h1>
                         		<h3 className="myName">I'm Deepak</h3>
                         		<div className="profile">
@@ -56,12 +55,12 @@ class Home extends Component {
                             </Col>
                         </Row>
                         <Row className="scroll-down-block">
-                            <Col xs={12} md={2} mdOffset={8} className="scroll-down">
+                            <Col xs={12} smOffset={4} sm={4} mdOffset={8} md={2} className="scroll-down">
                                 <ScrollLink className="btn btn-default" activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500} >
                                     About
                                 </ScrollLink>
                             </Col>
-                            <Col xs={12} md={2} className="scroll-down">
+                            <Col xs={12} sm={4} md={2} className="scroll-down">
                                 <ScrollLink className="btn btn-default" activeClass="active" to="skills" spy={true} smooth={true} offset={-50} duration={500}>
                                     Skills
                                 </ScrollLink>
@@ -72,7 +71,7 @@ class Home extends Component {
               
                 <About />
                 
-            </div>
+            </main>
         );
     }
 }

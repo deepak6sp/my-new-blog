@@ -13,7 +13,7 @@ const Navigation = () => {
                 {/* Brand and toggle get grouped for better mobile display */}
                 <Navbar.Header>
                   <Navbar.Brand>
-                     <ScrollLink activeClass="home" to="home" spy={true} smooth={true} offset={0} duration={500}>Deepak Prakash</ScrollLink>
+                     <Link to="home">Deepak Prakash</Link>
                   </Navbar.Brand>
                   <Navbar.Toggle />
                 </Navbar.Header>
@@ -22,18 +22,11 @@ const Navigation = () => {
                 <Navbar.Collapse>
                   <Nav pullRight>
                     <li>
-                      <Link to="home">Home</Link>
+                      <Link to="blog">BLOG</Link>
                     </li>
 
                     <li>
-                      <Link to="blog">
-                        <FontAwesome className='super-crazy-colors' name="mail-forward" size='lg'/>
-                        Blog
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link to="contact">Contact</Link>
+                      <Link to="contact">CONTACT</Link>
                     </li>
                   </Nav>
                   

@@ -14,7 +14,6 @@
 		background-repeat: no-repeat;
 		position: fixed;
 	    width: 100%;
-		height:100vh;
 		transition: 0.5s ease all;
 		&.blurred {
 		    filter: blur(2px);
@@ -26,7 +25,6 @@
 	.myInfo{
 		position: relative;
 	    text-align: center;
-	    height:100vh;
 	    color:$white;
 	    top:15rem;
 		@include bounceInDown();
@@ -145,14 +143,23 @@
 }
 
 
-@media (min-width: $screen-md-min) {
+
+
+@media (min-width: $screen-sm-min) {
+	.home_bg,.myInfo{
+		height:100vh;
+	}
+
 	.devModulesVisible {
 	   @include fadeInLeft();
 	}
 
 }
 
-@media only screen and (max-width: $screen-md-max) {
+@media only screen and (max-width: $screen-xs-max) {
+	.home_bg,.myInfo{
+		height:700px;
+	}
 	.devModulesVisible {
 	   @include fadeInUp();
 	}
