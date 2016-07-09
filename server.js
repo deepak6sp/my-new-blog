@@ -17,6 +17,7 @@ mongoose.connect('mongodb://localhost:27017/myBlog',function (err){
 //App setup
 
 //app.use(express.static(path.join(__dirname))); /* this is to get index.html */
+app.use(express.static(path.join(__dirname)));
 app.use(express.static(path.join(__dirname,"/img")));
 app.use(express.static(path.join(__dirname,"/css")));
 app.use(express.static(path.join(__dirname,"/public/minifycss")));
@@ -26,6 +27,8 @@ app.use(express.static(path.join(__dirname,"/public/fonts")));
 app.use(bodyParser.json());  
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',mainRouter);
+app.use('/home',mainRouter);
+app.use('/blog',mainRouter);
 app.use('/api',blogPostsRouter);
 
 //Server setup

@@ -14203,7 +14203,42 @@ h4 {
         font-size: 3rem; } }
     .navbar-default .navbar-brand:hover {
       cursor: pointer;
-      color: #ffffff; }
+      color: #fb252e;
+      -webkit-animation-name: pulse;
+      -moz-animation-name: pulse;
+      -ms-animation-name: pulse;
+      -o-animation-name: pulse;
+      animation-name: pulse;
+      -webkit-animation-iteration-count: 1;
+      -moz-animation-iteration-count: 1;
+      -ms-animation-iteration-count: 1;
+      -o-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+      -o-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
+      -ms-animation-delay: 0s;
+      -o-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-timing-function: ease;
+      -ms-animation-timing-function: ease;
+      -o-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      -o-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden; }
     .navbar-default .navbar-brand:focus {
       color: #FC575E; }
   .navbar-default .container-fluid {
@@ -14214,7 +14249,49 @@ h4 {
     .navbar-default .navbar-nav > li > a:focus {
       color: #FC575E; }
     .navbar-default .navbar-nav > li > a:hover {
-      color: #ffffff; }
+      color: #fb252e;
+      -webkit-animation-name: pulse;
+      -moz-animation-name: pulse;
+      -ms-animation-name: pulse;
+      -o-animation-name: pulse;
+      animation-name: pulse;
+      -webkit-animation-iteration-count: 1;
+      -moz-animation-iteration-count: 1;
+      -ms-animation-iteration-count: 1;
+      -o-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+      -o-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-delay: 0s;
+      -moz-animation-delay: 0s;
+      -ms-animation-delay: 0s;
+      -o-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-timing-function: ease;
+      -ms-animation-timing-function: ease;
+      -o-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      -o-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden; }
+
+.navbar-header {
+  float: left; }
+
+.navbar-right {
+  float: right !important;
+  margin-right: -15px; }
 
 .navbar-inverse {
   background-color: #222222;
@@ -14338,7 +14415,7 @@ h4 {
   max-width: 1024px; }
 
 #header .home_bg {
-  background-image: linear-gradient(rgba(29, 31, 33, 0.7), rgba(29, 31, 33, 0.7)), url("main_bg.jpg");
+  background-image: linear-gradient(rgba(29, 31, 33, 0.5), rgba(29, 31, 33, 0.5)), url("main_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   position: fixed;

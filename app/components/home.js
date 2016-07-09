@@ -13,30 +13,9 @@ var Element = Scroll.Element;
 class Home extends Component {
     constructor(props){
         super(props);
-        this._handleScroll = this._handleScroll.bind(this);
+        window.scrollTo(0,0);
     }
-    _handleScroll(){
-        var navBar= document.getElementsByClassName("navbar")[0],
-            bgImage = document.getElementsByClassName("home_bg")[0],
-            range = 170,
-            scrollTop = document.body.scrollTop;
-        if (scrollTop > range) {
-            navBar.classList.add("navbar-inverse");
-            navBar.classList.remove("navbar-default");
-            bgImage.classList.add("blurred");
-        }
-        else {
-            navBar.classList.remove("navbar-inverse");
-            navBar.classList.add("navbar-default");
-            bgImage.classList.remove("blurred");
-        }
-    }
-    componentDidMount() {
-        window.addEventListener('scroll', this._handleScroll);
-    }
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this._handleScroll);
-    }
+   
     render() {
         return  (
             <main id="home">
@@ -45,7 +24,7 @@ class Home extends Component {
                     <div className="myInfo container-fluid container">
                         <Row >
                             <Col xs={12} sm={8} smOffset={4}>
-                                <h1 className="greetings">Hello</h1>
+                                <h1 className="greetings">Hey</h1>
                         		<h3 className="myName">I'm Deepak</h3>
                         		<div className="profile">
                                     UI and Front End Developer based in Melbourne, Australia.

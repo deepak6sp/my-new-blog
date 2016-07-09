@@ -28314,13 +28314,48 @@
 	var MainLayout = function (_Component) {
 	    _inherits(MainLayout, _Component);
 	
-	    function MainLayout() {
+	    function MainLayout(props) {
 	        _classCallCheck(this, MainLayout);
 	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(MainLayout).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MainLayout).call(this, props));
+	
+	        _this._handleScroll = _this._handleScroll.bind(_this);
+	        return _this;
 	    }
 	
 	    _createClass(MainLayout, [{
+	        key: '_handleScroll',
+	        value: function _handleScroll() {
+	            var navBar = document.getElementsByClassName("navbar")[0],
+	                bgImage = document.getElementsByClassName("home_bg")[0],
+	                range = 170,
+	                scrollTop = document.body.scrollTop;
+	
+	            if (scrollTop > range) {
+	                navBar.classList.add("navbar-inverse");
+	                navBar.classList.remove("navbar-default");
+	                if (bgImage != undefined) {
+	                    bgImage.classList.add("blurred");
+	                }
+	            } else {
+	                navBar.classList.remove("navbar-inverse");
+	                navBar.classList.add("navbar-default");
+	                if (bgImage != undefined) {
+	                    bgImage.classList.remove("blurred");
+	                }
+	            }
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            window.addEventListener('scroll', this._handleScroll);
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            window.removeEventListener('scroll', this._handleScroll);
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -28386,32 +28421,18 @@
 	            { to: 'home' },
 	            'Deepak Prakash'
 	          )
-	        ),
-	        _react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
+	        )
 	      ),
 	      _react2.default.createElement(
-	        _reactBootstrap.Navbar.Collapse,
-	        null,
+	        _reactBootstrap.Nav,
+	        { pullRight: true },
 	        _react2.default.createElement(
-	          _reactBootstrap.Nav,
-	          { pullRight: true },
+	          'li',
+	          null,
 	          _react2.default.createElement(
-	            'li',
-	            null,
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: 'blog' },
-	              'BLOG'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: 'contact' },
-	              'CONTACT'
-	            )
+	            _reactRouter.Link,
+	            { to: 'blog' },
+	            'BLOG'
 	          )
 	        )
 	      )
@@ -48520,38 +48541,11 @@
 	
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Home).call(this, props));
 	
-	        _this._handleScroll = _this._handleScroll.bind(_this);
+	        window.scrollTo(0, 0);
 	        return _this;
 	    }
 	
 	    _createClass(Home, [{
-	        key: '_handleScroll',
-	        value: function _handleScroll() {
-	            var navBar = document.getElementsByClassName("navbar")[0],
-	                bgImage = document.getElementsByClassName("home_bg")[0],
-	                range = 170,
-	                scrollTop = document.body.scrollTop;
-	            if (scrollTop > range) {
-	                navBar.classList.add("navbar-inverse");
-	                navBar.classList.remove("navbar-default");
-	                bgImage.classList.add("blurred");
-	            } else {
-	                navBar.classList.remove("navbar-inverse");
-	                navBar.classList.add("navbar-default");
-	                bgImage.classList.remove("blurred");
-	            }
-	        }
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            window.addEventListener('scroll', this._handleScroll);
-	        }
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {
-	            window.removeEventListener('scroll', this._handleScroll);
-	        }
-	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -48573,7 +48567,7 @@
 	                                _react2.default.createElement(
 	                                    'h1',
 	                                    { className: 'greetings' },
-	                                    'Hello'
+	                                    'Hey'
 	                                ),
 	                                _react2.default.createElement(
 	                                    'h3',
@@ -50274,6 +50268,70 @@
 	      return _react2.default.createElement(
 	        'main',
 	        { id: 'blog' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'container-fluid container' },
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { sm: 4, className: 'blog-posts-search' },
+	              _react2.default.createElement(_searchBlog2.default, null)
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { sm: 9, className: 'blog-posts-section' },
+	              blogListData
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { sm: 3, className: 'latest-post-section' },
+	              _react2.default.createElement(
+	                'h1',
+	                null,
+	                'Whats new'
+	              ),
+	              WhatsNewData
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'container-fluid container' },
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { sm: 4, className: 'blog-posts-search' },
+	              _react2.default.createElement(_searchBlog2.default, null)
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { sm: 9, className: 'blog-posts-section' },
+	              blogListData
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { sm: 3, className: 'latest-post-section' },
+	              _react2.default.createElement(
+	                'h1',
+	                null,
+	                'Whats new'
+	              ),
+	              WhatsNewData
+	            )
+	          )
+	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'container-fluid container' },

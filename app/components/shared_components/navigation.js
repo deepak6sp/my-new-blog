@@ -15,22 +15,24 @@ const Navigation = () => {
                   <Navbar.Brand>
                      <Link to="home">Deepak Prakash</Link>
                   </Navbar.Brand>
-                  <Navbar.Toggle />
+                  {/*<Navbar.Toggle />*/}
                 </Navbar.Header>
 
                 {/* Collect the nav links, forms, and other content for toggling */}
-                <Navbar.Collapse>
                   <Nav pullRight>
                     <li>
                       <Link to="blog">BLOG</Link>
                     </li>
+                    {/*
+                <Navbar.Collapse> </Navbar.Collapse>
 
                     <li>
                       <Link to="contact">CONTACT</Link>
                     </li>
+                  */}
                   </Nav>
                   
-                </Navbar.Collapse>
+               
 
                 
                

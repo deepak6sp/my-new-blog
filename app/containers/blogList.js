@@ -14,18 +14,18 @@ class Blog extends Component {
         window.scrollTo(0,0);
         this.state= {blogLists: ""};
     }
+
     componentWillMount() {
         this.props.getBlogPosts();
     }
+
     render() {
         let blogListData = "";
         if (!this.props.blogList){
            blogListData = "No blog posts available";
-        }
-        else if (this.props.blogList == ""){
+        }else if (this.props.blogList == ""){
            blogListData = "No blog posts matching search keyword";
-        }
-        else{
+        }else{
             blogListData  = this.props.blogList.map((blog,index) => {
               return (<div className="blog-post" key={index}>
                         <h1>{blog.title}</h1>
@@ -40,6 +40,38 @@ class Blog extends Component {
         return  (
         	<main id="blog">
             <div className="container-fluid container">
+              <Row>
+                <Col sm={4} className="blog-posts-search">
+                  <SearchBlog />
+                </Col>
+              </Row>
+              <Row>
+                  <Col sm={9} className="blog-posts-section">
+                       { blogListData }
+                  </Col>
+                  <Col sm={3} className="latest-post-section">
+                        <h1>Whats new</h1>
+                        { WhatsNewData }
+                  </Col>
+              </Row>
+            </div>
+             <div className="container-fluid container">
+              <Row>
+                <Col sm={4} className="blog-posts-search">
+                  <SearchBlog />
+                </Col>
+              </Row>
+              <Row>
+                  <Col sm={9} className="blog-posts-section">
+                       { blogListData }
+                  </Col>
+                  <Col sm={3} className="latest-post-section">
+                        <h1>Whats new</h1>
+                        { WhatsNewData }
+                  </Col>
+              </Row>
+            </div>
+             <div className="container-fluid container">
               <Row>
                 <Col sm={4} className="blog-posts-search">
                   <SearchBlog />

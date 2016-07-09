@@ -7,8 +7,8 @@
 #header{
 	.home_bg{
 		background-image:  linear-gradient(
-      rgba(29, 31, 33, 0.7), 
-      rgba(29, 31, 33, 0.7)
+      rgba(29, 31, 33, 0.5), 
+      rgba(29, 31, 33, 0.5)
     ), url('main_bg.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -41,6 +41,7 @@
 			font-family: $arial;
 			font-style: italic;
 		    font-size: 5rem;
+		    
 		    span{
 		    	color:$red;
 		    }

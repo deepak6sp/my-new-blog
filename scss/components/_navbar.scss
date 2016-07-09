@@ -9,6 +9,7 @@
 		border-color:transparent;
 		box-shadow: none;
 	}
+
 	.navbar-brand{
 		font-family: $kushan-arial;
 		color: $red ;
@@ -20,7 +21,8 @@
 		}
 		&:hover{
 			cursor: pointer;
-			color:$white ;		
+			color:darken($red, 10%) ;
+			@include pulse();	
 		}
 		&:focus{
 			color: $red ;
@@ -37,9 +39,17 @@
 			color: $red;
 		}
 		&:hover{
-			color:$white ;
+			color:darken($red, 10%) ;
+			@include pulse();
 		}
 	}
+}
+.navbar-header{
+	float: left;
+}
+.navbar-right {
+    float: right !important;
+    margin-right: -15px;
 }
 
 .navbar-inverse{
