@@ -34,14 +34,9 @@ class Home extends Component {
                             </Col>
                         </Row>
                         <Row className="scroll-down-block">
-                            <Col xs={12} smOffset={4} sm={4} mdOffset={8} md={2} className="scroll-down">
+                            <Col xs={12} smOffset={9} sm={3} className="scroll-down">
                                 <ScrollLink className="btn btn-default" activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500} >
                                     About
-                                </ScrollLink>
-                            </Col>
-                            <Col xs={12} sm={4} md={2} className="scroll-down">
-                                <ScrollLink className="btn btn-default" activeClass="active" to="skills" spy={true} smooth={true} offset={-50} duration={500}>
-                                    Skills
                                 </ScrollLink>
                             </Col>
                         </Row>

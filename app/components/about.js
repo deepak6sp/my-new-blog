@@ -95,22 +95,6 @@ class About extends Component {
                     recommendedBy = "Clauidiu - Senior Developer @ mycause.com.au"
                 />
 
-                <SplitBar text="Skills" iconName="star" />
-                
-                <section className="container container-fluid " id="skills">
-                    <Row>
-                        <Col sm={12}>
-                            <p> My projects involve use of technologies such as:</p>
-                            <section className={ "skills " + this.state.skillsModulesVisibleClass}>
-                                <LazyLoad onContentVisible={() => this._animate("skillsModules")} offset={-100} throttle={0}>
-                                    <ListSkills/>
-                                </LazyLoad>
-                            </section>
-                            <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
-                            <Button>Download Resume</Button>
-                        </Col>
-                    </Row>
-                </section>
 			</main>
         );
     }

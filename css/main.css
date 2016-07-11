@@ -14185,13 +14185,7 @@ h4 {
 
 .navbar-default {
   background-color: transparent;
-  border: none;
-  height: 100px; }
-  .navbar-default .navbar-header {
-    height: 74px; }
-  .navbar-default .navbar-collapse {
-    border-color: transparent;
-    box-shadow: none; }
+  border: none; }
   .navbar-default .navbar-brand {
     font-family: "Kaushan Script", cursive, "Helvetica Neue", Helvetica, Arial;
     color: #FC575E; }
@@ -14241,7 +14235,7 @@ h4 {
       backface-visibility: hidden; }
     .navbar-default .navbar-brand:focus {
       color: #FC575E; }
-  .navbar-default .container-fluid {
+  .navbar-default .container {
     margin-top: 25px; }
   .navbar-default .navbar-nav > li > a {
     color: #FC575E;
@@ -14285,13 +14279,6 @@ h4 {
       -ms-backface-visibility: hidden;
       -o-backface-visibility: hidden;
       backface-visibility: hidden; }
-
-.navbar-header {
-  float: left; }
-
-.navbar-right {
-  float: right !important;
-  margin-right: -15px; }
 
 .navbar-inverse {
   background-color: #222222;
@@ -14344,15 +14331,17 @@ h4 {
       color: #ffffff;
       background-color: #151515; }
 
+@media only screen and (max-width: 767px) {
+  .navbar-default .navbar-collapse.in {
+    background: #ffffff; } }
+
 .footer {
   height: 50px;
   background-color: #222222;
   width: 100%;
-  position: relative;
-  bottom: 0; }
-
-#blog + .footer {
-  bottom: -50px; }
+  position: absolute;
+  bottom: 0;
+  left: 0; }
 
 .social-links {
   padding-top: 10px; }
@@ -14411,8 +14400,22 @@ h4 {
     .testimonial .quotation span {
       margin-left: 10px; }
 
-#main .container {
-  max-width: 1024px; }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+#main {
+  min-height: 100%;
+  position: relative; }
+
+#MainLayout {
+  min-height: 100%; }
+  #MainLayout .container {
+    max-width: 1024px; }
+  #MainLayout .container-fluid {
+    padding-top: 20px;
+    padding-bottom: 20px; }
 
 #header .home_bg {
   background-image: linear-gradient(rgba(29, 31, 33, 0.5), rgba(29, 31, 33, 0.5)), url("main_bg.jpg");
@@ -14584,9 +14587,6 @@ h4 {
 #about {
   background: #ffffff;
   position: relative; }
-  #about .container {
-    padding-top: 20px;
-    padding-bottom: 20px; }
   #about .skillsModulesVisible, #about .blogModulesVisible {
     -webkit-animation-name: fadeInDown;
     -moz-animation-name: fadeInDown;
@@ -14678,9 +14678,9 @@ h4 {
       font-size: 1.6rem;
       color: #FC575E; }
 
-#contact {
-  background: #ffffff;
-  position: relative; }
+#blog, #skills, #contact {
+  position: relative;
+  border-top: 1px solid #F0F1F5; }
 
 @media (min-width: 768px) {
   .home_bg, .myInfo {
@@ -14766,12 +14766,5 @@ h4 {
     left: 0;
     right: 0;
     margin: auto; } }
-
-#blog {
-  position: relative;
-  top: 100px;
-  border-top: 1px solid #F0F1F5;
-  padding-top: 50px;
-  min-height: 87vh; }
 
 /*# sourceMappingURL=maps/main.css.map */

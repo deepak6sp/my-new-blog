@@ -2,10 +2,7 @@
 	height:50px;
 	background-color: $main-primary;
 	width: 100%;
-	position: relative;
+	position: absolute;
 	bottom:0;
-}
-
-#blog + .footer{
-	bottom:-50px;
+	left:0;
 }

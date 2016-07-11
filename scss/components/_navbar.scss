@@ -1,14 +1,7 @@
 .navbar-default{
 	background-color: transparent;
 	border: none;
-	height: 100px;
-	.navbar-header{
-		height: 74px;
-	}
-	.navbar-collapse{
-		border-color:transparent;
-		box-shadow: none;
-	}
+	
 
 	.navbar-brand{
 		font-family: $kushan-arial;
@@ -28,7 +21,7 @@
 			color: $red ;
 		}
 	}
-	.container-fluid{
+	.container{
 		margin-top:25px;
 
 	}
@@ -43,13 +36,6 @@
 			@include pulse();
 		}
 	}
-}
-.navbar-header{
-	float: left;
-}
-.navbar-right {
-    float: right !important;
-    margin-right: -15px;
 }
 
 .navbar-inverse{
@@ -119,6 +105,14 @@
 					background-color:darken( $main-primary, 5% );
 				}			
 			}
+		}
+	}
+}
+
+@media only screen and (max-width: $screen-xs-max) {
+	.navbar-default{
+		.navbar-collapse.in{
+			background: $white;
 		}
 	}
 }

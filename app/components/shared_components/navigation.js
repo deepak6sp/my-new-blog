@@ -9,34 +9,36 @@ var ScrollLink = Scroll.Link;
 const Navigation = () => {
         return  (
         	<Navbar fixedTop>
-              <div className="container-fluid">
                 {/* Brand and toggle get grouped for better mobile display */}
                 <Navbar.Header>
                   <Navbar.Brand>
                      <Link to="home">Deepak Prakash</Link>
                   </Navbar.Brand>
-                  {/*<Navbar.Toggle />*/}
+                  <Navbar.Toggle />
                 </Navbar.Header>
+                <Navbar.Collapse> 
 
-                {/* Collect the nav links, forms, and other content for toggling */}
+                  {/* Collect the nav links, forms, and other content for toggling */}
                   <Nav pullRight>
+                    
+                     <li>
+                      <Link to="skills">SKILLS</Link>
+                    </li>
+
+                     <li>
+                      <Link to="projects">PROJECTS</Link>
+                    </li>
+
                     <li>
                       <Link to="blog">BLOG</Link>
                     </li>
-                    {/*
-                <Navbar.Collapse> </Navbar.Collapse>
 
                     <li>
                       <Link to="contact">CONTACT</Link>
                     </li>
-                  */}
-                  </Nav>
                   
-               
-
-                
-               
-              </div>
+                  </Nav>
+              </Navbar.Collapse>
         	</Navbar>
         );
 }

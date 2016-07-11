@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',mainRouter);
 app.use('/home',mainRouter);
 app.use('/blog',mainRouter);
+app.use('/skills',mainRouter);
 app.use('/api',blogPostsRouter);
 
 //Server setup

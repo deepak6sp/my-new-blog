@@ -22785,6 +22785,10 @@
 	
 	var _Home2 = _interopRequireDefault(_Home);
 	
+	var _Skills = __webpack_require__(577);
+	
+	var _Skills2 = _interopRequireDefault(_Skills);
+	
 	var _about = __webpack_require__(540);
 	
 	var _about2 = _interopRequireDefault(_about);
@@ -22807,6 +22811,7 @@
 			{ path: '/', component: _MainLayout2.default },
 			_react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: 'home', component: _Home2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: 'skills', component: _Skills2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: 'blog', component: _blogList2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: 'about', component: _about2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: 'contact', component: _contact2.default })
@@ -28408,21 +28413,22 @@
 	    _reactBootstrap.Navbar,
 	    { fixedTop: true },
 	    _react2.default.createElement(
-	      'div',
-	      { className: 'container-fluid' },
+	      _reactBootstrap.Navbar.Header,
+	      null,
 	      _react2.default.createElement(
-	        _reactBootstrap.Navbar.Header,
+	        _reactBootstrap.Navbar.Brand,
 	        null,
 	        _react2.default.createElement(
-	          _reactBootstrap.Navbar.Brand,
-	          null,
-	          _react2.default.createElement(
-	            _reactRouter.Link,
-	            { to: 'home' },
-	            'Deepak Prakash'
-	          )
+	          _reactRouter.Link,
+	          { to: 'home' },
+	          'Deepak Prakash'
 	        )
 	      ),
+	      _react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
+	    ),
+	    _react2.default.createElement(
+	      _reactBootstrap.Navbar.Collapse,
+	      null,
 	      _react2.default.createElement(
 	        _reactBootstrap.Nav,
 	        { pullRight: true },
@@ -28431,8 +28437,35 @@
 	          null,
 	          _react2.default.createElement(
 	            _reactRouter.Link,
+	            { to: 'skills' },
+	            'SKILLS'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: 'projects' },
+	            'PROJECTS'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
 	            { to: 'blog' },
 	            'BLOG'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: 'contact' },
+	            'CONTACT'
 	          )
 	        )
 	      )
@@ -48586,20 +48619,11 @@
 	                            { className: 'scroll-down-block' },
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
-	                                { xs: 12, smOffset: 4, sm: 4, mdOffset: 8, md: 2, className: 'scroll-down' },
+	                                { xs: 12, smOffset: 9, sm: 3, className: 'scroll-down' },
 	                                _react2.default.createElement(
 	                                    ScrollLink,
 	                                    { className: 'btn btn-default', activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
 	                                    'About'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                _reactBootstrap.Col,
-	                                { xs: 12, sm: 4, md: 2, className: 'scroll-down' },
-	                                _react2.default.createElement(
-	                                    ScrollLink,
-	                                    { className: 'btn btn-default', activeClass: 'active', to: 'skills', spy: true, smooth: true, offset: -50, duration: 500 },
-	                                    'Skills'
 	                                )
 	                            )
 	                        )
@@ -48817,46 +48841,7 @@
 	                ),
 	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
 	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
-	                }),
-	                _react2.default.createElement(_splitBar2.default, { text: 'Skills', iconName: 'star' }),
-	                _react2.default.createElement(
-	                    'section',
-	                    { className: 'container container-fluid ', id: 'skills' },
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Row,
-	                        null,
-	                        _react2.default.createElement(
-	                            _reactBootstrap.Col,
-	                            { sm: 12 },
-	                            _react2.default.createElement(
-	                                'p',
-	                                null,
-	                                ' My projects involve use of technologies such as:'
-	                            ),
-	                            _react2.default.createElement(
-	                                'section',
-	                                { className: "skills " + this.state.skillsModulesVisibleClass },
-	                                _react2.default.createElement(
-	                                    _reactLazyLoad2.default,
-	                                    { onContentVisible: function onContentVisible() {
-	                                            return _this2._animate("skillsModules");
-	                                        }, offset: -100, throttle: 0 },
-	                                    _react2.default.createElement(_listSkills2.default, null)
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'p',
-	                                null,
-	                                'I am self learner, love web technologies, have passion for what I do, and hope to do this forever.'
-	                            ),
-	                            _react2.default.createElement(
-	                                _reactBootstrap.Button,
-	                                null,
-	                                'Download Resume'
-	                            )
-	                        )
-	                    )
-	                )
+	                })
 	            );
 	        }
 	    }]);
@@ -50078,7 +50063,7 @@
 									key: 'render',
 									value: function render() {
 													return _react2.default.createElement(
-																	'div',
+																	'main',
 																	{ id: 'contact' },
 																	_react2.default.createElement(
 																					_reactBootstrap.Row,
@@ -51785,6 +51770,146 @@
 	};
 	
 	exports.default = whatsNewListReducer;
+
+/***/ },
+/* 577 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(261);
+	
+	var _reactFontawesome = __webpack_require__(260);
+	
+	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+	
+	var _reactVisibilitySensor = __webpack_require__(541);
+	
+	var _reactVisibilitySensor2 = _interopRequireDefault(_reactVisibilitySensor);
+	
+	var _reactRouter = __webpack_require__(198);
+	
+	var _reactScroll = __webpack_require__(524);
+	
+	var _reactScroll2 = _interopRequireDefault(_reactScroll);
+	
+	var _reactLazyLoad = __webpack_require__(542);
+	
+	var _reactLazyLoad2 = _interopRequireDefault(_reactLazyLoad);
+	
+	var _listSkills = __webpack_require__(548);
+	
+	var _listSkills2 = _interopRequireDefault(_listSkills);
+	
+	var _splitBar = __webpack_require__(550);
+	
+	var _splitBar2 = _interopRequireDefault(_splitBar);
+	
+	var _testimonial = __webpack_require__(551);
+	
+	var _testimonial2 = _interopRequireDefault(_testimonial);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Skills = function (_Component) {
+	    _inherits(Skills, _Component);
+	
+	    function Skills(props) {
+	        _classCallCheck(this, Skills);
+	
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Skills).call(this, props));
+	
+	        _this.state = { devModulesVisibleClass: "", blogModulesVisibleClass: "", skillsModulesVisibleClass: "", testimonialVisibleClass: "" };
+	        return _this;
+	    }
+	
+	    _createClass(Skills, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {}
+	    }, {
+	        key: '_animate',
+	        value: function _animate(module) {
+	            if (module == "devModules") {
+	                this.setState({ devModulesVisibleClass: "devModulesVisible" });
+	            } else if (module == "blogModules") {
+	                this.setState({ blogModulesVisibleClass: "blogModulesVisible" });
+	            } else if (module == "skillsModules") {
+	                this.setState({ skillsModulesVisibleClass: "skillsModulesVisible" });
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+	
+	            return _react2.default.createElement(
+	                'main',
+	                { id: 'skills' },
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: 'container container-fluid ' },
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                ' My projects involve use of technologies such as:'
+	                            ),
+	                            _react2.default.createElement(
+	                                'section',
+	                                { className: "skills " + this.state.skillsModulesVisibleClass },
+	                                _react2.default.createElement(
+	                                    _reactLazyLoad2.default,
+	                                    { onContentVisible: function onContentVisible() {
+	                                            return _this2._animate("skillsModules");
+	                                        }, offset: -100, throttle: 0 },
+	                                    _react2.default.createElement(_listSkills2.default, null)
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'I am self learner, love web technologies, have passion for what I do, and hope to do this forever.'
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Button,
+	                                null,
+	                                'Download Resume'
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
+	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
+	                })
+	            );
+	        }
+	    }]);
+	
+	    return Skills;
+	}(_react.Component);
+	
+	exports.default = Skills;
 
 /***/ }
 /******/ ]);

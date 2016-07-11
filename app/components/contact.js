@@ -10,7 +10,7 @@ class Contact extends Component {
 
     render() {
         return  (
-	        	<div id="contact">
+	        	<main id="contact">
 	        		<Row className="container container-fluid">
 	        			<Col sm={8}>
 	        				<h1>Got a project ? or drop me a line ?</h1>
@@ -38,7 +38,7 @@ class Contact extends Component {
 							<p>deepak6sp@gmail.com</p>
 						</Col>
 					</Row>
-				</div>
+				</main>
         );
     }
 }

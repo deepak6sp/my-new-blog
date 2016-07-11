@@ -1,6 +1,22 @@
+html,body{
+	margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 #main{
+	min-height: 100%;
+	position: relative;
+}
+
+#MainLayout{
+	min-height: 100%;
 	.container{
 		max-width: 1024px;
+	}
+	.container-fluid{
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 }
 
@@ -107,10 +123,7 @@
 	background:$white;
 
 	position: relative;
-	.container{
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
+
 	
 	.skillsModulesVisible,.blogModulesVisible{
 		@include fadeInDown();
@@ -138,12 +151,10 @@
 	}
 }
 
-#contact{
-	background:$white;
+#blog,#skills,#contact{
 	position: relative;
+	border-top:1px solid $silver;
 }
-
-
 
 
 @media (min-width: $screen-sm-min) {
