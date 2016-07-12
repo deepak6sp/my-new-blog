@@ -68,7 +68,7 @@
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _index = __webpack_require__(574);
+	var _index = __webpack_require__(575);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -22785,7 +22785,7 @@
 	
 	var _Home2 = _interopRequireDefault(_Home);
 	
-	var _Skills = __webpack_require__(577);
+	var _Skills = __webpack_require__(552);
 	
 	var _Skills2 = _interopRequireDefault(_Skills);
 	
@@ -22793,11 +22793,11 @@
 	
 	var _about2 = _interopRequireDefault(_about);
 	
-	var _contact = __webpack_require__(552);
+	var _contact = __webpack_require__(553);
 	
 	var _contact2 = _interopRequireDefault(_contact);
 	
-	var _blogList = __webpack_require__(553);
+	var _blogList = __webpack_require__(554);
 	
 	var _blogList2 = _interopRequireDefault(_blogList);
 	
@@ -48579,6 +48579,18 @@
 	    }
 	
 	    _createClass(Home, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var navBar = document.getElementsByClassName("navbar")[0];
+	            navBar.classList.add("border-none");
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            var navBar = document.getElementsByClassName("navbar")[0];
+	            navBar.classList.remove("border-none");
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -48708,9 +48720,6 @@
 	    }
 	
 	    _createClass(About, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
 	        key: '_animate',
 	        value: function _animate(module) {
 	            if (module == "devModules") {
@@ -50028,6 +50037,143 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(261);
+	
+	var _reactFontawesome = __webpack_require__(260);
+	
+	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+	
+	var _reactVisibilitySensor = __webpack_require__(541);
+	
+	var _reactVisibilitySensor2 = _interopRequireDefault(_reactVisibilitySensor);
+	
+	var _reactRouter = __webpack_require__(198);
+	
+	var _reactScroll = __webpack_require__(524);
+	
+	var _reactScroll2 = _interopRequireDefault(_reactScroll);
+	
+	var _reactLazyLoad = __webpack_require__(542);
+	
+	var _reactLazyLoad2 = _interopRequireDefault(_reactLazyLoad);
+	
+	var _listSkills = __webpack_require__(548);
+	
+	var _listSkills2 = _interopRequireDefault(_listSkills);
+	
+	var _splitBar = __webpack_require__(550);
+	
+	var _splitBar2 = _interopRequireDefault(_splitBar);
+	
+	var _testimonial = __webpack_require__(551);
+	
+	var _testimonial2 = _interopRequireDefault(_testimonial);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Skills = function (_Component) {
+	    _inherits(Skills, _Component);
+	
+	    function Skills(props) {
+	        _classCallCheck(this, Skills);
+	
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Skills).call(this, props));
+	
+	        _this.state = { devModulesVisibleClass: "", blogModulesVisibleClass: "", skillsModulesVisibleClass: "", testimonialVisibleClass: "" };
+	        return _this;
+	    }
+	
+	    _createClass(Skills, [{
+	        key: '_animate',
+	        value: function _animate(module) {
+	            if (module == "devModules") {
+	                this.setState({ devModulesVisibleClass: "devModulesVisible" });
+	            } else if (module == "blogModules") {
+	                this.setState({ blogModulesVisibleClass: "blogModulesVisible" });
+	            } else if (module == "skillsModules") {
+	                this.setState({ skillsModulesVisibleClass: "skillsModulesVisible" });
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+	
+	            return _react2.default.createElement(
+	                'main',
+	                { id: 'skills' },
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: 'container container-fluid ' },
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                ' My projects involve use of technologies such as:'
+	                            ),
+	                            _react2.default.createElement(
+	                                'section',
+	                                { className: "skills " + this.state.skillsModulesVisibleClass },
+	                                _react2.default.createElement(
+	                                    _reactLazyLoad2.default,
+	                                    { onContentVisible: function onContentVisible() {
+	                                            return _this2._animate("skillsModules");
+	                                        }, offset: -100, throttle: 0 },
+	                                    _react2.default.createElement(_listSkills2.default, null)
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'I am self learner, love web technologies, have passion for what I do, and hope to do this forever.'
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Button,
+	                                null,
+	                                'Download Resume'
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
+	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
+	                })
+	            );
+	        }
+	    }]);
+	
+	    return Skills;
+	}(_react.Component);
+	
+	exports.default = Skills;
+
+/***/ },
+/* 553 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
 					value: true
 	});
 	
@@ -50057,9 +50203,6 @@
 					}
 	
 					_createClass(Contact, [{
-									key: 'componentDidMount',
-									value: function componentDidMount() {}
-					}, {
 									key: 'render',
 									value: function render() {
 													return _react2.default.createElement(
@@ -50151,7 +50294,7 @@
 	exports.default = Contact;
 
 /***/ },
-/* 553 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50162,7 +50305,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _axios = __webpack_require__(554);
+	var _axios = __webpack_require__(555);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
@@ -50172,11 +50315,11 @@
 	
 	var _reactBootstrap = __webpack_require__(261);
 	
-	var _searchBlog = __webpack_require__(572);
+	var _searchBlog = __webpack_require__(573);
 	
 	var _searchBlog2 = _interopRequireDefault(_searchBlog);
 	
-	var _index = __webpack_require__(573);
+	var _index = __webpack_require__(574);
 	
 	var _reactRedux = __webpack_require__(181);
 	
@@ -50206,6 +50349,7 @@
 	  _createClass(Blog, [{
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {
+	
 	      this.props.getBlogPosts();
 	    }
 	  }, {
@@ -50284,73 +50428,8 @@
 	              WhatsNewData
 	            )
 	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'container-fluid container' },
-	          _react2.default.createElement(
-	            _reactBootstrap.Row,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { sm: 4, className: 'blog-posts-search' },
-	              _react2.default.createElement(_searchBlog2.default, null)
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Row,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { sm: 9, className: 'blog-posts-section' },
-	              blogListData
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { sm: 3, className: 'latest-post-section' },
-	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                'Whats new'
-	              ),
-	              WhatsNewData
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'container-fluid container' },
-	          _react2.default.createElement(
-	            _reactBootstrap.Row,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { sm: 4, className: 'blog-posts-search' },
-	              _react2.default.createElement(_searchBlog2.default, null)
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactBootstrap.Row,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { sm: 9, className: 'blog-posts-section' },
-	              blogListData
-	            ),
-	            _react2.default.createElement(
-	              _reactBootstrap.Col,
-	              { sm: 3, className: 'latest-post-section' },
-	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                'Whats new'
-	              ),
-	              WhatsNewData
-	            )
-	          )
 	        )
 	      );
-	      //return <div>adsasd</div>;
 	    }
 	  }]);
 	
@@ -50371,25 +50450,25 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Blog);
 
 /***/ },
-/* 554 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(555);
+	module.exports = __webpack_require__(556);
 
 /***/ },
-/* 555 */
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var defaults = __webpack_require__(556);
-	var utils = __webpack_require__(557);
-	var dispatchRequest = __webpack_require__(558);
-	var InterceptorManager = __webpack_require__(567);
-	var isAbsoluteURL = __webpack_require__(568);
-	var combineURLs = __webpack_require__(569);
-	var bind = __webpack_require__(570);
-	var transformData = __webpack_require__(562);
+	var defaults = __webpack_require__(557);
+	var utils = __webpack_require__(558);
+	var dispatchRequest = __webpack_require__(559);
+	var InterceptorManager = __webpack_require__(568);
+	var isAbsoluteURL = __webpack_require__(569);
+	var combineURLs = __webpack_require__(570);
+	var bind = __webpack_require__(571);
+	var transformData = __webpack_require__(563);
 	
 	function Axios(defaultConfig) {
 	  this.defaults = utils.merge({}, defaultConfig);
@@ -50475,7 +50554,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(571);
+	axios.spread = __webpack_require__(572);
 	
 	// Provide aliases for supported request methods
 	utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
@@ -50503,12 +50582,12 @@
 
 
 /***/ },
-/* 556 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(557);
+	var utils = __webpack_require__(558);
 	
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -50575,7 +50654,7 @@
 
 
 /***/ },
-/* 557 */
+/* 558 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -50847,7 +50926,7 @@
 
 
 /***/ },
-/* 558 */
+/* 559 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -50869,10 +50948,10 @@
 	        adapter = config.adapter;
 	      } else if (typeof XMLHttpRequest !== 'undefined') {
 	        // For browsers use XHR adapter
-	        adapter = __webpack_require__(559);
+	        adapter = __webpack_require__(560);
 	      } else if (typeof process !== 'undefined') {
 	        // For node use HTTP adapter
-	        adapter = __webpack_require__(559);
+	        adapter = __webpack_require__(560);
 	      }
 	
 	      if (typeof adapter === 'function') {
@@ -50888,18 +50967,18 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 559 */
+/* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
-	var utils = __webpack_require__(557);
-	var buildURL = __webpack_require__(560);
-	var parseHeaders = __webpack_require__(561);
-	var transformData = __webpack_require__(562);
-	var isURLSameOrigin = __webpack_require__(563);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(564);
-	var settle = __webpack_require__(565);
+	var utils = __webpack_require__(558);
+	var buildURL = __webpack_require__(561);
+	var parseHeaders = __webpack_require__(562);
+	var transformData = __webpack_require__(563);
+	var isURLSameOrigin = __webpack_require__(564);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(565);
+	var settle = __webpack_require__(566);
 	
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  var requestData = config.data;
@@ -50996,7 +51075,7 @@
 	  // This is only done if running in a standard browser environment.
 	  // Specifically not if we're in a web worker, or react-native.
 	  if (utils.isStandardBrowserEnv()) {
-	    var cookies = __webpack_require__(566);
+	    var cookies = __webpack_require__(567);
 	
 	    // Add xsrf header
 	    var xsrfValue = config.withCredentials || isURLSameOrigin(config.url) ?
@@ -51057,12 +51136,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 560 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(557);
+	var utils = __webpack_require__(558);
 	
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -51130,12 +51209,12 @@
 
 
 /***/ },
-/* 561 */
+/* 562 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(557);
+	var utils = __webpack_require__(558);
 	
 	/**
 	 * Parse headers into an object
@@ -51173,12 +51252,12 @@
 
 
 /***/ },
-/* 562 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(557);
+	var utils = __webpack_require__(558);
 	
 	/**
 	 * Transform the data for a request or a response
@@ -51199,12 +51278,12 @@
 
 
 /***/ },
-/* 563 */
+/* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(557);
+	var utils = __webpack_require__(558);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -51273,7 +51352,7 @@
 
 
 /***/ },
-/* 564 */
+/* 565 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51315,7 +51394,7 @@
 
 
 /***/ },
-/* 565 */
+/* 566 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51339,12 +51418,12 @@
 
 
 /***/ },
-/* 566 */
+/* 567 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(557);
+	var utils = __webpack_require__(558);
 	
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -51398,12 +51477,12 @@
 
 
 /***/ },
-/* 567 */
+/* 568 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var utils = __webpack_require__(557);
+	var utils = __webpack_require__(558);
 	
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -51456,7 +51535,7 @@
 
 
 /***/ },
-/* 568 */
+/* 569 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51476,7 +51555,7 @@
 
 
 /***/ },
-/* 569 */
+/* 570 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51494,7 +51573,7 @@
 
 
 /***/ },
-/* 570 */
+/* 571 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51511,7 +51590,7 @@
 
 
 /***/ },
-/* 571 */
+/* 572 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51544,7 +51623,7 @@
 
 
 /***/ },
-/* 572 */
+/* 573 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51569,7 +51648,7 @@
 	
 	var _redux = __webpack_require__(168);
 	
-	var _index = __webpack_require__(573);
+	var _index = __webpack_require__(574);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -51629,7 +51708,7 @@
 	exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(SearchBlog);
 
 /***/ },
-/* 573 */
+/* 574 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51641,7 +51720,7 @@
 	exports.getBlogPosts = getBlogPosts;
 	exports.getBlogPostsBasedOnSearchTerm = getBlogPostsBasedOnSearchTerm;
 	
-	var _axios = __webpack_require__(554);
+	var _axios = __webpack_require__(555);
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
@@ -51667,7 +51746,7 @@
 	}
 
 /***/ },
-/* 574 */
+/* 575 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51678,11 +51757,11 @@
 	
 	var _redux = __webpack_require__(168);
 	
-	var _reducer_searchBlogList = __webpack_require__(575);
+	var _reducer_searchBlogList = __webpack_require__(576);
 	
 	var _reducer_searchBlogList2 = _interopRequireDefault(_reducer_searchBlogList);
 	
-	var _reducer_whatsNewList = __webpack_require__(576);
+	var _reducer_whatsNewList = __webpack_require__(577);
 	
 	var _reducer_whatsNewList2 = _interopRequireDefault(_reducer_whatsNewList);
 	
@@ -51697,7 +51776,7 @@
 	exports.default = RootReducer;
 
 /***/ },
-/* 575 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -51706,7 +51785,7 @@
 		value: true
 	});
 	
-	var _index = __webpack_require__(573);
+	var _index = __webpack_require__(574);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -51757,7 +51836,7 @@
 	exports.default = SearchBlogListReducer;
 
 /***/ },
-/* 576 */
+/* 577 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -51770,146 +51849,6 @@
 	};
 	
 	exports.default = whatsNewListReducer;
-
-/***/ },
-/* 577 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactBootstrap = __webpack_require__(261);
-	
-	var _reactFontawesome = __webpack_require__(260);
-	
-	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
-	
-	var _reactVisibilitySensor = __webpack_require__(541);
-	
-	var _reactVisibilitySensor2 = _interopRequireDefault(_reactVisibilitySensor);
-	
-	var _reactRouter = __webpack_require__(198);
-	
-	var _reactScroll = __webpack_require__(524);
-	
-	var _reactScroll2 = _interopRequireDefault(_reactScroll);
-	
-	var _reactLazyLoad = __webpack_require__(542);
-	
-	var _reactLazyLoad2 = _interopRequireDefault(_reactLazyLoad);
-	
-	var _listSkills = __webpack_require__(548);
-	
-	var _listSkills2 = _interopRequireDefault(_listSkills);
-	
-	var _splitBar = __webpack_require__(550);
-	
-	var _splitBar2 = _interopRequireDefault(_splitBar);
-	
-	var _testimonial = __webpack_require__(551);
-	
-	var _testimonial2 = _interopRequireDefault(_testimonial);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Skills = function (_Component) {
-	    _inherits(Skills, _Component);
-	
-	    function Skills(props) {
-	        _classCallCheck(this, Skills);
-	
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Skills).call(this, props));
-	
-	        _this.state = { devModulesVisibleClass: "", blogModulesVisibleClass: "", skillsModulesVisibleClass: "", testimonialVisibleClass: "" };
-	        return _this;
-	    }
-	
-	    _createClass(Skills, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
-	        key: '_animate',
-	        value: function _animate(module) {
-	            if (module == "devModules") {
-	                this.setState({ devModulesVisibleClass: "devModulesVisible" });
-	            } else if (module == "blogModules") {
-	                this.setState({ blogModulesVisibleClass: "blogModulesVisible" });
-	            } else if (module == "skillsModules") {
-	                this.setState({ skillsModulesVisibleClass: "skillsModulesVisible" });
-	            }
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-	
-	            return _react2.default.createElement(
-	                'main',
-	                { id: 'skills' },
-	                _react2.default.createElement(
-	                    'section',
-	                    { className: 'container container-fluid ' },
-	                    _react2.default.createElement(
-	                        _reactBootstrap.Row,
-	                        null,
-	                        _react2.default.createElement(
-	                            _reactBootstrap.Col,
-	                            { sm: 12 },
-	                            _react2.default.createElement(
-	                                'p',
-	                                null,
-	                                ' My projects involve use of technologies such as:'
-	                            ),
-	                            _react2.default.createElement(
-	                                'section',
-	                                { className: "skills " + this.state.skillsModulesVisibleClass },
-	                                _react2.default.createElement(
-	                                    _reactLazyLoad2.default,
-	                                    { onContentVisible: function onContentVisible() {
-	                                            return _this2._animate("skillsModules");
-	                                        }, offset: -100, throttle: 0 },
-	                                    _react2.default.createElement(_listSkills2.default, null)
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'p',
-	                                null,
-	                                'I am self learner, love web technologies, have passion for what I do, and hope to do this forever.'
-	                            ),
-	                            _react2.default.createElement(
-	                                _reactBootstrap.Button,
-	                                null,
-	                                'Download Resume'
-	                            )
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
-	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
-	                })
-	            );
-	        }
-	    }]);
-	
-	    return Skills;
-	}(_react.Component);
-	
-	exports.default = Skills;
 
 /***/ }
 /******/ ]);

@@ -16,8 +16,6 @@ class Skills extends Component {
         super(props);
         this.state = {devModulesVisibleClass: "", blogModulesVisibleClass:"", skillsModulesVisibleClass:"", testimonialVisibleClass:""};
     }
-    componentDidMount(){
-    }
     _animate(module){
         if( module == "devModules" ){
             this.setState({ devModulesVisibleClass:"devModulesVisible"});

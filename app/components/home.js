@@ -15,7 +15,14 @@ class Home extends Component {
         super(props);
         window.scrollTo(0,0);
     }
-   
+    componentDidMount(){
+        var navBar= document.getElementsByClassName("navbar")[0];
+        navBar.classList.add("border-none");   
+    }
+    componentWillUnmount(){
+        var navBar= document.getElementsByClassName("navbar")[0];
+        navBar.classList.remove("border-none");   
+    }
     render() {
         return  (
             <main id="home">

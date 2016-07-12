@@ -15,7 +15,6 @@ html,body{
 		max-width: 1024px;
 	}
 	.container-fluid{
-		padding-top: 20px;
 		padding-bottom: 20px;
 	}
 }
@@ -153,7 +152,11 @@ html,body{
 
 #blog,#skills,#contact{
 	position: relative;
-	border-top:1px solid $silver;
+	padding-top: 100px;
+	.container-fluid{
+		
+	}
+	
 }
 
 
@@ -164,6 +167,12 @@ html,body{
 
 	.devModulesVisible {
 	   @include fadeInLeft();
+	}
+
+	#contact{
+		button[type="submit"]{
+			margin-bottom: 50px;
+		}
 	}
 
 }
@@ -183,4 +192,7 @@ html,body{
 	}
 
 }
+
+
+
 

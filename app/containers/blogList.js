@@ -16,6 +16,7 @@ class Blog extends Component {
     }
 
     componentWillMount() {
+        
         this.props.getBlogPosts();
     }
 
@@ -55,41 +56,9 @@ class Blog extends Component {
                   </Col>
               </Row>
             </div>
-             <div className="container-fluid container">
-              <Row>
-                <Col sm={4} className="blog-posts-search">
-                  <SearchBlog />
-                </Col>
-              </Row>
-              <Row>
-                  <Col sm={9} className="blog-posts-section">
-                       { blogListData }
-                  </Col>
-                  <Col sm={3} className="latest-post-section">
-                        <h1>Whats new</h1>
-                        { WhatsNewData }
-                  </Col>
-              </Row>
-            </div>
-             <div className="container-fluid container">
-              <Row>
-                <Col sm={4} className="blog-posts-search">
-                  <SearchBlog />
-                </Col>
-              </Row>
-              <Row>
-                  <Col sm={9} className="blog-posts-section">
-                       { blogListData }
-                  </Col>
-                  <Col sm={3} className="latest-post-section">
-                        <h1>Whats new</h1>
-                        { WhatsNewData }
-                  </Col>
-              </Row>
-            </div>
+             
           </main>
         );
-        //return <div>adsasd</div>;
     }
 }
 

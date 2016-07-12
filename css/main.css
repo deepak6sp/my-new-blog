@@ -14183,9 +14183,12 @@ h4 {
     background-color: #fc4850;
     color: #ffffff; }
 
+.border-none {
+  border: none; }
+
 .navbar-default {
   background-color: transparent;
-  border: none; }
+  padding-bottom: 20px; }
   .navbar-default .navbar-brand {
     font-family: "Kaushan Script", cursive, "Helvetica Neue", Helvetica, Arial;
     color: #FC575E; }
@@ -14282,7 +14285,6 @@ h4 {
 
 .navbar-inverse {
   background-color: #222222;
-  border: none;
   border-radius: 0px;
   margin-bottom: 0px;
   transition: all 0.5s ease; }
@@ -14414,7 +14416,6 @@ html, body {
   #MainLayout .container {
     max-width: 1024px; }
   #MainLayout .container-fluid {
-    padding-top: 20px;
     padding-bottom: 20px; }
 
 #header .home_bg {
@@ -14680,7 +14681,7 @@ html, body {
 
 #blog, #skills, #contact {
   position: relative;
-  border-top: 1px solid #F0F1F5; }
+  padding-top: 100px; }
 
 @media (min-width: 768px) {
   .home_bg, .myInfo {
@@ -14720,7 +14721,9 @@ html, body {
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
-    backface-visibility: hidden; } }
+    backface-visibility: hidden; }
+  #contact button[type="submit"] {
+    margin-bottom: 50px; } }
 
 @media only screen and (max-width: 767px) {
   .home_bg, .myInfo {
