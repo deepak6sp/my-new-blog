@@ -14731,13 +14731,13 @@ html, body {
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
-    backface-visibility: hidden; }
-  #contact button[type="submit"] {
-    margin-bottom: 50px; } }
+    backface-visibility: hidden; } }
 
 @media only screen and (max-width: 767px) {
   .home_bg, .myInfo {
     height: 700px; }
+    .home_bg .myName:before, .home_bg .myName:after, .myInfo .myName:before, .myInfo .myName:after {
+      display: none; }
   .devModulesVisible {
     -webkit-animation-name: fadeInUp;
     -moz-animation-name: fadeInUp;

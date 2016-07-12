@@ -131,11 +131,7 @@
 
 #blog,#skills,#contact{
 	position: relative;
-	padding-top: 100px;
-	.container-fluid{
-		
-	}
-	
+	padding-top: 100px;	
 }
 
 
@@ -148,17 +144,18 @@
 	   @include fadeInLeft();
 	}
 
-	#contact{
-		button[type="submit"]{
-			margin-bottom: 50px;
-		}
-	}
+	
 
 }
 
 @media only screen and (max-width: $screen-xs-max) {
 	.home_bg,.myInfo{
 		height:700px;
+		.myName{
+			&:before,&:after{
+				display: none;
+			}
+		}
 	}
 	.devModulesVisible {
 	   @include fadeInUp();
