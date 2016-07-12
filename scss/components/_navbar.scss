@@ -1,5 +1,7 @@
-.border-none{
-	border:none;
+.navbar-collapse-secondary{
+	background-color:$main-primary !important;
+	transition: all 0.5s ease;
+	opacity: 0.9;
 }
 .navbar-default{
 	background-color: transparent;
@@ -34,7 +36,12 @@
 		}
 		&:hover{
 			color:darken($red, 10%) ;
-			@include pulse();
+			
+		}
+	}
+	.navbar-toggle{
+		&:focus{
+			background: transparent;
 		}
 	}
 }
@@ -109,10 +116,22 @@
 	}
 }
 
+@media (min-width: $screen-sm-min) {
+	.navbar-nav > li > a{
+		&:hover{
+			@include pulse();
+		}
+}
+}
+
+
 @media only screen and (max-width: $screen-xs-max) {
 	.navbar-default{
-		.navbar-collapse.in{
-			background: $white;
+		.navbar-collapse{
+			    margin-top: 20px;
 		}
+		
 	}
+
+
 }

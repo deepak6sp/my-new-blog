@@ -1,0 +1,7 @@
+#contact{
+	@media (min-width: $screen-sm-min) {
+		button[type="submit"]{
+			margin-bottom: 50px;
+		}
+	}
+}

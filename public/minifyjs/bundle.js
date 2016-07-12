@@ -28354,6 +28354,11 @@
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            window.addEventListener('scroll', this._handleScroll);
+	            var toggleNavbar = document.getElementsByClassName("navbar-toggle")[0];
+	            var navBar = document.getElementsByClassName("navbar")[0];
+	            toggleNavbar.onclick = function () {
+	                navBar.classList.toggle("navbar-collapse-secondary");
+	            };
 	        }
 	    }, {
 	        key: 'componentWillUnmount',

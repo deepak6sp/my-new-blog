@@ -8,6 +8,7 @@
 @import "config/globals";
 @import "config/mixins";
 //@import "config/animation";
+@import "common/common";
 @import "components/navbar";
 @import "components/footer";
 @import "components/social_links";
@@ -15,6 +16,8 @@
 @import "components/testimonial";
 @import "specifics/home";
 @import "specifics/blog";
+@import "specifics/skills";
+@import "specifics/contact";
 
 
 

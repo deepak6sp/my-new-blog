@@ -14183,8 +14183,29 @@ h4 {
     background-color: #fc4850;
     color: #ffffff; }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+#main {
+  min-height: 100%;
+  position: relative; }
+
+#MainLayout {
+  min-height: 100%; }
+  #MainLayout .container {
+    max-width: 1024px; }
+  #MainLayout .container-fluid {
+    padding-bottom: 20px; }
+
 .border-none {
   border: none; }
+
+.navbar-collapse-secondary {
+  background-color: #222222 !important;
+  transition: all 0.5s ease;
+  opacity: 0.9; }
 
 .navbar-default {
   background-color: transparent;
@@ -14246,42 +14267,9 @@ h4 {
     .navbar-default .navbar-nav > li > a:focus {
       color: #FC575E; }
     .navbar-default .navbar-nav > li > a:hover {
-      color: #fb252e;
-      -webkit-animation-name: pulse;
-      -moz-animation-name: pulse;
-      -ms-animation-name: pulse;
-      -o-animation-name: pulse;
-      animation-name: pulse;
-      -webkit-animation-iteration-count: 1;
-      -moz-animation-iteration-count: 1;
-      -ms-animation-iteration-count: 1;
-      -o-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-duration: 1s;
-      -moz-animation-duration: 1s;
-      -ms-animation-duration: 1s;
-      -o-animation-duration: 1s;
-      animation-duration: 1s;
-      -webkit-animation-delay: 0s;
-      -moz-animation-delay: 0s;
-      -ms-animation-delay: 0s;
-      -o-animation-delay: 0s;
-      animation-delay: 0s;
-      -webkit-animation-timing-function: ease;
-      -moz-animation-timing-function: ease;
-      -ms-animation-timing-function: ease;
-      -o-animation-timing-function: ease;
-      animation-timing-function: ease;
-      -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      -ms-animation-fill-mode: both;
-      -o-animation-fill-mode: both;
-      animation-fill-mode: both;
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      -ms-backface-visibility: hidden;
-      -o-backface-visibility: hidden;
-      backface-visibility: hidden; }
+      color: #fb252e; }
+  .navbar-default .navbar-toggle:focus {
+    background: transparent; }
 
 .navbar-inverse {
   background-color: #222222;
@@ -14333,9 +14321,47 @@ h4 {
       color: #ffffff;
       background-color: #151515; }
 
+@media (min-width: 768px) {
+  .navbar-nav > li > a:hover {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -ms-animation-name: pulse;
+    -o-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; } }
+
 @media only screen and (max-width: 767px) {
-  .navbar-default .navbar-collapse.in {
-    background: #ffffff; } }
+  .navbar-default .navbar-collapse {
+    margin-top: 20px; } }
 
 .footer {
   height: 50px;
@@ -14401,22 +14427,6 @@ h4 {
     text-align: center; }
     .testimonial .quotation span {
       margin-left: 10px; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%; }
-
-#main {
-  min-height: 100%;
-  position: relative; }
-
-#MainLayout {
-  min-height: 100%; }
-  #MainLayout .container {
-    max-width: 1024px; }
-  #MainLayout .container-fluid {
-    padding-bottom: 20px; }
 
 #header .home_bg {
   background-image: linear-gradient(rgba(29, 31, 33, 0.5), rgba(29, 31, 33, 0.5)), url("main_bg.jpg");
@@ -14769,5 +14779,9 @@ html, body {
     left: 0;
     right: 0;
     margin: auto; } }
+
+@media (min-width: 768px) {
+  #contact button[type="submit"] {
+    margin-bottom: 50px; } }
 
 /*# sourceMappingURL=maps/main.css.map */

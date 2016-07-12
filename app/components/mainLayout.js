@@ -33,6 +33,11 @@ class MainLayout extends Component {
     }
     componentDidMount() {
         window.addEventListener('scroll', this._handleScroll);
+        var toggleNavbar = document.getElementsByClassName("navbar-toggle")[0];
+        var navBar= document.getElementsByClassName("navbar")[0];
+        toggleNavbar.onclick = () => {
+            navBar.classList.toggle("navbar-collapse-secondary");
+        }
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this._handleScroll);
