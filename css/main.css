@@ -14308,7 +14308,7 @@ html, body {
     .navbar-inverse .navbar-nav li a:hover {
       cursor: pointer;
       color: #ffffff;
-      background-color: #44BBFF; }
+      background-color: #FC575E; }
     .navbar-inverse .navbar-nav li a:focus {
       outline: none; }
   .navbar-inverse .navbar-nav li.active a {
@@ -14322,7 +14322,7 @@ html, body {
       background-color: #151515; }
 
 @media (min-width: 768px) {
-  .navbar-nav > li > a:hover {
+  .navbar-default .navbar-nav > li > a:hover {
     -webkit-animation-name: pulse;
     -moz-animation-name: pulse;
     -ms-animation-name: pulse;
