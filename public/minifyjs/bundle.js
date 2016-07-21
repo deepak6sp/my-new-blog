@@ -28339,15 +28339,9 @@
 	            if (scrollTop > range) {
 	                navBar.classList.add("navbar-inverse");
 	                navBar.classList.remove("navbar-default");
-	                if (bgImage != undefined) {
-	                    bgImage.classList.add("blurred");
-	                }
 	            } else {
 	                navBar.classList.remove("navbar-inverse");
 	                navBar.classList.add("navbar-default");
-	                if (bgImage != undefined) {
-	                    bgImage.classList.remove("blurred");
-	                }
 	            }
 	        }
 	    }, {
@@ -48604,43 +48598,46 @@
 	                _react2.default.createElement(
 	                    'header',
 	                    { id: 'header' },
-	                    _react2.default.createElement('div', { className: 'home_bg' }),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'myInfo container-fluid container' },
+	                        { className: 'home_bg' },
 	                        _react2.default.createElement(
-	                            _reactBootstrap.Row,
-	                            null,
+	                            'div',
+	                            { className: 'myInfo container-fluid container' },
 	                            _react2.default.createElement(
-	                                _reactBootstrap.Col,
-	                                { xs: 12, sm: 8, smOffset: 4 },
+	                                _reactBootstrap.Row,
+	                                null,
 	                                _react2.default.createElement(
-	                                    'h1',
-	                                    { className: 'greetings' },
-	                                    'Hey'
-	                                ),
-	                                _react2.default.createElement(
-	                                    'h3',
-	                                    { className: 'myName' },
-	                                    'I\'m Deepak'
-	                                ),
-	                                _react2.default.createElement(
-	                                    'div',
-	                                    { className: 'profile' },
-	                                    'UI and Front End Developer based in Melbourne, Australia. While I specialize in Front end, I do a lot of work on Javascript and Node technologies developing rich web applications.'
+	                                    _reactBootstrap.Col,
+	                                    { xs: 10, xsOffset: 1, sm: 8, smOffset: 3 },
+	                                    _react2.default.createElement(
+	                                        'h1',
+	                                        { className: 'greetings' },
+	                                        'Hello'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'h3',
+	                                        { className: 'myName' },
+	                                        'I\'m Deepak'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'profile' },
+	                                        'UI and Front End Developer based in Melbourne, Australia. While I specialize in Front end, I do a lot of work on Javascript and Node technologies developing rich web applications.'
+	                                    )
 	                                )
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            _reactBootstrap.Row,
-	                            { className: 'scroll-down-block' },
+	                            ),
 	                            _react2.default.createElement(
-	                                _reactBootstrap.Col,
-	                                { xs: 12, smOffset: 9, sm: 3, className: 'scroll-down' },
+	                                _reactBootstrap.Row,
+	                                { className: 'scroll-down-block' },
 	                                _react2.default.createElement(
-	                                    ScrollLink,
-	                                    { className: 'btn btn-default', activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
-	                                    'About'
+	                                    _reactBootstrap.Col,
+	                                    { xs: 10, xsOffset: 1, smOffset: 8, sm: 3, className: 'scroll-down' },
+	                                    _react2.default.createElement(
+	                                        ScrollLink,
+	                                        { className: 'btn btn-default', activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
+	                                        'About'
+	                                    )
 	                                )
 	                            )
 	                        )
@@ -48852,10 +48849,7 @@
 	                        { to: 'blog', className: 'btn btn-default' },
 	                        'Visit Blog'
 	                    )
-	                ),
-	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
-	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
-	                })
+	                )
 	            );
 	        }
 	    }]);
@@ -50099,6 +50093,7 @@
 	
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Skills).call(this, props));
 	
+	        window.scrollTo(0, 0);
 	        _this.state = { devModulesVisibleClass: "", blogModulesVisibleClass: "", skillsModulesVisibleClass: "", testimonialVisibleClass: "" };
 	        return _this;
 	    }
@@ -50159,10 +50154,7 @@
 	                            )
 	                        )
 	                    )
-	                ),
-	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
-	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
-	                })
+	                )
 	            );
 	        }
 	    }]);
@@ -50204,7 +50196,10 @@
 					function Contact(props) {
 									_classCallCheck(this, Contact);
 	
-									return _possibleConstructorReturn(this, Object.getPrototypeOf(Contact).call(this, props));
+									var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Contact).call(this, props));
+	
+									window.scrollTo(0, 0);
+									return _this;
 					}
 	
 					_createClass(Contact, [{

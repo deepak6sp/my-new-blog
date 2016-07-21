@@ -27,26 +27,27 @@ class Home extends Component {
         return  (
             <main id="home">
                 <header id="header" >
-                    <div className="home_bg"></div>
-                    <div className="myInfo container-fluid container">
-                        <Row >
-                            <Col xs={12} sm={8} smOffset={4}>
-                                <h1 className="greetings">Hey</h1>
-                        		<h3 className="myName">I'm Deepak</h3>
-                        		<div className="profile">
-                                    UI and Front End Developer based in Melbourne, Australia.
-                                    While I specialize in Front end, I do a lot of work on Javascript and Node technologies
-                                    developing rich web applications.
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row className="scroll-down-block">
-                            <Col xs={12} smOffset={9} sm={3} className="scroll-down">
-                                <ScrollLink className="btn btn-default" activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500} >
-                                    About
-                                </ScrollLink>
-                            </Col>
-                        </Row>
+                    <div className="home_bg">
+                        <div className="myInfo container-fluid container">
+                            <Row >
+                                <Col xs={10} xsOffset={1} sm={8} smOffset={3}>
+                                    <h1 className="greetings">Hello</h1>
+                            		<h3 className="myName">I'm Deepak</h3>
+                            		<div className="profile">
+                                        UI and Front End Developer based in Melbourne, Australia.
+                                        While I specialize in Front end, I do a lot of work on Javascript and Node technologies
+                                        developing rich web applications.
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row className="scroll-down-block">
+                                <Col xs={10} xsOffset={1} smOffset={8} sm={3} className="scroll-down">
+                                    <ScrollLink className="btn btn-default" activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500} >
+                                        About
+                                    </ScrollLink>
+                                </Col>
+                            </Row>
+                        </div>
                     </div>
             	</header>
               

@@ -6,9 +6,10 @@
     ), url('main_bg.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
-		position: fixed;
+		background-attachment: fixed;
 	    width: 100%;
 		transition: 0.5s ease all;
+		transform: scale(1.25);
 		&.blurred {
 		    filter: blur(2px);
 		    -webkit-filter: blur(2px);
@@ -20,7 +21,7 @@
 		position: relative;
 	    text-align: center;
 	    color:$white;
-	    top:15rem;
+	    top:20rem;
 		@include bounceInDown();
 		// .avatar{
 		// 	background: url('avatar.jpg');
@@ -34,7 +35,7 @@
 		.greetings{
 			font-family: $arial;
 			font-style: italic;
-		    font-size: 5rem;
+		    font-size: 4rem;
 		    
 		    span{
 		    	color:$red;
@@ -43,7 +44,7 @@
 		.myName{
 			position: relative;
 			font-family: $arial;
-		    font-size: 4rem;
+		    font-size: 3rem;
 		    span{
 		    	color:$red;
 		    }
@@ -74,7 +75,7 @@
 		}
 	}
 	.scroll-down{
-		margin-top: 50px;
+		margin-top: 20px;
     	@include fadeInDown();
     	a {
     		width: 15rem;
@@ -94,7 +95,8 @@
     	}
 
     	
-	}		
+	}
+		
 }
 
 #about{
@@ -109,8 +111,9 @@
 	.fadeInLeft{
 		@include fadeInLeft();
 	}
-	.dev-modules,.skills,.blog{
+	.dev-modules,.skills{
 		opacity:0;
+		margin-bottom: 30px;
 		.fa{
 		   @include circle(80px);
 		    color: $white;
@@ -119,6 +122,9 @@
 		.fa-cogs{
 			transform: rotate(90deg);
 		}
+	}
+	.blog{
+		margin-bottom: 10px;
 	}
 	.panel{
 		margin-bottom: 0px;
@@ -134,6 +140,9 @@
 	padding-top: 100px;	
 }
 
+.btn-default{
+	margin-bottom: 50px;
+}
 
 @media (min-width: $screen-sm-min) {
 	.home_bg,.myInfo{
@@ -149,11 +158,16 @@
 }
 
 @media only screen and (max-width: $screen-xs-max) {
-	.home_bg,.myInfo{
-		height:700px;
-		.myName{
-			&:before,&:after{
-				display: none;
+	#header{
+		.home_bg,.myInfo{
+			height:700px;
+			.myName{
+				&:before,&:after{
+					display: none;
+				}
+			}
+			.profile{
+				font-size: 1.5rem;
 			}
 		}
 	}

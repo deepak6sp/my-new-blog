@@ -19,16 +19,10 @@ class MainLayout extends Component {
         if (scrollTop > range) {
             navBar.classList.add("navbar-inverse");
             navBar.classList.remove("navbar-default");
-            if(bgImage != undefined){
-                bgImage.classList.add("blurred");
-            }
         }
         else {
             navBar.classList.remove("navbar-inverse");
             navBar.classList.add("navbar-default");
-            if(bgImage != undefined){
-                bgImage.classList.remove("blurred");
-            }
         }
     }
     componentDidMount() {

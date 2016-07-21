@@ -14418,10 +14418,12 @@ html, body {
   display: flex;
   align-items: center;
   text-align: center;
-  height: 300px; }
+  height: 300px;
+  transform: scale(1.25); }
   .testimonial .quotation {
     line-height: 1.6em;
     color: #ffffff;
+    font-size: 1.4rem;
     font-weight: bold;
     font-style: italic;
     text-align: center; }
@@ -14432,9 +14434,10 @@ html, body {
   background-image: linear-gradient(rgba(29, 31, 33, 0.5), rgba(29, 31, 33, 0.5)), url("main_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  position: fixed;
+  background-attachment: fixed;
   width: 100%;
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  transform: scale(1.25); }
   #header .home_bg.blurred {
     filter: blur(2px);
     -webkit-filter: blur(2px); }
@@ -14443,7 +14446,7 @@ html, body {
   position: relative;
   text-align: center;
   color: #ffffff;
-  top: 15rem;
+  top: 20rem;
   -webkit-animation-name: bounceInDown;
   -moz-animation-name: bounceInDown;
   -ms-animation-name: bounceInDown;
@@ -14482,13 +14485,13 @@ html, body {
   #header .myInfo .greetings {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: italic;
-    font-size: 5rem; }
+    font-size: 4rem; }
     #header .myInfo .greetings span {
       color: #FC575E; }
   #header .myInfo .myName {
     position: relative;
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 4rem; }
+    font-size: 3rem; }
     #header .myInfo .myName span {
       color: #FC575E; }
     #header .myInfo .myName::before, #header .myInfo .myName::after {
@@ -14511,7 +14514,7 @@ html, body {
       color: #FC575E; }
 
 #header .scroll-down {
-  margin-top: 50px;
+  margin-top: 20px;
   -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
   -ms-animation-name: fadeInDown;
@@ -14670,9 +14673,10 @@ html, body {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden; }
-  #about .dev-modules, #about .skills, #about .blog {
-    opacity: 0; }
-    #about .dev-modules .fa, #about .skills .fa, #about .blog .fa {
+  #about .dev-modules, #about .skills {
+    opacity: 0;
+    margin-bottom: 30px; }
+    #about .dev-modules .fa, #about .skills .fa {
       width: 80px;
       height: 80px;
       line-height: 80px;
@@ -14681,8 +14685,10 @@ html, body {
       -webkit-border-radius: 80px;
       color: #ffffff;
       background: #FC575E; }
-    #about .dev-modules .fa-cogs, #about .skills .fa-cogs, #about .blog .fa-cogs {
+    #about .dev-modules .fa-cogs, #about .skills .fa-cogs {
       transform: rotate(90deg); }
+  #about .blog {
+    margin-bottom: 10px; }
   #about .panel {
     margin-bottom: 0px; }
     #about .panel .panel-heading {
@@ -14692,6 +14698,9 @@ html, body {
 #blog, #skills, #contact {
   position: relative;
   padding-top: 100px; }
+
+.btn-default {
+  margin-bottom: 50px; }
 
 @media (min-width: 768px) {
   .home_bg, .myInfo {
@@ -14734,10 +14743,12 @@ html, body {
     backface-visibility: hidden; } }
 
 @media only screen and (max-width: 767px) {
-  .home_bg, .myInfo {
+  #header .home_bg, #header .myInfo {
     height: 700px; }
-    .home_bg .myName:before, .home_bg .myName:after, .myInfo .myName:before, .myInfo .myName:after {
+    #header .home_bg .myName:before, #header .home_bg .myName:after, #header .myInfo .myName:before, #header .myInfo .myName:after {
       display: none; }
+    #header .home_bg .profile, #header .myInfo .profile {
+      font-size: 1.5rem; }
   .devModulesVisible {
     -webkit-animation-name: fadeInUp;
     -moz-animation-name: fadeInUp;
