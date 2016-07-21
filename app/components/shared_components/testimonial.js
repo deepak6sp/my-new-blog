@@ -8,7 +8,7 @@ const Testimonial = (props) => {
     	<section className="testimonial">
             <div className="container container-fluid">
                 <Row>
-                    <Col sm={6} smOffset={3} >
+                    <Col xs={10} xsOffset={1} sm={6} smOffset={3} >
                         <h4 className="quotation">
                         	<FontAwesome className='super-crazy-colors' name="quote-left" size='2x'/>
                         	<span>{props.text}</span>

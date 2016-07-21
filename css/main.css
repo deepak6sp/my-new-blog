@@ -14169,6 +14169,9 @@ h4 {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.6rem; }
 
+#main {
+  overflow: hidden; }
+
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -14178,7 +14181,8 @@ h4 {
 .btn-default {
   background-color: #FC575E;
   color: #ffffff;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 50px; }
   .btn-default:hover {
     background-color: #fc4850;
     color: #ffffff; }
@@ -14698,9 +14702,6 @@ html, body {
 #blog, #skills, #contact {
   position: relative;
   padding-top: 100px; }
-
-.btn-default {
-  margin-bottom: 50px; }
 
 @media (min-width: 768px) {
   .home_bg, .myInfo {

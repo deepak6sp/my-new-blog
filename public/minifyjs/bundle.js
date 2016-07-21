@@ -50003,7 +50003,7 @@
 	                null,
 	                _react2.default.createElement(
 	                    _reactBootstrap.Col,
-	                    { sm: 6, smOffset: 3 },
+	                    { xs: 10, xsOffset: 1, sm: 6, smOffset: 3 },
 	                    _react2.default.createElement(
 	                        'h4',
 	                        { className: 'quotation' },
