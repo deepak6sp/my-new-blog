@@ -14361,11 +14361,40 @@ html, body {
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
-    backface-visibility: hidden; } }
+    backface-visibility: hidden; }
+  .menuClose {
+    display: none; } }
 
 @media only screen and (max-width: 767px) {
   .navbar-default .navbar-collapse {
-    margin-top: 20px; } }
+    margin-top: 20px; }
+  .navbar-default .navbar-toggle:hover {
+    background-color: transparent; }
+  .menuClose {
+    display: none; }
+  .navbar-collapse-secondary .navbar-toggle span {
+    display: none; }
+  .navbar-collapse-secondary .menuClose {
+    position: absolute;
+    right: 15px;
+    top: 33px;
+    color: #dddddd;
+    border-color: #dddddd;
+    border: 1px solid #dddddd;
+    padding: 0px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; }
+    .navbar-collapse-secondary .menuClose:hover {
+      color: #222222; }
+  .navbar-collapse-secondary .navbar-toggle {
+    padding: 9px 10px 9px 33px;
+    height: 34px;
+    border-color: transparent; }
+  .navbar-inverse .menuClose {
+    top: 8px; }
+  .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background: transparent; } }
 
 .footer {
   height: 50px;
@@ -14748,6 +14777,8 @@ html, body {
     backface-visibility: hidden; } }
 
 @media only screen and (max-width: 767px) {
+  #header .home_bg {
+    background-attachment: scroll; }
   #header .home_bg, #header .myInfo {
     height: 700px; }
     #header .home_bg .myName:before, #header .home_bg .myName:after, #header .myInfo .myName:before, #header .myInfo .myName:after {
