@@ -48653,7 +48653,7 @@
 	                                    _react2.default.createElement(
 	                                        'div',
 	                                        { className: 'profile' },
-	                                        'UI and Front End Developer based in Melbourne, Australia. While I specialize in Front end, I do a lot of work on Javascript and Node technologies developing rich web applications.'
+	                                        'UI and Front End Developer based in Melbourne, Australia. While I specialize in Front end, I do a lot of work on Javascript and Node developing rich web applications.'
 	                                    )
 	                                )
 	                            ),
@@ -48662,11 +48662,11 @@
 	                                { className: 'scroll-down-block' },
 	                                _react2.default.createElement(
 	                                    _reactBootstrap.Col,
-	                                    { xs: 10, xsOffset: 1, smOffset: 8, sm: 3, className: 'scroll-down' },
+	                                    { xs: 10, xsOffset: 1, smOffset: 9, sm: 2, className: 'scroll-down' },
 	                                    _react2.default.createElement(
 	                                        ScrollLink,
 	                                        { className: 'btn btn-default', activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
-	                                        'About'
+	                                        'About me'
 	                                    )
 	                                )
 	                            )
@@ -48773,7 +48773,7 @@
 	                _react2.default.createElement(_splitBar2.default, { text: 'About me', link: '', iconName: 'user' }),
 	                _react2.default.createElement(
 	                    'section',
-	                    { className: 'container container-fluid ' },
+	                    { className: 'container container-fluid  about-me' },
 	                    _react2.default.createElement(
 	                        _reactBootstrap.Row,
 	                        null,
@@ -48781,10 +48781,31 @@
 	                            _reactBootstrap.Col,
 	                            { sm: 12 },
 	                            _react2.default.createElement(
+	                                'h2',
+	                                null,
+	                                ' Who I Am '
+	                            ),
+	                            _react2.default.createElement('hr', null),
+	                            _react2.default.createElement(
 	                                'p',
 	                                null,
-	                                'I am an IT graduate, freelance Web Developer having 4 years of user experience and front end development. I develop with skills of minimal usability designs and using core XHTML/HTML5, CSS3 and Javascript. Have experince working on PHP frameworks and have knowledge of ruby on rails. I love node technologies and how the way they have reformed the full stack development.'
+	                                ' I am a techsavy and freelance Web Developer having 5 years of experience mainly focusing on UI and front end development. I develop with skills of minimal usability designs and using core XHTML/HTML, CSS and Javascript. My coding follows resuable component based structure for easy maintanence, scaling and debugging. Have experince using PHP frameworks and knowledge of ruby on rails.'
 	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                'h2',
+	                                null,
+	                                ' What I Do '
+	                            ),
+	                            _react2.default.createElement('hr', null),
+	                            _react2.default.createElement('p', null)
 	                        )
 	                    ),
 	                    _react2.default.createElement(
@@ -48798,7 +48819,7 @@
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
 	                                { sm: 12, md: 4 },
-	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'mobile', size: '4x' }),
+	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'mobile', size: '3x' }),
 	                                _react2.default.createElement(
 	                                    'h4',
 	                                    null,
@@ -48813,7 +48834,7 @@
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
 	                                { sm: 12, md: 4 },
-	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'code', size: '3x' }),
+	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'code', size: '2x' }),
 	                                _react2.default.createElement(
 	                                    'h4',
 	                                    null,
@@ -48828,7 +48849,7 @@
 	                            _react2.default.createElement(
 	                                _reactBootstrap.Col,
 	                                { sm: 12, md: 4 },
-	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'cogs', size: '3x' }),
+	                                _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'cogs', size: '2x' }),
 	                                _react2.default.createElement(
 	                                    'h4',
 	                                    null,

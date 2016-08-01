@@ -35,15 +35,15 @@ class Home extends Component {
                             		<h3 className="myName">I'm Deepak</h3>
                             		<div className="profile">
                                         UI and Front End Developer based in Melbourne, Australia.
-                                        While I specialize in Front end, I do a lot of work on Javascript and Node technologies
+                                        While I specialize in Front end, I do a lot of work on Javascript and Node
                                         developing rich web applications.
                                     </div>
                                 </Col>
                             </Row>
                             <Row className="scroll-down-block">
-                                <Col xs={10} xsOffset={1} smOffset={8} sm={3} className="scroll-down">
+                                <Col xs={10} xsOffset={1} smOffset={9} sm={2} className="scroll-down">
                                     <ScrollLink className="btn btn-default" activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500} >
-                                        About
+                                        About me
                                     </ScrollLink>
                                 </Col>
                             </Row>

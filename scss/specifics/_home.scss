@@ -82,18 +82,16 @@
 		margin-top: 20px;
     	@include fadeInDown();
     	a {
-    		width: 15rem;
-		    height: 5rem;
-		    line-height: 3.5rem;
-		    font-size: 2rem;
-		    border:1px solid $red;
-		    background: transparent;
+		    height: 3rem;
+		    line-height: 2rem;
+		    font-size: 1.6rem;
+		    background: $red;
 		    color: $white;
+		    border: none;
     		&:hover{
     			cursor:pointer;
-    			background:$red;
+    			background:darken($red,10%);
     			color:$white;
-    			@include pulse();
     		}
     		
     	}
@@ -105,10 +103,22 @@
 
 #about{
 	background:$white;
-
 	position: relative;
+	hr{
+		height: 2px;
+	    width: 60px;
+	    background: $red;
+	    position: relative;
+	    border: 0;
+	    margin: 0;
+	}
 
-	
+	.about-me{
+		min-height: 100vh;
+		h2{
+			margin-top: 50px;
+		}
+	}
 	.skillsModulesVisible,.blogModulesVisible{
 		@include fadeInDown();
 	}
@@ -123,9 +133,6 @@
 		    color: $white;
 		    background: $red;
 		}
-		.fa-cogs{
-			transform: rotate(90deg);
-		}
 	}
 	.blog{
 		margin-bottom: 10px;
@@ -135,6 +142,11 @@
 		.panel-heading{
 			font-size: 1.6rem;
 			color: $red;
+		}
+	}
+	.fa{
+		&:hover{
+			@include pulse();
 		}
 	}
 }
@@ -148,6 +160,7 @@
 @media (min-width: $screen-sm-min) {
 	.home_bg,.myInfo{
 		height:100vh;
+		min-height: 600px;
 	}
 
 	.devModulesVisible {

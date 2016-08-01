@@ -10,9 +10,11 @@
 		background-repeat:no-repeat;
 		overflow: hidden;
 		display: flex;
+		display: -webkit-flex;
 	    align-items: center;
+	    -webkit-align-items: center;
 	    text-align: center;
-		height:300px;
+		min-height:300px;
 		transform: scale(1.25);
 		.quotation{
 			line-height:1.6em;

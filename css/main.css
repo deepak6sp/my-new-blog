@@ -14164,6 +14164,11 @@ li {
   line-height: 1.5;
   font-family: Vani, "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
 
+h2 {
+  font-size: 30px;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif; }
+
 h4 {
   color: #FC575E;
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -14449,9 +14454,11 @@ html, body {
   background-repeat: no-repeat;
   overflow: hidden;
   display: flex;
+  display: -webkit-flex;
   align-items: center;
+  -webkit-align-items: center;
   text-align: center;
-  height: 300px;
+  min-height: 300px;
   transform: scale(1.25); }
   .testimonial .quotation {
     line-height: 1.6em;
@@ -14588,56 +14595,31 @@ html, body {
   -o-backface-visibility: hidden;
   backface-visibility: hidden; }
   #header .scroll-down a {
-    width: 15rem;
-    height: 5rem;
-    line-height: 3.5rem;
-    font-size: 2rem;
-    border: 1px solid #FC575E;
-    background: transparent;
-    color: #ffffff; }
+    height: 3rem;
+    line-height: 2rem;
+    font-size: 1.6rem;
+    background: #FC575E;
+    color: #ffffff;
+    border: none; }
     #header .scroll-down a:hover {
       cursor: pointer;
-      background: #FC575E;
-      color: #ffffff;
-      -webkit-animation-name: pulse;
-      -moz-animation-name: pulse;
-      -ms-animation-name: pulse;
-      -o-animation-name: pulse;
-      animation-name: pulse;
-      -webkit-animation-iteration-count: 1;
-      -moz-animation-iteration-count: 1;
-      -ms-animation-iteration-count: 1;
-      -o-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-duration: 1s;
-      -moz-animation-duration: 1s;
-      -ms-animation-duration: 1s;
-      -o-animation-duration: 1s;
-      animation-duration: 1s;
-      -webkit-animation-delay: 0s;
-      -moz-animation-delay: 0s;
-      -ms-animation-delay: 0s;
-      -o-animation-delay: 0s;
-      animation-delay: 0s;
-      -webkit-animation-timing-function: ease;
-      -moz-animation-timing-function: ease;
-      -ms-animation-timing-function: ease;
-      -o-animation-timing-function: ease;
-      animation-timing-function: ease;
-      -webkit-animation-fill-mode: both;
-      -moz-animation-fill-mode: both;
-      -ms-animation-fill-mode: both;
-      -o-animation-fill-mode: both;
-      animation-fill-mode: both;
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      -ms-backface-visibility: hidden;
-      -o-backface-visibility: hidden;
-      backface-visibility: hidden; }
+      background: #fb252e;
+      color: #ffffff; }
 
 #about {
   background: #ffffff;
   position: relative; }
+  #about hr {
+    height: 2px;
+    width: 60px;
+    background: #FC575E;
+    position: relative;
+    border: 0;
+    margin: 0; }
+  #about .about-me {
+    min-height: 100vh; }
+    #about .about-me h2 {
+      margin-top: 50px; }
   #about .skillsModulesVisible, #about .blogModulesVisible {
     -webkit-animation-name: fadeInDown;
     -moz-animation-name: fadeInDown;
@@ -14722,8 +14704,6 @@ html, body {
       -webkit-border-radius: 80px;
       color: #ffffff;
       background: #FC575E; }
-    #about .dev-modules .fa-cogs, #about .skills .fa-cogs {
-      transform: rotate(90deg); }
   #about .blog {
     margin-bottom: 10px; }
   #about .panel {
@@ -14731,6 +14711,42 @@ html, body {
     #about .panel .panel-heading {
       font-size: 1.6rem;
       color: #FC575E; }
+  #about .fa:hover {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -ms-animation-name: pulse;
+    -o-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; }
 
 #blog, #skills, #contact {
   position: relative;
@@ -14738,7 +14754,8 @@ html, body {
 
 @media (min-width: 768px) {
   .home_bg, .myInfo {
-    height: 100vh; }
+    height: 100vh;
+    min-height: 600px; }
   .devModulesVisible {
     -webkit-animation-name: fadeInLeft;
     -moz-animation-name: fadeInLeft;

@@ -33,32 +33,40 @@ class About extends Component {
         return  (
         	<main id="about">
                 <SplitBar text="About me" link="" iconName="user" />
-                <section className="container container-fluid ">
+                <section className="container container-fluid  about-me">
                     <Row>
                         <Col sm={12}>
-                            <p>I am an IT graduate, freelance Web Developer having 4 years of user experience and front end development. 
-                                I develop with skills of minimal usability designs and using core XHTML/HTML5, CSS3 and Javascript. 
-                                Have experince working on PHP frameworks and have knowledge of ruby on rails. I love node technologies and how 
-                                the way they have reformed the full stack development.
+                            <h2> Who I Am </h2>
+                            <hr/>
+                            <p> I am a techsavy and freelance Web Developer having 5 years of experience mainly focusing on UI and front end development. 
+                                I develop with skills of minimal usability designs and using core XHTML/HTML, CSS and Javascript. My coding follows resuable 
+                                component based structure for easy maintanence, scaling and debugging. Have experince using PHP frameworks and knowledge of ruby on rails. 
                             </p>
+                        </Col>
+                    </Row>
+                     <Row>
+                        <Col sm={12}>
+                            <h2> What I Do </h2>
+                            <hr/>
+                            <p></p>
                         </Col>
                     </Row>
                     <LazyLoad onContentVisible={() => this._animate("devModules")} offsetTop={-100} throttle={0}>
                         <Row className={"text-center dev-modules " + this.state.devModulesVisibleClass}>
                             <Col sm={12} md={4}>
-                                <FontAwesome className='super-crazy-colors' name="mobile" size='4x'/>
+                                <FontAwesome className='super-crazy-colors' name="mobile" size='3x'/>
                                 <h4> Design and Wireframes </h4>
                                 <p> I use photoshop for designs and convert them to complete web solution. Recently, I have
                                    been using my favourite Google drawings for mockups and wireframes, and loving it.</p>
                             </Col>
                             <Col sm={12} md={4}>
-                                <FontAwesome className='super-crazy-colors' name="code" size='3x'/>
+                                <FontAwesome className='super-crazy-colors' name="code" size='2x'/>
                                 <h4> Development </h4>
                                 <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as 
                                 npm, bower, webpack, gulp, sass to speed up developement process.</p>
                             </Col>
                             <Col sm={12} md={4}>
-                                <FontAwesome className='super-crazy-colors' name="cogs" size='3x'/>
+                                <FontAwesome className='super-crazy-colors' name="cogs" size='2x'/>
                                 <h4> Testing </h4>
                                 <p> I consider testing to be as important as design and development, so I believe in Agile test driven development. Also, I will make sure the 
                                     web application works fine accross multi browsers and devices.</p>
