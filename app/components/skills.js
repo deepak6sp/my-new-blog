@@ -17,16 +17,6 @@ class Skills extends Component {
         window.scrollTo(0,0);
         this.state = {devModulesVisibleClass: "", blogModulesVisibleClass:"", skillsModulesVisibleClass:"", testimonialVisibleClass:""};
     }
-    _animate(module){
-        if( module == "devModules" ){
-            this.setState({ devModulesVisibleClass:"devModulesVisible"});
-        } else if ( module == "blogModules"){
-            this.setState({ blogModulesVisibleClass:"blogModulesVisible"});
-        } else if ( module == "skillsModules"){
-            this.setState({ skillsModulesVisibleClass:"skillsModulesVisible"});
-        }
-    }
-
 
     render() {
        
@@ -37,10 +27,8 @@ class Skills extends Component {
                     <Row>
                         <Col sm={12}>
                             <p> My projects involve use of technologies such as:</p>
-                            <section className={ "skills " + this.state.skillsModulesVisibleClass}>
-                                <LazyLoad onContentVisible={() => this._animate("skillsModules")} offset={-100} throttle={0}>
-                                    <ListSkills/>
-                                </LazyLoad>
+                            <section className="skillsModulesVisible">
+                                <ListSkills/>
                             </section>
                             <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
                             <Button>Download Resume</Button>

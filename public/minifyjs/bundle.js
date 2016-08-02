@@ -48462,7 +48462,12 @@
 	        _react2.default.createElement(
 	            'center',
 	            null,
-	            _react2.default.createElement(_socialLinks2.default, null)
+	            _react2.default.createElement(_socialLinks2.default, null),
+	            _react2.default.createElement(
+	                'p',
+	                null,
+	                '© Copyright 2016 Deepak Prakash. All rights reserved.'
+	            )
 	        )
 	    );
 	};
@@ -48870,7 +48875,21 @@
 	                _react2.default.createElement(_splitBar2.default, { text: 'About my blog', iconName: 'pencil' }),
 	                _react2.default.createElement(
 	                    'section',
-	                    { className: 'container container-fluid' },
+	                    { className: 'container container-fluid about-my-blog' },
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                'h2',
+	                                null,
+	                                ' What I Am Doing'
+	                            ),
+	                            _react2.default.createElement('hr', null)
+	                        )
+	                    ),
 	                    _react2.default.createElement(
 	                        _reactLazyLoad2.default,
 	                        { onContentVisible: function onContentVisible() {
@@ -50150,20 +50169,8 @@
 	    }
 	
 	    _createClass(Skills, [{
-	        key: '_animate',
-	        value: function _animate(module) {
-	            if (module == "devModules") {
-	                this.setState({ devModulesVisibleClass: "devModulesVisible" });
-	            } else if (module == "blogModules") {
-	                this.setState({ blogModulesVisibleClass: "blogModulesVisible" });
-	            } else if (module == "skillsModules") {
-	                this.setState({ skillsModulesVisibleClass: "skillsModulesVisible" });
-	            }
-	        }
-	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var _this2 = this;
 	
 	            return _react2.default.createElement(
 	                'main',
@@ -50184,14 +50191,8 @@
 	                            ),
 	                            _react2.default.createElement(
 	                                'section',
-	                                { className: "skills " + this.state.skillsModulesVisibleClass },
-	                                _react2.default.createElement(
-	                                    _reactLazyLoad2.default,
-	                                    { onContentVisible: function onContentVisible() {
-	                                            return _this2._animate("skillsModules");
-	                                        }, offset: -100, throttle: 0 },
-	                                    _react2.default.createElement(_listSkills2.default, null)
-	                                )
+	                                { className: 'skillsModulesVisible' },
+	                                _react2.default.createElement(_listSkills2.default, null)
 	                            ),
 	                            _react2.default.createElement(
 	                                'p',

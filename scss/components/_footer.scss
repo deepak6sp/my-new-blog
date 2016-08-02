@@ -1,8 +1,13 @@
 .footer{
-	height:50px;
 	background-color: $main-primary;
 	width: 100%;
 	position: absolute;
 	bottom:0;
 	left:0;
+	p{
+		color:$white;
+		position: relative;
+	    text-align: center;
+	    margin-top: 0px;
+	}
 }

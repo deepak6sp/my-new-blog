@@ -84,7 +84,7 @@
     	a {
 		    height: 3rem;
 		    line-height: 2rem;
-		    font-size: 1.6rem;
+		    font-size: 1.4rem;
 		    background: $red;
 		    color: $white;
 		    border: none;
@@ -119,8 +119,8 @@
 			margin-top: 50px;
 		}
 	}
-	.skillsModulesVisible,.blogModulesVisible{
-		@include fadeInDown();
+	.blogModulesVisible{
+		@include fadeInUp();
 	}
 	.fadeInLeft{
 		@include fadeInLeft();
@@ -134,9 +134,18 @@
 		    background: $red;
 		}
 	}
-	.blog{
-		margin-bottom: 10px;
+	.about-my-blog{
+		h2{
+			margin-top: 50px;
+		}
+		.blog{
+			margin-bottom: 10px;
+		}
+		.btn-default{
+			margin-bottom: 125px;
+		}
 	}
+	
 	.panel{
 		margin-bottom: 0px;
 		.panel-heading{
@@ -145,10 +154,21 @@
 		}
 	}
 	.fa{
+		-webkit-transition: 1s ease-in-out;
+	    -moz-transition: 1s ease-in-out;
+	    -o-transition: 1s ease-in-out;
+	    transition: 1s ease-in-out;
 		&:hover{
-			@include pulse();
+			-ms-transform: rotate(360deg); /* IE 9 */
+		    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+		    transform: rotate(360deg);
+
 		}
 	}
+}
+
+#skills{
+	@include fadeInUp();
 }
 
 #blog,#skills,#contact{

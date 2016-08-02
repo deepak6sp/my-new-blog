@@ -14183,13 +14183,15 @@ h4 {
   padding-left: 15px;
   padding-right: 15px; }
 
-.btn-default {
+.btn {
   background-color: #FC575E;
   color: #ffffff;
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-bottom: 50px; }
-  .btn-default:hover {
+  margin-bottom: 50px;
+  border-color: transparent; }
+  .btn:hover {
     background-color: #fc4850;
+    border-color: transparent;
     color: #ffffff; }
 
 html, body {
@@ -14275,8 +14277,51 @@ html, body {
     cursor: pointer; }
     .navbar-default .navbar-nav > li > a:focus {
       color: #FC575E; }
+    .navbar-default .navbar-nav > li > a:after {
+      content: "";
+      display: block;
+      height: 2px;
+      background-color: #FC575E;
+      width: 0; }
     .navbar-default .navbar-nav > li > a:hover {
       color: #fb252e; }
+      .navbar-default .navbar-nav > li > a:hover:after {
+        width: 100%;
+        -webkit-animation-name: bounceIn;
+        -moz-animation-name: bounceIn;
+        -ms-animation-name: bounceIn;
+        -o-animation-name: bounceIn;
+        animation-name: bounceIn;
+        -webkit-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        -ms-animation-iteration-count: 1;
+        -o-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        -ms-animation-duration: 1s;
+        -o-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-delay: 0s;
+        -moz-animation-delay: 0s;
+        -ms-animation-delay: 0s;
+        -o-animation-delay: 0s;
+        animation-delay: 0s;
+        -webkit-animation-timing-function: ease;
+        -moz-animation-timing-function: ease;
+        -ms-animation-timing-function: ease;
+        -o-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        -ms-animation-fill-mode: both;
+        -o-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden; }
   .navbar-default .navbar-toggle:focus {
     background: transparent; }
 
@@ -14402,27 +14447,42 @@ html, body {
     background: transparent; } }
 
 .footer {
-  height: 50px;
   background-color: #222222;
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0; }
+  .footer p {
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    margin-top: 0px; }
 
-.social-links {
-  padding-top: 10px; }
-  .social-links a {
-    font-size: 2rem;
-    padding: 0px 20px;
-    cursor: pointer; }
-  .social-links .github {
-    color: #ffffff; }
-  .social-links .twitter {
-    color: #5EA9DD; }
-  .social-links .linkedin {
-    color: #007BB6; }
-  .social-links .stackoverflow {
-    color: #F48024; }
+.social-links a {
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  line-height: 50px; }
+  .social-links a:hover {
+    background: #ffffff; }
+  .social-links a.github:hover {
+    color: #222222; }
+
+.social-links .github {
+  color: #ffffff; }
+
+.social-links .twitter {
+  color: #5EA9DD; }
+
+.social-links .linkedin {
+  color: #007BB6; }
+
+.social-links .stackoverflow {
+  color: #F48024; }
 
 .split-bar {
   height: 48px;
@@ -14597,7 +14657,7 @@ html, body {
   #header .scroll-down a {
     height: 3rem;
     line-height: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     background: #FC575E;
     color: #ffffff;
     border: none; }
@@ -14620,12 +14680,12 @@ html, body {
     min-height: 100vh; }
     #about .about-me h2 {
       margin-top: 50px; }
-  #about .skillsModulesVisible, #about .blogModulesVisible {
-    -webkit-animation-name: fadeInDown;
-    -moz-animation-name: fadeInDown;
-    -ms-animation-name: fadeInDown;
-    -o-animation-name: fadeInDown;
-    animation-name: fadeInDown;
+  #about .blogModulesVisible {
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -ms-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
     -webkit-animation-iteration-count: 1;
     -moz-animation-iteration-count: 1;
     -ms-animation-iteration-count: 1;
@@ -14704,49 +14764,65 @@ html, body {
       -webkit-border-radius: 80px;
       color: #ffffff;
       background: #FC575E; }
-  #about .blog {
+  #about .about-my-blog h2 {
+    margin-top: 50px; }
+  #about .about-my-blog .blog {
     margin-bottom: 10px; }
+  #about .about-my-blog .btn-default {
+    margin-bottom: 125px; }
   #about .panel {
     margin-bottom: 0px; }
     #about .panel .panel-heading {
       font-size: 1.6rem;
       color: #FC575E; }
-  #about .fa:hover {
-    -webkit-animation-name: pulse;
-    -moz-animation-name: pulse;
-    -ms-animation-name: pulse;
-    -o-animation-name: pulse;
-    animation-name: pulse;
-    -webkit-animation-iteration-count: 1;
-    -moz-animation-iteration-count: 1;
-    -ms-animation-iteration-count: 1;
-    -o-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    -ms-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-delay: 0s;
-    -moz-animation-delay: 0s;
-    -ms-animation-delay: 0s;
-    -o-animation-delay: 0s;
-    animation-delay: 0s;
-    -webkit-animation-timing-function: ease;
-    -moz-animation-timing-function: ease;
-    -ms-animation-timing-function: ease;
-    -o-animation-timing-function: ease;
-    animation-timing-function: ease;
-    -webkit-animation-fill-mode: both;
-    -moz-animation-fill-mode: both;
-    -ms-animation-fill-mode: both;
-    -o-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden; }
+  #about .fa {
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out; }
+    #about .fa:hover {
+      -ms-transform: rotate(360deg);
+      /* IE 9 */
+      -webkit-transform: rotate(360deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(360deg); }
+
+#skills {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -ms-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden; }
 
 #blog, #skills, #contact {
   position: relative;
@@ -14844,8 +14920,44 @@ html, body {
     right: 0;
     margin: auto; } }
 
-@media (min-width: 768px) {
-  #contact button[type="submit"] {
-    margin-bottom: 50px; } }
+#contact {
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -ms-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden; }
+  @media (min-width: 768px) {
+    #contact button[type="submit"] {
+      margin-bottom: 50px; } }
 
 /*# sourceMappingURL=maps/main.css.map */

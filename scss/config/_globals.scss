@@ -42,13 +42,15 @@ h4{
     padding-right: 15px;
 }
 
-.btn-default{
+.btn{
     background-color: $red;
     color:$white;
     font-family: $arial;
     margin-bottom: 50px;
+    border-color: transparent;
     &:hover{
         background-color: darken($red,3%);
+        border-color: transparent;
         color: $white;
     }
 }

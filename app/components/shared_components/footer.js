@@ -6,6 +6,7 @@ const Footer = () => {
     	<footer className="footer">
             <center>
                 <SocialLinks />
+                <p>© Copyright 2016 Deepak Prakash. All rights reserved.</p>
             </center>
 		</footer>
     );

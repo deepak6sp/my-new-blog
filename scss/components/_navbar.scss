@@ -18,7 +18,8 @@
 		&:hover{
 			cursor: pointer;
 			color:darken($red, 10%) ;
-			@include pulse();	
+			@include pulse();
+
 		}
 		&:focus{
 			color: $red ;
@@ -35,9 +36,20 @@
 		&:focus{
 			color: $red;
 		}
+		&:after{
+			content: "";
+			display: block;
+			height: 2px;
+			background-color: $red;
+			width: 0;
+			
+		}
 		&:hover{
 			color:darken($red, 10%) ;
-			
+			&:after{
+				width: 100%;
+				@include bounceIn();
+			}	
 		}
 	}
 	.navbar-toggle{

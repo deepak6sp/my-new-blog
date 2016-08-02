@@ -83,8 +83,15 @@ class About extends Component {
 
                 <SplitBar text="About my blog" iconName="pencil" />
                 
-                <section className="container container-fluid">
+                <section className="container container-fluid about-my-blog">
+                    <Row>
+                        <Col sm={12}>
+                            <h2> What I Am Doing</h2>
+                            <hr/>
+                        </Col>
+                    </Row>
                     <LazyLoad onContentVisible={() => this._animate("blogModules")} offset={-100} throttle={0}>
+                         
                         <Row className={ "blog "+ this.state.blogModulesVisibleClass}>
                             <Col sm={12}>
                                 <p> My website is developed on MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
