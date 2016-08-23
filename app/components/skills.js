@@ -22,7 +22,6 @@ class Skills extends Component {
        
         return  (
         	<main id="skills">
-                
                 <section className="container container-fluid ">
                     <Row>
                         <Col sm={12}>
@@ -35,6 +34,7 @@ class Skills extends Component {
                         </Col>
                     </Row>
                 </section>
+
 			</main>
         );
     }

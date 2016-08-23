@@ -2,8 +2,10 @@ import React,{ Component } from 'react';
 import { Row, Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
-import About from "./about";
+import WorkList from "./shared_components/workList";
+import PostList from "./shared_components/postList";
 import SplitBar from "./shared_components/splitBar";
+import Testimonial from "./shared_components/testimonial";
 import Scroll from 'react-scroll';
 
 var ScrollLink = Scroll.Link;
@@ -41,9 +43,10 @@ class Home extends Component {
                                 </Col>
                             </Row>
                             <Row className="scroll-down-block">
-                                <Col xs={10} xsOffset={1} smOffset={9} sm={2} className="scroll-down">
-                                    <ScrollLink className="btn btn-default" activeClass="active" to="about" spy={true} smooth={true} offset={-50} duration={500} >
-                                        About me
+                                <Col xs={10} xsOffset={1} sm={8} smOffset={3} className="scroll-down text-center">
+                                    <ScrollLink activeClass="active" to="postList" spy={true} smooth={true} offset={-50} duration={500} >
+                                        <div>Latest Posts</div>
+                                        <FontAwesome className='super-crazy-colors' name='angle-down' size='lg'/>
                                     </ScrollLink>
                                 </Col>
                             </Row>
@@ -51,7 +54,12 @@ class Home extends Component {
                     </div>
             	</header>
               
-                <About />
+                <WorkList />
+                <PostList />
+                 <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
+                    He is a team player; I like working with him and I recommend him with pleasure."
+                    recommendedBy = "Clauidiu - Senior Developer @ mycause.com.au"
+               />
                 
             </main>
         );

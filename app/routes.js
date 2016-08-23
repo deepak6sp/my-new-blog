@@ -12,7 +12,6 @@ const AppRoutes = (<Router history={browserHistory}>
 	    <Route path="/" component={MainLayout}>
 	    	<IndexRoute component={Home} />
 	    	<Route path="home" component={Home}/>
-	    	<Route path="skills" component={Skills}/>
 	    	<Route path="blog" component={Blog}/>
             <Route path="about" component={About}/>
 	    	<Route path="contact" component={Contact}/>

@@ -84,14 +84,13 @@
     	a {
 		    height: 3rem;
 		    line-height: 2rem;
-		    font-size: 1.4rem;
-		    background: $red;
-		    color: $white;
+		    font-size: 1.6rem;
+		    color: $red;
 		    border: none;
+		    text-decoration:none;
     		&:hover{
     			cursor:pointer;
-    			background:darken($red,10%);
-    			color:$white;
+    			color:darken($red,10%);
     		}
     		
     	}
@@ -101,7 +100,7 @@
 		
 }
 
-#about{
+#about, #workList, #postList{
 	background:$white;
 	position: relative;
 	hr{
@@ -112,12 +111,11 @@
 	    border: 0;
 	    margin: 0;
 	}
-
+	h2{
+		margin-top: 50px;
+	}
 	.about-me{
-		min-height: 100vh;
-		h2{
-			margin-top: 50px;
-		}
+		@include fadeInUp();
 	}
 	.blogModulesVisible{
 		@include fadeInUp();
@@ -126,8 +124,6 @@
 		@include fadeInLeft();
 	}
 	.dev-modules,.skills{
-		opacity:0;
-		margin-bottom: 30px;
 		.fa{
 		   @include circle(80px);
 		    color: $white;
@@ -140,9 +136,6 @@
 		}
 		.blog{
 			margin-bottom: 10px;
-		}
-		.btn-default{
-			margin-bottom: 125px;
 		}
 	}
 	
@@ -167,13 +160,50 @@
 	}
 }
 
+#workList{
+	.btn-default{
+		margin-top:50px;
+	}
+}
+
+#postList{
+	background-color:$grey-dark;
+	h2{
+		color:$white;
+	}
+	.panel{
+		background: none;
+    	border: none;
+    	&:hover{
+    		cursor:pointer;
+    	}
+    	.panel-body{
+    		padding:0px;
+    	}
+	}
+	p{
+		margin-top:45px;
+		color:$white;
+		&:nth-child(2){
+			margin-top:0px;
+			color:$grey-high;
+		}
+	}
+	.btn-default{
+		margin-top:50px;
+	}
+}
+
+
+
+
 #skills{
 	@include fadeInUp();
 }
 
-#blog,#skills,#contact{
+#blog,#about,#contact{
 	position: relative;
-	padding-top: 100px;	
+    padding-top: 100px;	
 }
 
 
@@ -184,7 +214,7 @@
 	}
 
 	.devModulesVisible {
-	   @include fadeInLeft();
+	   @include fadeInUp();
 	}
 
 	
@@ -217,7 +247,14 @@
 		right: 0;
 		margin: auto;
 	}
-
+	#postList{
+		p{
+			margin-top:10px;
+			&.published-date{
+				margin-top:0px;
+			}
+		}
+	}
 }
 
 

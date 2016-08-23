@@ -14187,12 +14187,18 @@ h4 {
   background-color: #FC575E;
   color: #ffffff;
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-bottom: 50px;
   border-color: transparent; }
   .btn:hover {
     background-color: #fc4850;
     border-color: transparent;
     color: #ffffff; }
+
+.image-container {
+  height: 100%;
+  margin-top: 50px;
+  width: 100%; }
+  .image-container img {
+    width: 100%; }
 
 html, body {
   margin: 0;
@@ -14283,45 +14289,50 @@ html, body {
       height: 2px;
       background-color: #FC575E;
       width: 0; }
-    .navbar-default .navbar-nav > li > a:hover {
-      color: #fb252e; }
-      .navbar-default .navbar-nav > li > a:hover:after {
-        width: 100%;
-        -webkit-animation-name: bounceIn;
-        -moz-animation-name: bounceIn;
-        -ms-animation-name: bounceIn;
-        -o-animation-name: bounceIn;
-        animation-name: bounceIn;
-        -webkit-animation-iteration-count: 1;
-        -moz-animation-iteration-count: 1;
-        -ms-animation-iteration-count: 1;
-        -o-animation-iteration-count: 1;
-        animation-iteration-count: 1;
-        -webkit-animation-duration: 1s;
-        -moz-animation-duration: 1s;
-        -ms-animation-duration: 1s;
-        -o-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-delay: 0s;
-        -moz-animation-delay: 0s;
-        -ms-animation-delay: 0s;
-        -o-animation-delay: 0s;
-        animation-delay: 0s;
-        -webkit-animation-timing-function: ease;
-        -moz-animation-timing-function: ease;
-        -ms-animation-timing-function: ease;
-        -o-animation-timing-function: ease;
-        animation-timing-function: ease;
-        -webkit-animation-fill-mode: both;
-        -moz-animation-fill-mode: both;
-        -ms-animation-fill-mode: both;
-        -o-animation-fill-mode: both;
-        animation-fill-mode: both;
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
-        -ms-backface-visibility: hidden;
-        -o-backface-visibility: hidden;
-        backface-visibility: hidden; }
+    @media (min-width: 768px) {
+      .navbar-default .navbar-nav > li > a:hover {
+        color: #fb252e; }
+        .navbar-default .navbar-nav > li > a:hover:after {
+          width: 100%;
+          -webkit-animation-name: bounceIn;
+          -moz-animation-name: bounceIn;
+          -ms-animation-name: bounceIn;
+          -o-animation-name: bounceIn;
+          animation-name: bounceIn;
+          -webkit-animation-iteration-count: 1;
+          -moz-animation-iteration-count: 1;
+          -ms-animation-iteration-count: 1;
+          -o-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+          -webkit-animation-duration: 1s;
+          -moz-animation-duration: 1s;
+          -ms-animation-duration: 1s;
+          -o-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-delay: 0s;
+          -moz-animation-delay: 0s;
+          -ms-animation-delay: 0s;
+          -o-animation-delay: 0s;
+          animation-delay: 0s;
+          -webkit-animation-timing-function: ease;
+          -moz-animation-timing-function: ease;
+          -ms-animation-timing-function: ease;
+          -o-animation-timing-function: ease;
+          animation-timing-function: ease;
+          -webkit-animation-fill-mode: both;
+          -moz-animation-fill-mode: both;
+          -ms-animation-fill-mode: both;
+          -o-animation-fill-mode: both;
+          animation-fill-mode: both;
+          -webkit-backface-visibility: hidden;
+          -moz-backface-visibility: hidden;
+          -ms-backface-visibility: hidden;
+          -o-backface-visibility: hidden;
+          backface-visibility: hidden; } }
+    @media only screen and (max-width: 767px) {
+      .navbar-default .navbar-nav > li > a:hover {
+        color: #ffffff;
+        background-color: #FC575E; } }
   .navbar-default .navbar-toggle:focus {
     background: transparent; }
 
@@ -14518,17 +14529,22 @@ html, body {
   align-items: center;
   -webkit-align-items: center;
   text-align: center;
-  min-height: 300px;
-  transform: scale(1.25); }
+  height: 400px;
+  margin-bottom: 100px; }
   .testimonial .quotation {
-    line-height: 1.6em;
+    line-height: 3.0rem;
     color: #ffffff;
-    font-size: 1.4rem;
+    font-size: 2.0rem;
     font-weight: bold;
     font-style: italic;
     text-align: center; }
     .testimonial .quotation span {
       margin-left: 10px; }
+
+@media only screen and (max-width: 767px) {
+  .testimonial .quotation {
+    line-height: 2.0rem;
+    font-size: 1.6rem; } }
 
 #header .home_bg {
   background-image: linear-gradient(rgba(29, 31, 33, 0.5), rgba(29, 31, 33, 0.5)), url("main_bg.jpg");
@@ -14657,30 +14673,27 @@ html, body {
   #header .scroll-down a {
     height: 3rem;
     line-height: 2rem;
-    font-size: 1.4rem;
-    background: #FC575E;
-    color: #ffffff;
-    border: none; }
+    font-size: 1.6rem;
+    color: #FC575E;
+    border: none;
+    text-decoration: none; }
     #header .scroll-down a:hover {
       cursor: pointer;
-      background: #fb252e;
-      color: #ffffff; }
+      color: #fb252e; }
 
-#about {
+#about, #workList, #postList {
   background: #ffffff;
   position: relative; }
-  #about hr {
+  #about hr, #workList hr, #postList hr {
     height: 2px;
     width: 60px;
     background: #FC575E;
     position: relative;
     border: 0;
     margin: 0; }
-  #about .about-me {
-    min-height: 100vh; }
-    #about .about-me h2 {
-      margin-top: 50px; }
-  #about .blogModulesVisible {
+  #about h2, #workList h2, #postList h2 {
+    margin-top: 50px; }
+  #about .about-me, #workList .about-me, #postList .about-me {
     -webkit-animation-name: fadeInUp;
     -moz-animation-name: fadeInUp;
     -ms-animation-name: fadeInUp;
@@ -14716,7 +14729,43 @@ html, body {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden; }
-  #about .fadeInLeft {
+  #about .blogModulesVisible, #workList .blogModulesVisible, #postList .blogModulesVisible {
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -ms-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  #about .fadeInLeft, #workList .fadeInLeft, #postList .fadeInLeft {
     -webkit-animation-name: fadeInLeft;
     -moz-animation-name: fadeInLeft;
     -ms-animation-name: fadeInLeft;
@@ -14752,40 +14801,58 @@ html, body {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden; }
-  #about .dev-modules, #about .skills {
-    opacity: 0;
-    margin-bottom: 30px; }
-    #about .dev-modules .fa, #about .skills .fa {
-      width: 80px;
-      height: 80px;
-      line-height: 80px;
-      border-radius: 50%;
-      -moz-border-radius: 80px;
-      -webkit-border-radius: 80px;
-      color: #ffffff;
-      background: #FC575E; }
-  #about .about-my-blog h2 {
+  #about .dev-modules .fa, #about .skills .fa, #workList .dev-modules .fa, #workList .skills .fa, #postList .dev-modules .fa, #postList .skills .fa {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    -moz-border-radius: 80px;
+    -webkit-border-radius: 80px;
+    color: #ffffff;
+    background: #FC575E; }
+  #about .about-my-blog h2, #workList .about-my-blog h2, #postList .about-my-blog h2 {
     margin-top: 50px; }
-  #about .about-my-blog .blog {
+  #about .about-my-blog .blog, #workList .about-my-blog .blog, #postList .about-my-blog .blog {
     margin-bottom: 10px; }
-  #about .about-my-blog .btn-default {
-    margin-bottom: 125px; }
-  #about .panel {
+  #about .panel, #workList .panel, #postList .panel {
     margin-bottom: 0px; }
-    #about .panel .panel-heading {
+    #about .panel .panel-heading, #workList .panel .panel-heading, #postList .panel .panel-heading {
       font-size: 1.6rem;
       color: #FC575E; }
-  #about .fa {
+  #about .fa, #workList .fa, #postList .fa {
     -webkit-transition: 1s ease-in-out;
     -moz-transition: 1s ease-in-out;
     -o-transition: 1s ease-in-out;
     transition: 1s ease-in-out; }
-    #about .fa:hover {
+    #about .fa:hover, #workList .fa:hover, #postList .fa:hover {
       -ms-transform: rotate(360deg);
       /* IE 9 */
       -webkit-transform: rotate(360deg);
       /* Chrome, Safari, Opera */
       transform: rotate(360deg); }
+
+#workList .btn-default {
+  margin-top: 50px; }
+
+#postList {
+  background-color: #333333; }
+  #postList h2 {
+    color: #ffffff; }
+  #postList .panel {
+    background: none;
+    border: none; }
+    #postList .panel:hover {
+      cursor: pointer; }
+    #postList .panel .panel-body {
+      padding: 0px; }
+  #postList p {
+    margin-top: 45px;
+    color: #ffffff; }
+    #postList p:nth-child(2) {
+      margin-top: 0px;
+      color: #999999; }
+  #postList .btn-default {
+    margin-top: 50px; }
 
 #skills {
   -webkit-animation-name: fadeInUp;
@@ -14824,7 +14891,7 @@ html, body {
   -o-backface-visibility: hidden;
   backface-visibility: hidden; }
 
-#blog, #skills, #contact {
+#blog, #about, #contact {
   position: relative;
   padding-top: 100px; }
 
@@ -14833,11 +14900,11 @@ html, body {
     height: 100vh;
     min-height: 600px; }
   .devModulesVisible {
-    -webkit-animation-name: fadeInLeft;
-    -moz-animation-name: fadeInLeft;
-    -ms-animation-name: fadeInLeft;
-    -o-animation-name: fadeInLeft;
-    animation-name: fadeInLeft;
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -ms-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
     -webkit-animation-iteration-count: 1;
     -moz-animation-iteration-count: 1;
     -ms-animation-iteration-count: 1;
@@ -14918,7 +14985,11 @@ html, body {
     position: absolute;
     left: 0;
     right: 0;
-    margin: auto; } }
+    margin: auto; }
+  #postList p {
+    margin-top: 10px; }
+    #postList p.published-date {
+      margin-top: 0px; } }
 
 #contact {
   -webkit-animation-name: fadeInUp;
@@ -14956,6 +15027,8 @@ html, body {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden; }
+  #contact h2 {
+    margin-top: 50px; }
   @media (min-width: 768px) {
     #contact button[type="submit"] {
       margin-bottom: 50px; } }

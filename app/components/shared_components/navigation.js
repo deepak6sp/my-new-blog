@@ -30,16 +30,16 @@ class Navigation extends Component {
               {/* Collect the nav links, forms, and other content for toggling */}
               <Nav pullRight>
                 
-                 <li>
-                  <Link to="skills">SKILLS</Link>
-                </li>
-
-                 <li>
-                  <Link to="projects">PROJECTS</Link>
+                <li>
+                  <Link to="projects">WORK</Link>
                 </li>
 
                 <li>
                   <Link to="blog">BLOG</Link>
+                </li>
+
+                 <li>
+                  <Link to="about">ABOUT</Link>
                 </li>
 
                 <li>

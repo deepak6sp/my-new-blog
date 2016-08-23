@@ -1,4 +1,7 @@
 #contact{
+	h2{
+		margin-top: 50px;
+	}
 	@include fadeInUp();
 	@media (min-width: $screen-sm-min) {
 		button[type="submit"]{

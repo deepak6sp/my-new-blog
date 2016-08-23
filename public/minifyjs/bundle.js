@@ -22811,7 +22811,6 @@
 			{ path: '/', component: _MainLayout2.default },
 			_react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: 'home', component: _Home2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: 'skills', component: _Skills2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: 'blog', component: _blogList2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: 'about', component: _about2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: 'contact', component: _contact2.default })
@@ -28462,17 +28461,8 @@
 	              null,
 	              _react2.default.createElement(
 	                _reactRouter.Link,
-	                { to: 'skills' },
-	                'SKILLS'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
 	                { to: 'projects' },
-	                'PROJECTS'
+	                'WORK'
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -28482,6 +28472,15 @@
 	                _reactRouter.Link,
 	                { to: 'blog' },
 	                'BLOG'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: 'about' },
+	                'ABOUT'
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -48577,13 +48576,21 @@
 	
 	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 	
-	var _about = __webpack_require__(540);
+	var _workList = __webpack_require__(578);
 	
-	var _about2 = _interopRequireDefault(_about);
+	var _workList2 = _interopRequireDefault(_workList);
+	
+	var _postList = __webpack_require__(579);
+	
+	var _postList2 = _interopRequireDefault(_postList);
 	
 	var _splitBar = __webpack_require__(550);
 	
 	var _splitBar2 = _interopRequireDefault(_splitBar);
+	
+	var _testimonial = __webpack_require__(551);
+	
+	var _testimonial2 = _interopRequireDefault(_testimonial);
 	
 	var _reactScroll = __webpack_require__(524);
 	
@@ -48667,18 +48674,27 @@
 	                                { className: 'scroll-down-block' },
 	                                _react2.default.createElement(
 	                                    _reactBootstrap.Col,
-	                                    { xs: 10, xsOffset: 1, smOffset: 9, sm: 2, className: 'scroll-down' },
+	                                    { xs: 10, xsOffset: 1, sm: 8, smOffset: 3, className: 'scroll-down text-center' },
 	                                    _react2.default.createElement(
 	                                        ScrollLink,
-	                                        { className: 'btn btn-default', activeClass: 'active', to: 'about', spy: true, smooth: true, offset: -50, duration: 500 },
-	                                        'About me'
+	                                        { activeClass: 'active', to: 'postList', spy: true, smooth: true, offset: -50, duration: 500 },
+	                                        _react2.default.createElement(
+	                                            'div',
+	                                            null,
+	                                            'Latest Posts'
+	                                        ),
+	                                        _react2.default.createElement(_reactFontawesome2.default, { className: 'super-crazy-colors', name: 'angle-down', size: 'lg' })
 	                                    )
 	                                )
 	                            )
 	                        )
 	                    )
 	                ),
-	                _react2.default.createElement(_about2.default, null)
+	                _react2.default.createElement(_workList2.default, null),
+	                _react2.default.createElement(_postList2.default, null),
+	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
+	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
+	                })
 	            );
 	        }
 	    }]);
@@ -48775,7 +48791,6 @@
 	            return _react2.default.createElement(
 	                'main',
 	                { id: 'about' },
-	                _react2.default.createElement(_splitBar2.default, { text: 'About me', link: '', iconName: 'user' }),
 	                _react2.default.createElement(
 	                    'section',
 	                    { className: 'container container-fluid  about-me' },
@@ -48788,13 +48803,13 @@
 	                            _react2.default.createElement(
 	                                'h2',
 	                                null,
-	                                ' Who I Am '
+	                                ' About me'
 	                            ),
 	                            _react2.default.createElement('hr', null),
 	                            _react2.default.createElement(
 	                                'p',
 	                                null,
-	                                ' I am a techsavy and freelance Web Developer having 5 years of experience mainly focusing on UI and front end development. I develop with skills of minimal usability designs and using core XHTML/HTML, CSS and Javascript. My coding follows resuable component based structure for easy maintanence, scaling and debugging. Have experince using PHP frameworks and knowledge of ruby on rails.'
+	                                ' I am a techsavvy and freelance Web Developer having 5 years of experience mainly focusing on UI and front end development. I develop with skills of minimal usability designs and using core XHTML/HTML, CSS and Javascript. My coding follows resuable component based structure for easy maintanence, scaling and debugging. Have experince using PHP frameworks and knowledge of ruby on rails.'
 	                            )
 	                        )
 	                    ),
@@ -48807,7 +48822,7 @@
 	                            _react2.default.createElement(
 	                                'h2',
 	                                null,
-	                                ' What I Do '
+	                                ' About things I do '
 	                            ),
 	                            _react2.default.createElement('hr', null),
 	                            _react2.default.createElement('p', null)
@@ -48867,12 +48882,36 @@
 	                                )
 	                            )
 	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                ' My projects involve use of technologies such as:'
+	                            ),
+	                            _react2.default.createElement(
+	                                'section',
+	                                { className: 'skillsModulesVisible' },
+	                                _react2.default.createElement(_listSkills2.default, null)
+	                            ),
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                'I am self learner, love web technologies, have passion for what I do, and hope to do this forever.'
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Button,
+	                                null,
+	                                'Download Resume'
+	                            )
+	                        )
 	                    )
 	                ),
-	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
-	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
-	                }),
-	                _react2.default.createElement(_splitBar2.default, { text: 'About my blog', iconName: 'pencil' }),
 	                _react2.default.createElement(
 	                    'section',
 	                    { className: 'container container-fluid about-my-blog' },
@@ -48885,7 +48924,7 @@
 	                            _react2.default.createElement(
 	                                'h2',
 	                                null,
-	                                ' What I Am Doing'
+	                                ' About my blog'
 	                            ),
 	                            _react2.default.createElement('hr', null)
 	                        )
@@ -48919,7 +48958,10 @@
 	                        { to: 'blog', className: 'btn btn-default' },
 	                        'Visit Blog'
 	                    )
-	                )
+	                ),
+	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
+	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
+	                })
 	            );
 	        }
 	    }]);
@@ -49996,7 +50038,7 @@
 	  value: true
 	});
 	var languages = exports.languages = ["XHtml, Html5", "Css3, Sass", "Javascript, Jquery", "PHP"];
-	var libraries = exports.libraries = ["React, Redux, Flux", "Angular, Express", "CodeIginiter, Laravel", "Wordpress, Drupal"];
+	var libraries = exports.libraries = ["React, Redux, Flux", "Angular, Express", "CodeIginiter, Laravel", "Wordpress"];
 	var collaboration = exports.collaboration = ["Node Modules (NPM)", "Bower", "Gulp / Grunt", "Webpack"];
 	var test = exports.test = ["Mocha", "Chai", "Jasmine", "Selenium"];
 
@@ -50073,7 +50115,7 @@
 	                null,
 	                _react2.default.createElement(
 	                    _reactBootstrap.Col,
-	                    { xs: 10, xsOffset: 1, sm: 6, smOffset: 3 },
+	                    { xs: 12, sm: 8, smOffset: 2 },
 	                    _react2.default.createElement(
 	                        'h4',
 	                        { className: 'quotation' },
@@ -50267,7 +50309,7 @@
 																									_reactBootstrap.Col,
 																									{ sm: 8 },
 																									_react2.default.createElement(
-																													'h1',
+																													'h2',
 																													null,
 																													'Got a project ? or drop me a line ?'
 																									),
@@ -50315,7 +50357,7 @@
 																									_reactBootstrap.Col,
 																									{ sm: 4 },
 																									_react2.default.createElement(
-																													'h1',
+																													'h2',
 																													null,
 																													'Get in touch'
 																									),
@@ -51901,6 +51943,370 @@
 	};
 	
 	exports.default = whatsNewListReducer;
+
+/***/ },
+/* 578 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(261);
+	
+	var _reactFontawesome = __webpack_require__(260);
+	
+	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+	
+	var _reactVisibilitySensor = __webpack_require__(541);
+	
+	var _reactVisibilitySensor2 = _interopRequireDefault(_reactVisibilitySensor);
+	
+	var _reactRouter = __webpack_require__(198);
+	
+	var _reactScroll = __webpack_require__(524);
+	
+	var _reactScroll2 = _interopRequireDefault(_reactScroll);
+	
+	var _reactLazyLoad = __webpack_require__(542);
+	
+	var _reactLazyLoad2 = _interopRequireDefault(_reactLazyLoad);
+	
+	var _listSkills = __webpack_require__(548);
+	
+	var _listSkills2 = _interopRequireDefault(_listSkills);
+	
+	var _splitBar = __webpack_require__(550);
+	
+	var _splitBar2 = _interopRequireDefault(_splitBar);
+	
+	var _testimonial = __webpack_require__(551);
+	
+	var _testimonial2 = _interopRequireDefault(_testimonial);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var WorkList = function (_Component) {
+	    _inherits(WorkList, _Component);
+	
+	    function WorkList(props) {
+	        _classCallCheck(this, WorkList);
+	
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(WorkList).call(this, props));
+	
+	        _this.state = { devModulesVisibleClass: "", blogModulesVisibleClass: "", skillsModulesVisibleClass: "", testimonialVisibleClass: "" };
+	        return _this;
+	    }
+	
+	    _createClass(WorkList, [{
+	        key: '_animate',
+	        value: function _animate(module) {
+	            if (module == "devModules") {
+	                this.setState({ devModulesVisibleClass: "devModulesVisible" });
+	            } else if (module == "blogModules") {
+	                this.setState({ blogModulesVisibleClass: "blogModulesVisible" });
+	            } else if (module == "skillsModules") {
+	                this.setState({ skillsModulesVisibleClass: "skillsModulesVisible" });
+	            }
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	
+	            return _react2.default.createElement(
+	                'main',
+	                { id: 'workList' },
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: 'container container-fluid' },
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { xs: 12 },
+	                            _react2.default.createElement(
+	                                'h2',
+	                                null,
+	                                ' Recent Work '
+	                            ),
+	                            _react2.default.createElement('hr', null)
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        { className: "text-center dev-modules " },
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { xs: 12, sm: 4 },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'image-container' },
+	                                _react2.default.createElement(_reactBootstrap.Image, { src: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg', rounded: true })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { xs: 12, sm: 4 },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'image-container' },
+	                                _react2.default.createElement(_reactBootstrap.Image, { src: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg', rounded: true })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { xs: 12, sm: 4 },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'image-container' },
+	                                _react2.default.createElement(_reactBootstrap.Image, { src: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg', rounded: true })
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Button,
+	                                null,
+	                                'View more'
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return WorkList;
+	}(_react.Component);
+	
+	exports.default = WorkList;
+
+/***/ },
+/* 579 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactBootstrap = __webpack_require__(261);
+	
+	var _reactFontawesome = __webpack_require__(260);
+	
+	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+	
+	var _reactVisibilitySensor = __webpack_require__(541);
+	
+	var _reactVisibilitySensor2 = _interopRequireDefault(_reactVisibilitySensor);
+	
+	var _reactRouter = __webpack_require__(198);
+	
+	var _reactScroll = __webpack_require__(524);
+	
+	var _reactScroll2 = _interopRequireDefault(_reactScroll);
+	
+	var _reactLazyLoad = __webpack_require__(542);
+	
+	var _reactLazyLoad2 = _interopRequireDefault(_reactLazyLoad);
+	
+	var _listSkills = __webpack_require__(548);
+	
+	var _listSkills2 = _interopRequireDefault(_listSkills);
+	
+	var _splitBar = __webpack_require__(550);
+	
+	var _splitBar2 = _interopRequireDefault(_splitBar);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var PostList = function (_Component) {
+	    _inherits(PostList, _Component);
+	
+	    function PostList(props) {
+	        _classCallCheck(this, PostList);
+	
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PostList).call(this, props));
+	
+	        _this.state = { devModulesVisibleClass: "", blogModulesVisibleClass: "", skillsModulesVisibleClass: "", testimonialVisibleClass: "" };
+	        return _this;
+	    }
+	
+	    _createClass(PostList, [{
+	        key: '_animate',
+	        value: function _animate(module) {
+	            if (module == "devModules") {
+	                this.setState({ devModulesVisibleClass: "devModulesVisible" });
+	            } else if (module == "blogModules") {
+	                this.setState({ blogModulesVisibleClass: "blogModulesVisible" });
+	            } else if (module == "skillsModules") {
+	                this.setState({ skillsModulesVisibleClass: "skillsModulesVisible" });
+	            }
+	        }
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick() {
+	            console.log("panel clicked");
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	
+	            return _react2.default.createElement(
+	                'main',
+	                { id: 'postList' },
+	                _react2.default.createElement(
+	                    'section',
+	                    { className: 'container container-fluid' },
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                'h2',
+	                                null,
+	                                ' Latest Posts'
+	                            ),
+	                            _react2.default.createElement('hr', null)
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Panel,
+	                        { onClick: this.handleClick },
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Row,
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Col,
+	                                { xs: 12, sm: 3, md: 2 },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'image-container' },
+	                                    _react2.default.createElement(_reactBootstrap.Image, { src: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg', rounded: true })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Col,
+	                                { xs: 12, sm: 6, md: 8 },
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'title' },
+	                                    'Learning Swift'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'description' },
+	                                    ' This tutorials teaches how to develop ios applications'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Col,
+	                                { xs: 12, sm: 3, md: 2 },
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'published-date' },
+	                                    ' August 15, 2016'
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Panel,
+	                        { onClick: this.handleClick },
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Row,
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Col,
+	                                { xs: 12, sm: 3, md: 2 },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'image-container' },
+	                                    _react2.default.createElement(_reactBootstrap.Image, { src: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg', rounded: true })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Col,
+	                                { xs: 12, sm: 6, md: 8 },
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'title' },
+	                                    'Learning Swift '
+	                                ),
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'description' },
+	                                    ' This tutorials teaches how to develop ios applications'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Col,
+	                                { xs: 12, sm: 3, md: 2 },
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'published-date' },
+	                                    ' August 15, 2016'
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Row,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Col,
+	                            { sm: 12 },
+	                            _react2.default.createElement(
+	                                _reactBootstrap.Button,
+	                                null,
+	                                'Visit my blog'
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return PostList;
+	}(_react.Component);
+	
+	exports.default = PostList;
 
 /***/ }
 /******/ ]);

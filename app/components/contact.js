@@ -12,7 +12,7 @@ class Contact extends Component {
 	        	<main id="contact">
 	        		<Row className="container container-fluid">
 	        			<Col sm={8}>
-	        				<h1>Got a project ? or drop me a line ?</h1>
+	        				<h2>Got a project ? or drop me a line ?</h2>
 			        		<form>
 			        			<div className="form-group">
 								    <label for="name">Name</label>
@@ -31,7 +31,7 @@ class Contact extends Component {
 							</form>
 						</Col>
 						<Col sm={4}>
-							<h1>Get in touch</h1>
+							<h2>Get in touch</h2>
 							<p>You can also contact me at</p>
 							<p>0422596332</p>
 							<p>deepak6sp@gmail.com</p>

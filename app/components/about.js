@@ -32,13 +32,12 @@ class About extends Component {
        
         return  (
         	<main id="about">
-                <SplitBar text="About me" link="" iconName="user" />
                 <section className="container container-fluid  about-me">
                     <Row>
                         <Col sm={12}>
-                            <h2> Who I Am </h2>
+                            <h2> About me</h2>
                             <hr/>
-                            <p> I am a techsavy and freelance Web Developer having 5 years of experience mainly focusing on UI and front end development. 
+                            <p> I am a techsavvy and freelance Web Developer having 5 years of experience mainly focusing on UI and front end development. 
                                 I develop with skills of minimal usability designs and using core XHTML/HTML, CSS and Javascript. My coding follows resuable 
                                 component based structure for easy maintanence, scaling and debugging. Have experince using PHP frameworks and knowledge of ruby on rails. 
                             </p>
@@ -46,7 +45,7 @@ class About extends Component {
                     </Row>
                      <Row>
                         <Col sm={12}>
-                            <h2> What I Do </h2>
+                            <h2> About things I do </h2>
                             <hr/>
                             <p></p>
                         </Col>
@@ -72,21 +71,26 @@ class About extends Component {
                                     web application works fine accross multi browsers and devices.</p>
                             </Col>
                         </Row>
+
                     </LazyLoad>
+                    <Row>
+                        <Col sm={12}>
+                            <p> My projects involve use of technologies such as:</p>
+                            <section className="skillsModulesVisible">
+                                <ListSkills/>
+                            </section>
+                            <p>I am self learner, love web technologies, have passion for what I do, and hope to do this forever.</p>
+                            <Button>Download Resume</Button>
+                        </Col>
+                    </Row>
                 </section>
-
-                
-               <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
-                    He is a team player; I like working with him and I recommend him with pleasure."
-                    recommendedBy = "Clauidiu - Senior Developer @ mycause.com.au"
-               />
-
-                <SplitBar text="About my blog" iconName="pencil" />
+             
+                {/*<SplitBar text="About my blog" iconName="pencil" />*/}
                 
                 <section className="container container-fluid about-my-blog">
                     <Row>
                         <Col sm={12}>
-                            <h2> What I Am Doing</h2>
+                            <h2> About my blog</h2>
                             <hr/>
                         </Col>
                     </Row>
@@ -103,6 +107,12 @@ class About extends Component {
                     </LazyLoad>
                     <Link to="blog" className="btn btn-default">Visit Blog</Link>
                 </section>
+
+                <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
+                    He is a team player; I like working with him and I recommend him with pleasure."
+                    recommendedBy = "Clauidiu - Senior Developer @ mycause.com.au"
+                />
+
 			</main>
         );
     }

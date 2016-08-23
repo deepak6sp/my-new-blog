@@ -46,11 +46,19 @@ h4{
     background-color: $red;
     color:$white;
     font-family: $arial;
-    margin-bottom: 50px;
     border-color: transparent;
     &:hover{
         background-color: darken($red,3%);
         border-color: transparent;
         color: $white;
+    }
+}
+
+.image-container{
+    height:100%;
+    margin-top:50px;
+    width:100%;
+    img{
+        width:100%;
     }
 }
