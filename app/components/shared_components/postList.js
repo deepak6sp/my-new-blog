@@ -77,7 +77,7 @@ class PostList extends Component {
                     </Panel>
                     <Row>
                         <Col sm={12}>
-                            <Button>Visit my blog</Button>
+                            <Link to="blog" className="btn btn-default">Visit Blog</Link>
                         </Col>
                     </Row>
                 </section>

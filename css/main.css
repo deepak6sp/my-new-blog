@@ -14219,11 +14219,6 @@ html, body {
 .border-none {
   border: none; }
 
-.navbar-collapse-secondary {
-  background-color: #222222 !important;
-  transition: all 0.5s ease;
-  opacity: 0.9; }
-
 .navbar-default {
   background-color: transparent;
   padding-bottom: 20px; }
@@ -14370,7 +14365,7 @@ html, body {
     background-color: transparent;
     -webkit-transition: background .3s;
     transition: background .3s; }
-    .navbar-inverse .navbar-nav li a:hover {
+    .navbar-inverse .navbar-nav li a:hover, .navbar-inverse .navbar-nav li a.active {
       cursor: pointer;
       color: #ffffff;
       background-color: #FC575E; }
@@ -14423,18 +14418,32 @@ html, body {
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden; }
+  .navbar-default .navbar-nav > li > a.active:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #FC575E;
+    width: 100%; }
   .menuClose {
     display: none; } }
 
 @media only screen and (max-width: 767px) {
   .navbar-default .navbar-collapse {
     margin-top: 20px; }
+    .navbar-default .navbar-collapse li a.active {
+      cursor: pointer;
+      color: #ffffff;
+      background-color: #FC575E; }
   .navbar-default .navbar-toggle:hover {
     background-color: transparent; }
   .menuClose {
     display: none; }
-  .navbar-collapse-secondary .navbar-toggle span {
-    display: none; }
+  .navbar-collapse-secondary {
+    background-color: #222222 !important;
+    transition: all 0.5s ease;
+    opacity: 0.9; }
+    .navbar-collapse-secondary .navbar-toggle span {
+      display: none; }
   .navbar-collapse-secondary .menuClose {
     position: absolute;
     right: 15px;

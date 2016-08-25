@@ -56,7 +56,7 @@ class Home extends Component {
               
                 <WorkList />
                 <PostList />
-                 <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
+                <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
                     He is a team player; I like working with him and I recommend him with pleasure."
                     recommendedBy = "Clauidiu - Senior Developer @ mycause.com.au"
                />

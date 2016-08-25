@@ -3,7 +3,6 @@ import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 
 import MainLayout from './components/MainLayout';
 import Home from './components/Home.js';
-import Skills from "./components/Skills.js"
 import About from './components/about';
 import Contact from './components/contact';
 import Blog from './containers/blogList';

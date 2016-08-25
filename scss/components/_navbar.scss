@@ -1,8 +1,4 @@
-.navbar-collapse-secondary{
-	background-color:$main-primary !important;
-	transition: all 0.5s ease;
-	opacity: 0.9;
-}
+
 .navbar-default{
 	background-color: transparent;
 	padding-bottom: 20px;
@@ -110,7 +106,7 @@
 				background-color:transparent;
 				-webkit-transition: background .3s;
 				transition: background .3s;
-				&:hover{
+				&:hover,&.active{
 					cursor:pointer;
 					color:$white;
 					background-color:$red;
@@ -145,6 +141,15 @@
 			&:hover{
 				@include pulse();
 			}
+			&.active{
+				&:after{
+					content: "";
+					display: block;
+					height: 2px;
+					background-color: $red;
+					width: 100%;
+				}
+			}
 		}
 
 	}
@@ -158,7 +163,14 @@
 @media only screen and (max-width: $screen-xs-max) {
 	.navbar-default{
 		.navbar-collapse{
-			    margin-top: 20px;
+		    margin-top: 20px;
+		    li a {
+			    &.active{
+					cursor:pointer;
+					color:$white;
+					background-color:$red;
+				}
+			}
 		}
 		
 		.navbar-toggle{
@@ -168,11 +180,15 @@
 		}
 		
 	}
+
 	.menuClose{
 		display: none;
 	}
 
 	.navbar-collapse-secondary{
+		background-color:$main-primary !important;
+		transition: all 0.5s ease;
+		opacity: 0.9;
 		.navbar-toggle{
 			span{
 				display: none;

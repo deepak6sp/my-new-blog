@@ -14,6 +14,7 @@ import Testimonial from "./shared_components/testimonial";
 class About extends Component {
     constructor(props) {
         super(props);
+        window.scrollTo(0,0);
         this.state = {devModulesVisibleClass: "", blogModulesVisibleClass:"", skillsModulesVisibleClass:"", testimonialVisibleClass:""};
     }
 
