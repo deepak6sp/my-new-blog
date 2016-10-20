@@ -15,6 +15,10 @@ class Blog extends Component {
         this.state= {blogLists: ""};
     }
 
+    componentDidMount(){
+        document.getElementById("navbar").style.background = "white";
+    }
+
     componentWillMount() {
         this.props.getBlogPosts();
     }

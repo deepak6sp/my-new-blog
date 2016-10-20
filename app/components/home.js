@@ -26,7 +26,6 @@ class Home extends Component {
     componentWillUnmount(){
         var navBar= document.getElementsByClassName("navbar")[0];
         navBar.classList.remove("border-none");
-        document.getElementById("navbar").style.background = "white";
     }
     render() {
         return  (

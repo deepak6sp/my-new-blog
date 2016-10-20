@@ -15010,6 +15010,12 @@ html, body {
     #postList p.published-date {
       margin-top: 0px; } }
 
+#blog {
+  position: relative;
+  padding-top: 120px; }
+  #blog .blog-posts-section {
+    margin-bottom: 100px; }
+
 #contact {
   -webkit-animation-name: fadeInUp;
   -moz-animation-name: fadeInUp;

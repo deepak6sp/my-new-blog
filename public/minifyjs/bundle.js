@@ -48615,7 +48615,6 @@
 	        value: function componentWillUnmount() {
 	            var navBar = document.getElementsByClassName("navbar")[0];
 	            navBar.classList.remove("border-none");
-	            document.getElementById("navbar").style.background = "white";
 	        }
 	    }, {
 	        key: 'render',
@@ -50671,6 +50670,11 @@
 	  }
 	
 	  _createClass(Blog, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      document.getElementById("navbar").style.background = "white";
+	    }
+	  }, {
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {
 	      this.props.getBlogPosts();
