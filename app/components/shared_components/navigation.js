@@ -27,25 +27,29 @@ class Navigation extends Component {
     render(){
       return  (
       	<Navbar fixedTop id="navbar">
-              {/* Brand and toggle get grouped for better mobile display */}
-              <Navbar.Header>
-                <Navbar.Brand className="menuLinks">
-                   <Link to="home" id="link1" onClick={this._handleMenu}>Deepak Prakash</Link>
-                </Navbar.Brand>
-                <FontAwesome className='menuClose' name='close' size='2x' onClick={this._handleClose}/>
-                <Navbar.Toggle />
-              </Navbar.Header>
-              <Navbar.Collapse> 
+            {/* Brand and toggle get grouped for better mobile display */}
+            <Navbar.Header>
+              <Navbar.Brand className="menuLinks">
+                 <Link to="home" id="link1" onClick={this._handleMenu}>Deepak Prakash</Link>
+              </Navbar.Brand>
+              <FontAwesome className='menuClose' name='close' size='2x' onClick={this._handleClose}/>
+              {/*}<Navbar.Toggle />*/}
+            </Navbar.Header>
+            <Nav pullRight className="menuLinks">
+              <li><Link to="blog">BLOG</Link></li>
+            </Nav>
 
-              {/* Collect the nav links, forms, and other content for toggling */}
+
+            {/* Collect the nav links, forms, and other content for toggling
+            <Navbar.Collapse>
               <Nav pullRight className="menuLinks">
-                
+
                 <li>
                   <Link to="projects" id="link2"  onClick={this._handleMenu} >WORK</Link>
                 </li>
 
                 <li>
-                  <Link to="blog" id="link3"  onClick={this._handleMenu}>BLOG</Link>
+
                 </li>
 
                  <li>
@@ -55,9 +59,11 @@ class Navigation extends Component {
                 <li>
                   <Link to="contact" id="link5" onClick={this._handleMenu}>CONTACT</Link>
                 </li>
-              
+
               </Nav>
-            </Navbar.Collapse>
+              </Navbar.Collapse>
+              */}
+
       	</Navbar>
       );
     }

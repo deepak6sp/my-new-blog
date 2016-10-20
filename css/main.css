@@ -14219,6 +14219,13 @@ html, body {
 .border-none {
   border: none; }
 
+.navbar-header {
+  float: left; }
+
+.navbar-right {
+  float: right !important;
+  margin-right: -15px; }
+
 .navbar-default {
   background-color: transparent;
   padding-bottom: 20px; }
@@ -14326,13 +14333,12 @@ html, body {
           backface-visibility: hidden; } }
     @media only screen and (max-width: 767px) {
       .navbar-default .navbar-nav > li > a:hover {
-        color: #ffffff;
-        background-color: #FC575E; } }
+        color: #fb252e; } }
   .navbar-default .navbar-toggle:focus {
     background: transparent; }
 
 .navbar-inverse {
-  background-color: #222222;
+  background-color: #222222 !important;
   border-radius: 0px;
   margin-bottom: 0px;
   transition: all 0.5s ease; }
@@ -14342,6 +14348,11 @@ html, body {
     font-size: 2rem;
     transition: all 0.5 ease;
     cursor: pointer; }
+    .navbar-inverse .navbar-brand:hover {
+      cursor: pointer;
+      color: #fb252e; }
+    .navbar-inverse .navbar-brand:focus {
+      color: #fb252e; }
   .navbar-inverse .navbar-form {
     border-top: none;
     border-bottom: none;
@@ -14361,14 +14372,13 @@ html, body {
   .navbar-inverse .navbar-nav .fa {
     padding-right: 5px; }
   .navbar-inverse .navbar-nav li a {
-    color: #ffffff;
+    color: #FC575E;
     background-color: transparent;
     -webkit-transition: background .3s;
     transition: background .3s; }
     .navbar-inverse .navbar-nav li a:hover, .navbar-inverse .navbar-nav li a.active {
       cursor: pointer;
-      color: #ffffff;
-      background-color: #FC575E; }
+      color: #fb252e; }
     .navbar-inverse .navbar-nav li a:focus {
       outline: none; }
   .navbar-inverse .navbar-nav li.active a {
@@ -14900,9 +14910,9 @@ html, body {
   -o-backface-visibility: hidden;
   backface-visibility: hidden; }
 
-#blog, #about, #contact {
+#blog, #contact, #admin {
   position: relative;
-  padding-top: 100px; }
+  padding-top: 120px; }
 
 @media (min-width: 768px) {
   .home_bg, .myInfo {
@@ -15041,5 +15051,12 @@ html, body {
   @media (min-width: 768px) {
     #contact button[type="submit"] {
       margin-bottom: 50px; } }
+
+#admin h2 {
+  margin-top: 50px; }
+
+#admin .btn-default {
+  margin-top: 20px;
+  margin-bottom: 100px; }
 
 /*# sourceMappingURL=maps/main.css.map */

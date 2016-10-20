@@ -16,7 +16,6 @@ class Blog extends Component {
     }
 
     componentWillMount() {
-        
         this.props.getBlogPosts();
     }
 
@@ -30,14 +29,14 @@ class Blog extends Component {
             blogListData  = this.props.blogList.map((blog,index) => {
               return (<div className="blog-post" key={index}>
                         <h1>{blog.title}</h1>
-                        <p>{blog.content}</p>
+                        <div dangerouslySetInnerHTML={ {__html: blog.content} } />
                         <p><Button bsStyle="primary">read more</Button></p>
                       </div>);
             });
         }
         let WhatsNewData = this.props.whatsNewList.map((WhatsNew,index) => {
           return (<p key={index}>{WhatsNew.title}</p>);
-        }); 
+        });
         return  (
         	<main id="blog">
             <div className="container-fluid container">
@@ -50,13 +49,15 @@ class Blog extends Component {
                   <Col sm={9} className="blog-posts-section">
                        { blogListData }
                   </Col>
+                  {/*
                   <Col sm={3} className="latest-post-section">
                         <h1>Whats new</h1>
                         { WhatsNewData }
                   </Col>
+                */}
               </Row>
             </div>
-             
+
           </main>
         );
     }
@@ -76,4 +77,3 @@ function mapStateToProps(state){
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(Blog);
-

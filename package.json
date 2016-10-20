@@ -4,7 +4,6 @@
   "description": "my new blog",
   "main": "server.js",
   "scripts": {
-    "test": "mocha ./test/**/*.js --compilers js:babel-register --recursive",
     "server": "nodemon ./server.js",
     "webpack": "webpack --progress --colors --watch",
     "start": "node server.js"
@@ -56,6 +55,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.5.1",
     "react-scroll": "^1.0.17",
+    "react-tinymce": "^0.5.1",
     "react-visibility-sensor": "^3.2.0",
     "react-waypoint": "^3.0.0",
     "redux": "^3.5.2",

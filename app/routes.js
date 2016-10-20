@@ -6,6 +6,7 @@ import Home from './components/Home.js';
 import About from './components/about';
 import Contact from './components/contact';
 import Blog from './containers/blogList';
+import Admin from './containers/admin';
 
 const AppRoutes = (<Router history={browserHistory}>
 	    <Route path="/" component={MainLayout}>
@@ -14,6 +15,7 @@ const AppRoutes = (<Router history={browserHistory}>
 	    	<Route path="blog" component={Blog}/>
             <Route path="about" component={About}/>
 	    	<Route path="contact" component={Contact}/>
+	    	<Route path="admin" component={Admin}/>
 	    </Route>
   	</Router>);
 

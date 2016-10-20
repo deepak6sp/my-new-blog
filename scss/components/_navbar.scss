@@ -1,7 +1,14 @@
-
+.navbar-header{
+	float: left;
+}
+.navbar-right{
+	float: right !important;
+	margin-right: -15px;
+}
 .navbar-default{
 	background-color: transparent;
 	padding-bottom: 20px;
+
 	.navbar-brand{
 		font-family: $kushan-arial;
 		color: $red ;
@@ -38,7 +45,7 @@
 			height: 2px;
 			background-color: $red;
 			width: 0;
-			
+
 		}
 		@media (min-width: $screen-sm-min) {
 			&:hover{
@@ -46,13 +53,13 @@
 				&:after{
 					width: 100%;
 					@include bounceIn();
-				}	
+				}
 			}
 		}
 		@media only screen and (max-width: $screen-xs-max) {
 			&:hover{
-				color:$white;
-				background-color:$red;
+				color:darken($red, 10%);
+				//background-color:$red;
 			}
 		}
 	}
@@ -64,7 +71,7 @@
 }
 
 .navbar-inverse{
-	background-color: $main-primary;
+	background-color: $main-primary!important;
 	border-radius: 0px;
 	margin-bottom: 0px;
 	transition: all 0.5s ease;
@@ -74,6 +81,13 @@
 		font-size: 2rem;
 		transition: all 0.5 ease;
 		cursor: pointer;
+		&:hover{
+			cursor: pointer;
+			color:darken($red, 10%) ;
+		}
+		&:focus{
+			color:darken($red, 10%) ;
+		}
 	}
 	.navbar-form{
 		border-top: none;
@@ -93,7 +107,7 @@
 			}
 		}
 		.fa-search{
-			padding-top: 9px;			
+			padding-top: 9px;
 		}
 	}
 	.navbar-nav{
@@ -102,14 +116,14 @@
 		}
 		li{
 			a{
-				color:$white;
+				color:$red;
 				background-color:transparent;
 				-webkit-transition: background .3s;
 				transition: background .3s;
 				&:hover,&.active{
 					cursor:pointer;
-					color:$white;
-					background-color:$red;
+					color:darken($red, 10%);
+					//background-color:$red;
 				}
 				&:focus{
 					outline: none;
@@ -119,7 +133,7 @@
 		li.active{
 			a{
 				color:$white;
-				background-color:darken( $main-primary, 5% );	
+				background-color:darken( $main-primary, 5% );
 				&:hover{
 					color:$white;
 					background-color:darken( $main-primary, 1% );
@@ -127,7 +141,7 @@
 				&:focus{
 					color:$white;
 					background-color:darken( $main-primary, 5% );
-				}			
+				}
 			}
 		}
 	}
@@ -156,7 +170,7 @@
 	.menuClose{
 		display: none;
 	}
-	
+
 }
 
 
@@ -172,13 +186,13 @@
 				}
 			}
 		}
-		
+
 		.navbar-toggle{
 			&:hover{
 				background-color:transparent;
 			}
 		}
-		
+
 	}
 
 	.menuClose{
@@ -196,7 +210,7 @@
 		}
 	}
 
-	
+
 	.navbar-collapse-secondary{
 		.menuClose{
 			position: absolute;
@@ -217,7 +231,7 @@
 			padding: 9px 10px 9px 33px;
 			height: 34px;
 			border-color: transparent;
-			
+
 		}
 	}
 	.navbar-inverse{

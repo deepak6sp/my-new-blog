@@ -10,7 +10,11 @@ const blogPostsRouter = require('./server/routers/blogPostsRouter');
 //db Setup
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/myBlog',function (err){
-	if(err) console.log("check database connection")
+	if(err) {
+		console.log("check database connection");
+	} else {
+		console.log("Database connected");
+	}
 });
  
  
@@ -31,6 +35,7 @@ app.use('/home',mainRouter);
 app.use('/blog',mainRouter);
 app.use('/about',mainRouter);
 app.use('/contact',mainRouter);
+app.use('/admin',mainRouter);
 app.use('/api',blogPostsRouter);
 
 //Server setup

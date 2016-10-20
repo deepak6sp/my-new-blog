@@ -29,7 +29,7 @@ class WorkList extends Component {
 
 
     render() {
-       
+
         return  (
         	<main id="workList">
                 <section className="container container-fluid">
@@ -37,10 +37,9 @@ class WorkList extends Component {
                         <Col xs={12}>
                             <h2> Recent Work </h2>
                             <hr/>
-                            
                         </Col>
                     </Row>
-                    <Row className={"text-center dev-modules "}>
+                    <Row>
                         <Col xs={12} sm={4}>
                             <div className="image-container">
                             	<Image src="http://www.freedigitalphotos.net/images/img/homepage/87357.jpg" rounded />
