@@ -50715,7 +50715,7 @@
 	                { bsStyle: 'primary' },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: "/blog/" + blog.slugTitle },
+	                  { to: "/blog/" + blog.slug },
 	                  ' read more '
 	                )
 	              )

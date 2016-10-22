@@ -39,7 +39,7 @@ class Blog extends Component {
                         <Dotdotdot clamp={4}>
                           <p dangerouslySetInnerHTML={ {__html: blog.content} } ></p>
                         </Dotdotdot>
-                        <p><Button bsStyle="primary"><Link to={"/blog/"+blog.slugTitle}> read more </Link></Button></p>
+                        <p><Button bsStyle="primary"><Link to={"/blog/"+blog.slug}> read more </Link></Button></p>
                       </div>);
             });
         }

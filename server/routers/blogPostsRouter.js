@@ -7,9 +7,8 @@ blogPostsRouter.route('/blogPostList')
 .post(function (req, res, next) {
 	var blogPost = new BlogPost({
 		title : req.body.blogTitle,
-		slugTitle: req.body.blogSlug,
-		content : req.body.blogContents,
-		date: new Date(),
+		slug: req.body.blogSlug,
+		content : req.body.blogContents
 	});
 	blogPost.save(function(err,blogPost){
 		if(err) throw console.err(err);

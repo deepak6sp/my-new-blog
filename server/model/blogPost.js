@@ -3,6 +3,7 @@ const Scheme = mongoose.Schema;
 
 const BlogPostSchema = new Scheme({
 	title : String,
+	slug: String,
 	content : String,
 	updated: { type: Date, default: Date.now }
 });
