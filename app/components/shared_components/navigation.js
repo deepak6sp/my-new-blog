@@ -14,7 +14,6 @@ class Navigation extends Component {
     _handleMenu(e){
       var links = document.querySelectorAll(".menuLinks a");
       var setActive = e.target.id;
-      console.log(setActive);
       Array.prototype.map.call(links, function(e) {
           e.className = "";
           if (e.id == setActive)

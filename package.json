@@ -50,6 +50,7 @@
     "react": "^15.1.0",
     "react-bootstrap": "^0.29.5",
     "react-dom": "^15.1.0",
+    "react-dotdotdot": "^1.0.17",
     "react-fontawesome": "^1.1.0",
     "react-lazy-load": "^3.0.10",
     "react-redux": "^4.4.5",

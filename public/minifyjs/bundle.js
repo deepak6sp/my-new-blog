@@ -68,7 +68,7 @@
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _index = __webpack_require__(621);
+	var _index = __webpack_require__(623);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -22797,7 +22797,7 @@
 	
 	var _blogList2 = _interopRequireDefault(_blogList);
 	
-	var _admin = __webpack_require__(576);
+	var _admin = __webpack_require__(578);
 	
 	var _admin2 = _interopRequireDefault(_admin);
 	
@@ -28350,9 +28350,9 @@
 	            window.addEventListener('scroll', this._handleScroll);
 	            var toggleNavbar = document.getElementsByClassName("navbar-toggle")[0];
 	            var navBar = document.getElementsByClassName("navbar")[0];
-	            toggleNavbar.onclick = function () {
+	            /*toggleNavbar.onclick = () => {
 	                navBar.classList.toggle("navbar-collapse-secondary");
-	            };
+	            }*/
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
@@ -28432,7 +28432,6 @@
 	    value: function _handleMenu(e) {
 	      var links = document.querySelectorAll(".menuLinks a");
 	      var setActive = e.target.id;
-	      console.log(setActive);
 	      Array.prototype.map.call(links, function (e) {
 	        e.className = "";
 	        if (e.id == setActive) e.className = "active";
@@ -49908,9 +49907,9 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var languages = exports.languages = ["XHtml, Html5", "Css3, Sass", "Javascript, Jquery", "PHP"];
+	var languages = exports.languages = ["XHtml, Html5", "Css3, Sass", "Javascript, Jquery", "PHP, Node"];
 	var libraries = exports.libraries = ["React, Redux, Flux", "Angular, Express", "CodeIginiter, Laravel", "Wordpress"];
-	var collaboration = exports.collaboration = ["Node Modules (NPM)", "Bower", "Gulp / Grunt", "Webpack"];
+	var collaboration = exports.collaboration = ["NPM", "Bower", "Gulp / Grunt", "Webpack"];
 	var test = exports.test = ["Mocha", "Chai", "Jasmine", "Selenium"];
 
 /***/ },
@@ -50475,7 +50474,7 @@
 	                        'Visit Blog'
 	                    )
 	                ),
-	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.  He is a team player; I like working with him and I recommend him with pleasure.',
+	                _react2.default.createElement(_testimonial2.default, { text: 'Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. He is a team player; I like working with him and I recommend him with pleasure.',
 	                    recommendedBy: 'Clauidiu - Senior Developer @ mycause.com.au'
 	                })
 	            );
@@ -50638,6 +50637,8 @@
 	
 	var _reactBootstrap = __webpack_require__(261);
 	
+	var _reactRouter = __webpack_require__(198);
+	
 	var _searchBlog = __webpack_require__(574);
 	
 	var _searchBlog2 = _interopRequireDefault(_searchBlog);
@@ -50647,6 +50648,10 @@
 	var _reactRedux = __webpack_require__(181);
 	
 	var _redux = __webpack_require__(168);
+	
+	var _reactDotdotdot = __webpack_require__(576);
+	
+	var _reactDotdotdot2 = _interopRequireDefault(_reactDotdotdot);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -50697,14 +50702,22 @@
 	              null,
 	              blog.title
 	            ),
-	            _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: blog.content } }),
+	            _react2.default.createElement(
+	              _reactDotdotdot2.default,
+	              { clamp: 4 },
+	              _react2.default.createElement('p', { dangerouslySetInnerHTML: { __html: blog.content } })
+	            ),
 	            _react2.default.createElement(
 	              'p',
 	              null,
 	              _react2.default.createElement(
 	                _reactBootstrap.Button,
 	                { bsStyle: 'primary' },
-	                'read more'
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: "/blog/" + blog.slugTitle },
+	                  ' read more '
+	                )
 	              )
 	            )
 	          );
@@ -52043,22 +52056,25 @@
 	var GET_BLOG_POSTS = exports.GET_BLOG_POSTS = 'GET_BLOG_POSTS';
 	var GET_SEARCH_BASED_BLOG_POSTS = exports.GET_SEARCH_BASED_BLOG_POSTS = 'GET_SEARCH_BASED_BLOG_POSTS';
 	
-	function postBlogContents(blogContents) {
-	  /*
-	  axios.post('/api/blogPostList', { blogContents : blogContents })
-	  . then(function(response){
-	      console.log("-----------");
-	      console.log(response);
-	      console.log("saved successfully");
+	function postBlogContents(blogTitle, blogSlug, blogContents) {
+	  _axios2.default.post('/api/blogPostList', {
+	    blogTitle: blogTitle,
+	    blogSlug: blogSlug,
+	    blogContents: blogContents
+	  }).then(function (response) {
+	    console.log("-----------");
+	    console.log(response);
+	    console.log("saved successfully");
 	  });
-	  */
-	  (0, _axios2.default)({
+	  /*
+	  axios({
 	    method: 'post',
 	    url: '/api/blogPostList',
 	    data: {
-	      blogContents: blogContents
+	      blogContents : blogContents
 	    }
 	  });
+	  */
 	}
 	
 	function getBlogPosts() {
@@ -52081,10 +52097,383 @@
 /* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(38);
+	var clamp = __webpack_require__(577);
+	var PropTypes = React.PropTypes;
+	/**
+	 * multuline text-overflow: ellipsis
+	 */
+	function Dotdotdot() {
+	  if(!(this instanceof Dotdotdot)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	  this.update = this.update.bind(this);
+	}
+	
+	Dotdotdot.prototype = Object.create(React.Component.prototype);
+	Dotdotdot.prototype.componentDidMount = function() {
+	  this.dotdotdot(ReactDOM.findDOMNode(this.refs.container));
+	  window.addEventListener('resize', this.update, false);
+	};
+	Dotdotdot.prototype.componentWillUnmount = function() {
+	  window.removeEventListener('resize', this.update, false);
+	};
+	Dotdotdot.prototype.componentDidUpdate = function() {
+	  this.dotdotdot(ReactDOM.findDOMNode(this.refs.container));
+	};
+	
+	Dotdotdot.prototype.dotdotdot = function(container) {
+	  if (this.props.clamp) {
+	    if (container.length) {
+	      throw new Error('Please provide exacly one child to dotdotdot');
+	    }
+	
+	    clamp(container, {
+	      clamp: this.props.clamp,
+	      truncationChar: this.props.truncationChar
+	    });
+	  }
+	};
+	Dotdotdot.prototype.update = function() {
+	    this.forceUpdate();
+	};
+	
+	Dotdotdot.prototype.render = function() {
+	  return React.createElement(
+	    "div",
+	    { ref: "container", className: this.props.className },
+	    this.props.children
+	  );
+	};
+	
+	// Statics:
+	Dotdotdot.propTypes = {
+	  children: PropTypes.node,
+	  clamp: PropTypes.oneOfType([
+	    PropTypes.string,
+	    PropTypes.number,
+	    PropTypes.bool
+	  ]).isRequired,
+	  truncationChar: PropTypes.string,
+	  className: PropTypes.string
+	};
+	
+	Dotdotdot.defaultProps = {
+	  truncationChar: '\u2026'
+	};
+	
+	module.exports = Dotdotdot;
+
+
+/***/ },
+/* 577 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	 * Clamp.js 0.7.0
+	 * Based on: https://github.com/xavi160/Clamp.js/commit/e313818da231b8dd8fd603dd9c9a61a9d725c22f
+	 * Mixins:
+	 * - https://github.com/josephschmitt/Clamp.js/pull/50
+	 * - https://github.com/josephschmitt/Clamp.js/pull/49
+	 *
+	 * Copyright 2011-2013, Joseph Schmitt http://joe.sh
+	 * Released under the WTFPL license
+	 * http://sam.zoy.org/wtfpl/
+	 */
+	
+	(function(root, factory) {
+	  if (true) {
+	    // AMD
+	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if (typeof exports === 'object') {
+	    // Node, CommonJS-like
+	    module.exports = factory();
+	  } else {
+	    // Browser globals
+	    root.$clamp = factory();
+	  }
+	}(this, function() {
+	  /**
+	   * Clamps a text node.
+	   * @param {HTMLElement} element. Element containing the text node to clamp.
+	   * @param {Object} options. Options to pass to the clamper.
+	   */
+	  function clamp(element, options) {
+	    options = options || {};
+	
+	    var self = this,
+	      win = window,
+	      opt = {
+	        clamp: options.clamp || 2,
+	        useNativeClamp: typeof(options.useNativeClamp) != 'undefined' ? options.useNativeClamp : true,
+	        splitOnChars: options.splitOnChars || ['.', '-', '–', '—', ' '], //Split on sentences (periods), hypens, en-dashes, em-dashes, and words (spaces).
+	        animate: options.animate || false,
+	        truncationChar: options.truncationChar || '…',
+	        truncationHTML: options.truncationHTML
+	      },
+	
+	      sty = element.style,
+	      originalText = element.innerHTML,
+	
+	      supportsNativeClamp = typeof(element.style.webkitLineClamp) != 'undefined',
+	      clampValue = opt.clamp,
+	      isCSSValue = clampValue.indexOf && (clampValue.indexOf('px') > -1 || clampValue.indexOf('em') > -1),
+	      truncationHTMLContainer;
+	
+	    if (opt.truncationHTML) {
+	      truncationHTMLContainer = document.createElement('span');
+	      truncationHTMLContainer.innerHTML = opt.truncationHTML;
+	    }
+	
+	
+	    // UTILITY FUNCTIONS __________________________________________________________
+	
+	    /**
+	     * Return the current style for an element.
+	     * @param {HTMLElement} elem The element to compute.
+	     * @param {string} prop The style property.
+	     * @returns {number}
+	     */
+	    function computeStyle(elem, prop) {
+	      if (!win.getComputedStyle) {
+	        win.getComputedStyle = function(el, pseudo) {
+	          this.el = el;
+	          this.getPropertyValue = function(prop) {
+	            var re = /(\-([a-z]){1})/g;
+	            if (prop == 'float') prop = 'styleFloat';
+	            if (re.test(prop)) {
+	              prop = prop.replace(re, function() {
+	                return arguments[2].toUpperCase();
+	              });
+	            }
+	            return el.currentStyle && el.currentStyle[prop] ? el.currentStyle[prop] : null;
+	          };
+	          return this;
+	        };
+	      }
+	
+	      return win.getComputedStyle(elem, null).getPropertyValue(prop);
+	    }
+	
+	    /**
+	     * Returns the maximum number of lines of text that should be rendered based
+	     * on the current height of the element and the line-height of the text.
+	     */
+	    function getMaxLines(height) {
+	      var availHeight = height || element.clientHeight,
+	        lineHeight = getLineHeight(element);
+	
+	      return Math.max(Math.floor(availHeight / lineHeight), 0);
+	    }
+	
+	    /**
+	     * Returns the maximum height a given element should have based on the line-
+	     * height of the text and the given clamp value.
+	     */
+	    function getMaxHeight(clmp) {
+	      var lineHeight = getLineHeight(element);
+	      return lineHeight * clmp;
+	    }
+	
+	    /**
+	     * Returns the line-height of an element as an integer.
+	     */
+	    function getLineHeight(elem) {
+	      var lh = computeStyle(elem, 'line-height');
+	      if (lh == 'normal') {
+	        // Normal line heights vary from browser to browser. The spec recommends
+	        // a value between 1.0 and 1.2 of the font size. Using 1.1 to split the diff.
+	        lh = parseInt(computeStyle(elem, 'font-size')) * 1.2;
+	      }
+	      return parseInt(lh);
+	    }
+	
+	
+	    // MEAT AND POTATOES (MMMM, POTATOES...) ______________________________________
+	    var splitOnChars = opt.splitOnChars.slice(0),
+	      splitChar = splitOnChars[0],
+	      chunks,
+	      lastChunk;
+	
+	    /**
+	     * Gets an element's last child. That may be another node or a node's contents.
+	     */
+	    function getLastChild(elem) {
+	      if (!elem.lastChild) {
+	        return;
+	      }
+	      //Current element has children, need to go deeper and get last child as a text node
+	      if (elem.lastChild.children && elem.lastChild.children.length > 0) {
+	        return getLastChild(Array.prototype.slice.call(elem.children).pop());
+	      }
+	      //Handle scenario where the last child is white-space node
+	      else if (!elem.lastChild || !elem.lastChild.nodeValue || elem.lastChild.nodeValue === '' || elem.lastChild.nodeValue == opt.truncationChar) {
+	        var sibling = elem.lastChild;
+	        do {
+	          if (!sibling) {
+	            return;
+	          }
+	          //TEXT_NODE
+	          if (sibling.nodeType === 3 && ['', opt.truncationChar].indexOf(sibling.nodeValue) === -1) {
+	            return sibling;
+	          }
+	          if (sibling.lastChild) {
+	            var lastChild = getLastChild(sibling);
+	            if (lastChild) {
+	              return lastChild;
+	            }
+	          }
+	          //Current sibling is pretty useless
+	          sibling.parentNode.removeChild(sibling);
+	        } while (sibling = sibling.previousSibling);
+	      }
+	      //This is the last child we want, return it
+	      else {
+	        return elem.lastChild;
+	      }
+	    }
+	
+	    /**
+	     * Removes one character at a time from the text until its width or
+	     * height is beneath the passed-in max param.
+	     */
+	    function truncate(target, maxHeight) {
+	      if (!target || !maxHeight) {
+	        return;
+	      }
+	
+	      /**
+	       * Resets global variables.
+	       */
+	      function reset() {
+	        splitOnChars = opt.splitOnChars.slice(0);
+	        splitChar = splitOnChars[0];
+	        chunks = null;
+	        lastChunk = null;
+	      }
+	
+	      var nodeValue = target.nodeValue.replace(opt.truncationChar, '');
+	
+	      //Grab the next chunks
+	      if (!chunks) {
+	        //If there are more characters to try, grab the next one
+	        if (splitOnChars.length > 0) {
+	          splitChar = splitOnChars.shift();
+	        }
+	        //No characters to chunk by. Go character-by-character
+	        else {
+	          splitChar = '';
+	        }
+	
+	        chunks = nodeValue.split(splitChar);
+	      }
+	
+	      //If there are chunks left to remove, remove the last one and see if
+	      // the nodeValue fits.
+	      if (chunks.length > 1) {
+	        // console.log('chunks', chunks);
+	        lastChunk = chunks.pop();
+	        // console.log('lastChunk', lastChunk);
+	        applyEllipsis(target, chunks.join(splitChar));
+	      }
+	      //No more chunks can be removed using this character
+	      else {
+	        chunks = null;
+	      }
+	
+	      //Insert the custom HTML before the truncation character
+	      if (truncationHTMLContainer) {
+	        target.nodeValue = target.nodeValue.replace(opt.truncationChar, '');
+	        element.innerHTML = target.nodeValue + ' ' + truncationHTMLContainer.innerHTML + opt.truncationChar;
+	      }
+	
+	      //Search produced valid chunks
+	      if (chunks) {
+	        //It fits
+	        if (element.clientHeight <= maxHeight) {
+	          //There's still more characters to try splitting on, not quite done yet
+	          if (splitOnChars.length >= 0 && splitChar !== '') {
+	            applyEllipsis(target, chunks.join(splitChar) + splitChar + lastChunk);
+	            chunks = null;
+	          }
+	          //Finished!
+	          else {
+	            return element.innerHTML;
+	          }
+	        }
+	      }
+	      //No valid chunks produced
+	      else {
+	        //No valid chunks even when splitting by letter, time to move
+	        //on to the next node
+	        if (splitChar === '') {
+	          applyEllipsis(target, '');
+	          target = getLastChild(element);
+	
+	          reset();
+	        }
+	      }
+	
+	      //If you get here it means still too big, let's keep truncating
+	      if (opt.animate) {
+	        setTimeout(function() {
+	          truncate(target, maxHeight);
+	        }, opt.animate === true ? 10 : opt.animate);
+	      } else {
+	        return truncate(target, maxHeight);
+	      }
+	    }
+	
+	    function applyEllipsis(elem, str) {
+	      elem.nodeValue = str + opt.truncationChar;
+	    }
+	
+	
+	    // CONSTRUCTOR ________________________________________________________________
+	
+	    if (clampValue == 'auto') {
+	      clampValue = getMaxLines();
+	    } else if (isCSSValue) {
+	      clampValue = getMaxLines(parseInt(clampValue));
+	    }
+	
+	    var clampedText;
+	    if (supportsNativeClamp && opt.useNativeClamp) {
+	      sty.overflow = 'hidden';
+	      sty.textOverflow = 'ellipsis';
+	      sty.webkitBoxOrient = 'vertical';
+	      sty.display = '-webkit-box';
+	      sty.webkitLineClamp = clampValue;
+	
+	      if (isCSSValue) {
+	        sty.height = opt.clamp + 'px';
+	      }
+	    } else {
+	      var height = getMaxHeight(clampValue);
+	      if (height < element.clientHeight) {
+	        clampedText = truncate(getLastChild(element), height);
+	      }
+	    }
+	
+	    return {
+	      'original': originalText,
+	      'clamped': clampedText
+	    };
+	  }
+	
+	  return clamp;
+	}));
+
+
+/***/ },
+/* 578 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-					value: true
+	  value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -52099,7 +52488,7 @@
 	
 	var _reactBootstrap = __webpack_require__(261);
 	
-	var _reactTinymce = __webpack_require__(577);
+	var _reactTinymce = __webpack_require__(579);
 	
 	var _reactTinymce2 = _interopRequireDefault(_reactTinymce);
 	
@@ -52118,96 +52507,118 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var Admin = function (_Component) {
-					_inherits(Admin, _Component);
+	  _inherits(Admin, _Component);
 	
-					function Admin(props) {
-									_classCallCheck(this, Admin);
+	  function Admin(props) {
+	    _classCallCheck(this, Admin);
 	
-									var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Admin).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Admin).call(this, props));
 	
-									window.scrollTo(0, 0);
-									_this.state = { blogContent: "" };
-									return _this;
-					}
+	    window.scrollTo(0, 0);
+	    _this.state = { blogTitle: "", blogSlug: "", blogContent: "" };
+	    return _this;
+	  }
 	
-					_createClass(Admin, [{
-									key: '_handleEditorChange',
-									value: function _handleEditorChange(e) {
-													if (e.target.getContent() != "") {
-																	this.setState({ blogContent: e.target.getContent() });
-													} else {
-																	//console.log("this is a new documnet");
-																	this.setState({ blogContent: " " });
-													}
-									}
-					}, {
-									key: '_saveForm',
-									value: function _saveForm(e) {
-													e.preventDefault();
-													//console.log("-------");
-													//console.log(this.state.blogContent);
-													this.props.postBlogContents(this.state.blogContent);
-									}
-					}, {
-									key: 'render',
-									value: function render() {
-													return _react2.default.createElement(
-																	'main',
-																	{ id: 'admin' },
-																	_react2.default.createElement(
-																					_reactBootstrap.Row,
-																					{ className: 'container container-fluid' },
-																					_react2.default.createElement(
-																									_reactBootstrap.Col,
-																									{ sm: 12 },
-																									_react2.default.createElement(
-																													'h2',
-																													null,
-																													'Insert blog contents here'
-																									),
-																									_react2.default.createElement(
-																													'form',
-																													{ id: 'blogForm', onSubmit: this._saveForm.bind(this) },
-																													_react2.default.createElement(_reactTinymce2.default, {
-																																	content: 'Enter content here',
-																																	config: {
-																																					height: 300,
-																																					plugins: 'autolink link image lists print preview',
-																																					toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
-																																	},
-																																	onChange: this._handleEditorChange.bind(this)
-																													}),
-																													_react2.default.createElement(
-																																	_reactBootstrap.Button,
-																																	{ type: 'submit' },
-																																	'Save'
-																													)
-																									)
-																					)
-																	)
-													);
-									}
-					}]);
+	  _createClass(Admin, [{
+	    key: '_handleTitleChange',
+	    value: function _handleTitleChange(e) {
+	      if (e.target == "") {
+	        alert("title is empty");
+	      } else {
+	        this.setState({ blogTitle: e.target.value });
+	        var slugTarget = e.target.value;
+	        this.setState({ blogSlug: slugTarget.replace(/\s/g, '') });
+	      }
+	    }
+	  }, {
+	    key: '_handleEditorChange',
+	    value: function _handleEditorChange(e) {
+	      if (e.target.getContent() != "") {
+	        this.setState({ blogContent: e.target.getContent() });
+	      } else {
+	        //console.log("this is a new documnet");
+	        this.setState({ blogContent: " " });
+	      }
+	    }
+	  }, {
+	    key: '_saveForm',
+	    value: function _saveForm(e) {
+	      e.preventDefault();
+	      //console.log("-------");
+	      if (this.state.blogTitle == "") {
+	        alert("title field is empty");
+	      } else if (this.state.blogContent == "") {
+	        alert("content field is empty");
+	      } else {
+	        this.props.postBlogContents(this.state.blogTitle, this.state.blogSlug, this.state.blogContent);
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'main',
+	        { id: 'admin' },
+	        _react2.default.createElement(
+	          _reactBootstrap.Row,
+	          { className: 'container container-fluid' },
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { sm: 12 },
+	            _react2.default.createElement(
+	              'form',
+	              { id: 'blogForm', onSubmit: this._saveForm.bind(this) },
+	              _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Insert blog title here'
+	              ),
+	              _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', name: 'title', value: this.state.blogTitle, onChange: this._handleTitleChange.bind(this), placeholder: 'Enter blog title' }),
+	              _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Insert blog contents here'
+	              ),
+	              _react2.default.createElement(_reactTinymce2.default, {
+	                content: 'Enter content here',
+	                config: {
+	                  height: 300,
+	                  plugins: 'autolink link image lists print preview code',
+	                  toolbar: 'code undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent'
+	                },
+	                onChange: this._handleEditorChange.bind(this)
+	              }),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { type: 'submit' },
+	                'Save'
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
 	
-					return Admin;
+	  return Admin;
 	}(_react.Component);
 	
 	function mapDispatchToProps(dispatch) {
-					return (0, _redux.bindActionCreators)({ postBlogContents: _index.postBlogContents }, dispatch);
+	  return (0, _redux.bindActionCreators)({ postBlogContents: _index.postBlogContents }, dispatch);
 	}
 	
 	exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(Admin);
 
 /***/ },
-/* 577 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	module.exports = __webpack_require__(578);
+	module.exports = __webpack_require__(580);
 
 /***/ },
-/* 578 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52220,19 +52631,19 @@
 	
 	var _reactDom = __webpack_require__(38);
 	
-	var _lodashLangIsEqual = __webpack_require__(579);
+	var _lodashLangIsEqual = __webpack_require__(581);
 	
 	var _lodashLangIsEqual2 = _interopRequireDefault(_lodashLangIsEqual);
 	
-	var _lodashLangClone = __webpack_require__(604);
+	var _lodashLangClone = __webpack_require__(606);
 	
 	var _lodashLangClone2 = _interopRequireDefault(_lodashLangClone);
 	
-	var _helpersUuid = __webpack_require__(619);
+	var _helpersUuid = __webpack_require__(621);
 	
 	var _helpersUuid2 = _interopRequireDefault(_helpersUuid);
 	
-	var _helpersUcFirst = __webpack_require__(620);
+	var _helpersUcFirst = __webpack_require__(622);
 	
 	var _helpersUcFirst2 = _interopRequireDefault(_helpersUcFirst);
 	
@@ -52358,11 +52769,11 @@
 	module.exports = TinyMCE;
 
 /***/ },
-/* 579 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsEqual = __webpack_require__(580),
-	    bindCallback = __webpack_require__(602);
+	var baseIsEqual = __webpack_require__(582),
+	    bindCallback = __webpack_require__(604);
 	
 	/**
 	 * Performs a deep comparison between two values to determine if they are
@@ -52418,12 +52829,12 @@
 
 
 /***/ },
-/* 580 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsEqualDeep = __webpack_require__(581),
-	    isObject = __webpack_require__(590),
-	    isObjectLike = __webpack_require__(591);
+	var baseIsEqualDeep = __webpack_require__(583),
+	    isObject = __webpack_require__(592),
+	    isObjectLike = __webpack_require__(593);
 	
 	/**
 	 * The base implementation of `_.isEqual` without support for `this` binding
@@ -52452,14 +52863,14 @@
 
 
 /***/ },
-/* 581 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var equalArrays = __webpack_require__(582),
-	    equalByTag = __webpack_require__(584),
-	    equalObjects = __webpack_require__(585),
-	    isArray = __webpack_require__(598),
-	    isTypedArray = __webpack_require__(601);
+	var equalArrays = __webpack_require__(584),
+	    equalByTag = __webpack_require__(586),
+	    equalObjects = __webpack_require__(587),
+	    isArray = __webpack_require__(600),
+	    isTypedArray = __webpack_require__(603);
 	
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]',
@@ -52560,10 +52971,10 @@
 
 
 /***/ },
-/* 582 */
+/* 584 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var arraySome = __webpack_require__(583);
+	var arraySome = __webpack_require__(585);
 	
 	/**
 	 * A specialized version of `baseIsEqualDeep` for arrays with support for
@@ -52617,7 +53028,7 @@
 
 
 /***/ },
-/* 583 */
+/* 585 */
 /***/ function(module, exports) {
 
 	/**
@@ -52646,7 +53057,7 @@
 
 
 /***/ },
-/* 584 */
+/* 586 */
 /***/ function(module, exports) {
 
 	/** `Object#toString` result references. */
@@ -52700,10 +53111,10 @@
 
 
 /***/ },
-/* 585 */
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var keys = __webpack_require__(586);
+	var keys = __webpack_require__(588);
 	
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -52773,13 +53184,13 @@
 
 
 /***/ },
-/* 586 */
+/* 588 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var getNative = __webpack_require__(587),
-	    isArrayLike = __webpack_require__(592),
-	    isObject = __webpack_require__(590),
-	    shimKeys = __webpack_require__(596);
+	var getNative = __webpack_require__(589),
+	    isArrayLike = __webpack_require__(594),
+	    isObject = __webpack_require__(592),
+	    shimKeys = __webpack_require__(598);
 	
 	/* Native method references for those with the same name as other `lodash` methods. */
 	var nativeKeys = getNative(Object, 'keys');
@@ -52824,10 +53235,10 @@
 
 
 /***/ },
-/* 587 */
+/* 589 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isNative = __webpack_require__(588);
+	var isNative = __webpack_require__(590);
 	
 	/**
 	 * Gets the native function at `key` of `object`.
@@ -52846,11 +53257,11 @@
 
 
 /***/ },
-/* 588 */
+/* 590 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(589),
-	    isObjectLike = __webpack_require__(591);
+	var isFunction = __webpack_require__(591),
+	    isObjectLike = __webpack_require__(593);
 	
 	/** Used to detect host constructors (Safari > 5). */
 	var reIsHostCtor = /^\[object .+?Constructor\]$/;
@@ -52900,10 +53311,10 @@
 
 
 /***/ },
-/* 589 */
+/* 591 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(590);
+	var isObject = __webpack_require__(592);
 	
 	/** `Object#toString` result references. */
 	var funcTag = '[object Function]';
@@ -52944,7 +53355,7 @@
 
 
 /***/ },
-/* 590 */
+/* 592 */
 /***/ function(module, exports) {
 
 	/**
@@ -52978,7 +53389,7 @@
 
 
 /***/ },
-/* 591 */
+/* 593 */
 /***/ function(module, exports) {
 
 	/**
@@ -52996,11 +53407,11 @@
 
 
 /***/ },
-/* 592 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var getLength = __webpack_require__(593),
-	    isLength = __webpack_require__(595);
+	var getLength = __webpack_require__(595),
+	    isLength = __webpack_require__(597);
 	
 	/**
 	 * Checks if `value` is array-like.
@@ -53017,10 +53428,10 @@
 
 
 /***/ },
-/* 593 */
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseProperty = __webpack_require__(594);
+	var baseProperty = __webpack_require__(596);
 	
 	/**
 	 * Gets the "length" property value of `object`.
@@ -53038,7 +53449,7 @@
 
 
 /***/ },
-/* 594 */
+/* 596 */
 /***/ function(module, exports) {
 
 	/**
@@ -53058,7 +53469,7 @@
 
 
 /***/ },
-/* 595 */
+/* 597 */
 /***/ function(module, exports) {
 
 	/**
@@ -53084,14 +53495,14 @@
 
 
 /***/ },
-/* 596 */
+/* 598 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isArguments = __webpack_require__(597),
-	    isArray = __webpack_require__(598),
-	    isIndex = __webpack_require__(599),
-	    isLength = __webpack_require__(595),
-	    keysIn = __webpack_require__(600);
+	var isArguments = __webpack_require__(599),
+	    isArray = __webpack_require__(600),
+	    isIndex = __webpack_require__(601),
+	    isLength = __webpack_require__(597),
+	    keysIn = __webpack_require__(602);
 	
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -53131,11 +53542,11 @@
 
 
 /***/ },
-/* 597 */
+/* 599 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isArrayLike = __webpack_require__(592),
-	    isObjectLike = __webpack_require__(591);
+	var isArrayLike = __webpack_require__(594),
+	    isObjectLike = __webpack_require__(593);
 	
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -53171,12 +53582,12 @@
 
 
 /***/ },
-/* 598 */
+/* 600 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var getNative = __webpack_require__(587),
-	    isLength = __webpack_require__(595),
-	    isObjectLike = __webpack_require__(591);
+	var getNative = __webpack_require__(589),
+	    isLength = __webpack_require__(597),
+	    isObjectLike = __webpack_require__(593);
 	
 	/** `Object#toString` result references. */
 	var arrayTag = '[object Array]';
@@ -53217,7 +53628,7 @@
 
 
 /***/ },
-/* 599 */
+/* 601 */
 /***/ function(module, exports) {
 
 	/** Used to detect unsigned integer values. */
@@ -53247,14 +53658,14 @@
 
 
 /***/ },
-/* 600 */
+/* 602 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isArguments = __webpack_require__(597),
-	    isArray = __webpack_require__(598),
-	    isIndex = __webpack_require__(599),
-	    isLength = __webpack_require__(595),
-	    isObject = __webpack_require__(590);
+	var isArguments = __webpack_require__(599),
+	    isArray = __webpack_require__(600),
+	    isIndex = __webpack_require__(601),
+	    isLength = __webpack_require__(597),
+	    isObject = __webpack_require__(592);
 	
 	/** Used for native method references. */
 	var objectProto = Object.prototype;
@@ -53317,11 +53728,11 @@
 
 
 /***/ },
-/* 601 */
+/* 603 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(595),
-	    isObjectLike = __webpack_require__(591);
+	var isLength = __webpack_require__(597),
+	    isObjectLike = __webpack_require__(593);
 	
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]',
@@ -53397,10 +53808,10 @@
 
 
 /***/ },
-/* 602 */
+/* 604 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var identity = __webpack_require__(603);
+	var identity = __webpack_require__(605);
 	
 	/**
 	 * A specialized version of `baseCallback` which only supports `this` binding
@@ -53442,7 +53853,7 @@
 
 
 /***/ },
-/* 603 */
+/* 605 */
 /***/ function(module, exports) {
 
 	/**
@@ -53468,12 +53879,12 @@
 
 
 /***/ },
-/* 604 */
+/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseClone = __webpack_require__(605),
-	    bindCallback = __webpack_require__(602),
-	    isIterateeCall = __webpack_require__(618);
+	var baseClone = __webpack_require__(607),
+	    bindCallback = __webpack_require__(604),
+	    isIterateeCall = __webpack_require__(620);
 	
 	/**
 	 * Creates a clone of `value`. If `isDeep` is `true` nested objects are cloned,
@@ -53544,18 +53955,18 @@
 
 
 /***/ },
-/* 605 */
+/* 607 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var arrayCopy = __webpack_require__(606),
-	    arrayEach = __webpack_require__(607),
-	    baseAssign = __webpack_require__(608),
-	    baseForOwn = __webpack_require__(610),
-	    initCloneArray = __webpack_require__(614),
-	    initCloneByTag = __webpack_require__(615),
-	    initCloneObject = __webpack_require__(617),
-	    isArray = __webpack_require__(598),
-	    isObject = __webpack_require__(590);
+	var arrayCopy = __webpack_require__(608),
+	    arrayEach = __webpack_require__(609),
+	    baseAssign = __webpack_require__(610),
+	    baseForOwn = __webpack_require__(612),
+	    initCloneArray = __webpack_require__(616),
+	    initCloneByTag = __webpack_require__(617),
+	    initCloneObject = __webpack_require__(619),
+	    isArray = __webpack_require__(600),
+	    isObject = __webpack_require__(592);
 	
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]',
@@ -53678,7 +54089,7 @@
 
 
 /***/ },
-/* 606 */
+/* 608 */
 /***/ function(module, exports) {
 
 	/**
@@ -53704,7 +54115,7 @@
 
 
 /***/ },
-/* 607 */
+/* 609 */
 /***/ function(module, exports) {
 
 	/**
@@ -53732,11 +54143,11 @@
 
 
 /***/ },
-/* 608 */
+/* 610 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseCopy = __webpack_require__(609),
-	    keys = __webpack_require__(586);
+	var baseCopy = __webpack_require__(611),
+	    keys = __webpack_require__(588);
 	
 	/**
 	 * The base implementation of `_.assign` without support for argument juggling,
@@ -53757,7 +54168,7 @@
 
 
 /***/ },
-/* 609 */
+/* 611 */
 /***/ function(module, exports) {
 
 	/**
@@ -53786,11 +54197,11 @@
 
 
 /***/ },
-/* 610 */
+/* 612 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseFor = __webpack_require__(611),
-	    keys = __webpack_require__(586);
+	var baseFor = __webpack_require__(613),
+	    keys = __webpack_require__(588);
 	
 	/**
 	 * The base implementation of `_.forOwn` without support for callback
@@ -53809,10 +54220,10 @@
 
 
 /***/ },
-/* 611 */
+/* 613 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var createBaseFor = __webpack_require__(612);
+	var createBaseFor = __webpack_require__(614);
 	
 	/**
 	 * The base implementation of `baseForIn` and `baseForOwn` which iterates
@@ -53832,10 +54243,10 @@
 
 
 /***/ },
-/* 612 */
+/* 614 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toObject = __webpack_require__(613);
+	var toObject = __webpack_require__(615);
 	
 	/**
 	 * Creates a base function for `_.forIn` or `_.forInRight`.
@@ -53865,10 +54276,10 @@
 
 
 /***/ },
-/* 613 */
+/* 615 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(590);
+	var isObject = __webpack_require__(592);
 	
 	/**
 	 * Converts `value` to an object if it's not one.
@@ -53885,7 +54296,7 @@
 
 
 /***/ },
-/* 614 */
+/* 616 */
 /***/ function(module, exports) {
 
 	/** Used for native method references. */
@@ -53917,10 +54328,10 @@
 
 
 /***/ },
-/* 615 */
+/* 617 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bufferClone = __webpack_require__(616);
+	var bufferClone = __webpack_require__(618);
 	
 	/** `Object#toString` result references. */
 	var boolTag = '[object Boolean]',
@@ -53986,7 +54397,7 @@
 
 
 /***/ },
-/* 616 */
+/* 618 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Native method references. */
@@ -54013,7 +54424,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 617 */
+/* 619 */
 /***/ function(module, exports) {
 
 	/**
@@ -54035,12 +54446,12 @@
 
 
 /***/ },
-/* 618 */
+/* 620 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isArrayLike = __webpack_require__(592),
-	    isIndex = __webpack_require__(599),
-	    isObject = __webpack_require__(590);
+	var isArrayLike = __webpack_require__(594),
+	    isIndex = __webpack_require__(601),
+	    isObject = __webpack_require__(592);
 	
 	/**
 	 * Checks if the provided arguments are from an iteratee call.
@@ -54069,7 +54480,7 @@
 
 
 /***/ },
-/* 619 */
+/* 621 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -54080,7 +54491,7 @@
 	};
 
 /***/ },
-/* 620 */
+/* 622 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -54097,7 +54508,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 621 */
+/* 623 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54108,11 +54519,11 @@
 	
 	var _redux = __webpack_require__(168);
 	
-	var _reducer_searchBlogList = __webpack_require__(622);
+	var _reducer_searchBlogList = __webpack_require__(624);
 	
 	var _reducer_searchBlogList2 = _interopRequireDefault(_reducer_searchBlogList);
 	
-	var _reducer_whatsNewList = __webpack_require__(623);
+	var _reducer_whatsNewList = __webpack_require__(625);
 	
 	var _reducer_whatsNewList2 = _interopRequireDefault(_reducer_whatsNewList);
 	
@@ -54127,7 +54538,7 @@
 	exports.default = RootReducer;
 
 /***/ },
-/* 622 */
+/* 624 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54187,7 +54598,7 @@
 	exports.default = SearchBlogListReducer;
 
 /***/ },
-/* 623 */
+/* 625 */
 /***/ function(module, exports) {
 
 	'use strict';

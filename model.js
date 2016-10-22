@@ -1,11 +1,11 @@
 const mongoose  = require("mongoose");
 
 const BlogPostSchema =new mongoose.Schema({
-	id : Number,
 	title : String,
-	content : String
-
+	slugTitle: String,
+	content : String,
+	date: { type: Date, default: Date.now }
 });
 
-const blogPostsmodel = mongoose.model('blogPosts', BlogPostSchema);
-module.exports = blogPostsmodel;
+const blogPostsModel = mongoose.model('blogPosts', BlogPostSchema);
+module.exports = blogPostsModel;

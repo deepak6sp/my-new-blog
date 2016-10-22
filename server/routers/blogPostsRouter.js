@@ -6,9 +6,10 @@ var BlogPost = require("../model/blogPost");
 blogPostsRouter.route('/blogPostList')
 .post(function (req, res, next) {
 	var blogPost = new BlogPost({
-		title : 'post1',
-		content : req.body.blogContents
-
+		title : req.body.blogTitle,
+		slugTitle: req.body.blogSlug,
+		content : req.body.blogContents,
+		date: new Date(),
 	});
 	blogPost.save(function(err,blogPost){
 		if(err) throw console.err(err);

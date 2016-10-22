@@ -13,10 +13,10 @@ const store = createStoreWithMiddleware(RootReducer);
 
 class Main extends React.Component {
     render() {
-        return ( 
+        return (
         	<MainLayout />
         );
     }
 }
- 
-ReactDOM.render(<Provider store={store}>{AppRoutes}</Provider>,document.getElementById("main")); 
+
+ReactDOM.render(<Provider store={store}>{AppRoutes}</Provider>,document.getElementById("main"));

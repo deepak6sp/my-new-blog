@@ -30,7 +30,7 @@ class About extends Component {
 
 
     render() {
-       
+
         return  (
         	<main id="about">
                 <section className="container container-fluid  about-me">
@@ -38,9 +38,9 @@ class About extends Component {
                         <Col sm={12}>
                             <h2> About me</h2>
                             <hr/>
-                            <p> I am a techsavvy and freelance Web Developer having 5 years of experience mainly focusing on UI and front end development. 
-                                I develop with skills of minimal usability designs and using core XHTML/HTML, CSS and Javascript. My coding follows resuable 
-                                component based structure for easy maintanence, scaling and debugging. Have experince using PHP frameworks and knowledge of ruby on rails. 
+                            <p> I am a techsavvy and freelance Web Developer having 5 years of experience mainly focusing on UI and front end development.
+                                I develop with skills of minimal usability designs and using core XHTML/HTML, CSS and Javascript. My coding follows resuable
+                                component based structure for easy maintanence, scaling and debugging. Have experince using PHP frameworks and knowledge of ruby on rails.
                             </p>
                         </Col>
                     </Row>
@@ -62,13 +62,13 @@ class About extends Component {
                             <Col sm={12} md={4}>
                                 <FontAwesome className='super-crazy-colors' name="code" size='2x'/>
                                 <h4> Development </h4>
-                                <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as 
+                                <p> I develop custom made user friendly web pages and applications using the latest open source technologies. I use build tools such as
                                 npm, bower, webpack, gulp, sass to speed up developement process.</p>
                             </Col>
                             <Col sm={12} md={4}>
                                 <FontAwesome className='super-crazy-colors' name="cogs" size='2x'/>
                                 <h4> Testing </h4>
-                                <p> I consider testing to be as important as design and development, so I believe in Agile test driven development. Also, I will make sure the 
+                                <p> I consider testing to be as important as design and development, so I believe in Agile test driven development. Also, I will make sure the
                                     web application works fine accross multi browsers and devices.</p>
                             </Col>
                         </Row>
@@ -85,9 +85,9 @@ class About extends Component {
                         </Col>
                     </Row>
                 </section>
-             
+
                 {/*<SplitBar text="About my blog" iconName="pencil" />*/}
-                
+
                 <section className="container container-fluid about-my-blog">
                     <Row>
                         <Col sm={12}>
@@ -96,7 +96,7 @@ class About extends Component {
                         </Col>
                     </Row>
                     <LazyLoad onContentVisible={() => this._animate("blogModules")} offset={-100} throttle={0}>
-                         
+
                         <Row className={ "blog "+ this.state.blogModulesVisibleClass}>
                             <Col sm={12}>
                                 <p> My website is developed on MERN(Mongo, Express, Redux (React), Node) stack. I have also used react-bootstrap, which is my
@@ -109,7 +109,7 @@ class About extends Component {
                     <Link to="blog" className="btn btn-default">Visit Blog</Link>
                 </section>
 
-                <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution. 
+                <Testimonial text="Deepak is hard working; learning and providing good quality work, always in pace with technology, and always searching for best solution.
                     He is a team player; I like working with him and I recommend him with pleasure."
                     recommendedBy = "Clauidiu - Senior Developer @ mycause.com.au"
                 />

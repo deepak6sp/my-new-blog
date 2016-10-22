@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React,{ Component } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 import SearchBlog from './searchBlog';
 import { getBlogPosts } from '../actions/index';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Dotdotdot from 'react-dotdotdot'
+
 
 
 class Blog extends Component {
@@ -33,8 +36,10 @@ class Blog extends Component {
             blogListData  = this.props.blogList.map((blog,index) => {
               return (<div className="blog-post" key={index}>
                         <h1>{blog.title}</h1>
-                        <div dangerouslySetInnerHTML={ {__html: blog.content} } />
-                        <p><Button bsStyle="primary">read more</Button></p>
+                        <Dotdotdot clamp={4}>
+                          <p dangerouslySetInnerHTML={ {__html: blog.content} } ></p>
+                        </Dotdotdot>
+                        <p><Button bsStyle="primary"><Link to={"/blog/"+blog.slugTitle}> read more </Link></Button></p>
                       </div>);
             });
         }

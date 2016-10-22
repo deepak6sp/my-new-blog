@@ -29,21 +29,21 @@ class MainLayout extends Component {
         window.addEventListener('scroll', this._handleScroll);
         var toggleNavbar = document.getElementsByClassName("navbar-toggle")[0];
         var navBar= document.getElementsByClassName("navbar")[0];
-        toggleNavbar.onclick = () => {
+        /*toggleNavbar.onclick = () => {
             navBar.classList.toggle("navbar-collapse-secondary");
-        }
+        }*/
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this._handleScroll);
     }
     render() {
-        return ( 
+        return (
         	<div id="MainLayout">
 	        	<Navigation />
         		{this.props.children}
         		<Footer />
         	</div>
-        	
+
         );
     }
 }

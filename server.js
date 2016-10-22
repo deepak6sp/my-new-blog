@@ -16,8 +16,8 @@ mongoose.connect('mongodb://localhost:27017/myBlog',function (err){
 		console.log("Database connected");
 	}
 });
- 
- 
+
+
 //App setup
 
 //app.use(express.static(path.join(__dirname))); /* this is to get index.html */
@@ -28,13 +28,13 @@ app.use(express.static(path.join(__dirname,"/public/minifycss")));
 app.use(express.static(path.join(__dirname,"/public/minifyjs")));
 app.use(express.static(path.join(__dirname,"/public/fonts")));
 
-app.use(bodyParser.json());  
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',mainRouter);
 app.use('/home',mainRouter);
 app.use('/blog',mainRouter);
-app.use('/about',mainRouter);
-app.use('/contact',mainRouter);
+//app.use('/about',mainRouter);
+//app.use('/contact',mainRouter);
 app.use('/admin',mainRouter);
 app.use('/api',blogPostsRouter);
 
@@ -43,5 +43,3 @@ const port = process.env.PORT || 5000;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Example app listening on port '+port);
-
- 
