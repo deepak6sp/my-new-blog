@@ -15015,6 +15015,8 @@ html, body {
   padding-top: 120px; }
   #blog .blog-posts-section {
     margin-bottom: 100px; }
+    #blog .blog-posts-section .blog-post p {
+      line-height: 0px; }
 
 #contact {
   -webkit-animation-name: fadeInUp;

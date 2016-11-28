@@ -4,5 +4,10 @@
   padding-top: 120px;
   .blog-posts-section{
     margin-bottom:100px;
+		.blog-post{
+			p{
+				line-height: 0px;
+			}
+		}
   }
 }

@@ -27,15 +27,17 @@ app.use(express.static(path.join(__dirname,"/css")));
 app.use(express.static(path.join(__dirname,"/public/minifycss")));
 app.use(express.static(path.join(__dirname,"/public/minifyjs")));
 app.use(express.static(path.join(__dirname,"/public/fonts")));
+app.use(express.static(path.join(__dirname,"/public/blogPostImages")));
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',mainRouter);
 app.use('/home',mainRouter);
 app.use('/blog',mainRouter);
+app.use('/admin',mainRouter);
 //app.use('/about',mainRouter);
 //app.use('/contact',mainRouter);
-app.use('/admin',mainRouter);
 app.use('/api',blogPostsRouter);
 
 //Server setup

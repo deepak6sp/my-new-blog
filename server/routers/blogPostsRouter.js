@@ -2,24 +2,27 @@
 var express = require('express');
 var blogPostsRouter = express.Router();
 var BlogPost = require("../model/blogPost");
+var mongoose = require("mongoose");
 
 blogPostsRouter.route('/blogPostList')
 .post(function (req, res, next) {
-	var blogPost = new BlogPost({
-		title : req.body.blogTitle,
-		slug: req.body.blogSlug,
-		content : req.body.blogContents
-	});
-	blogPost.save(function(err,blogPost){
-		if(err) throw console.err(err);
+	BlogPost.create(req.body, function(err, post){
+		if (err) throw err;
+		var id= post._id;
+		res.end();
 	});
  })
 .get(function(req,res,next){
-	BlogPost.find(function(err,posts){
-		if (err) res.send(err);
+	BlogPost.find({},function(err,posts){
+		if (err) throw err;
 		res.json(posts);
 
 	});
+});
+
+blogPostsRouter.route('/blogPostList/:slug')
+.put(function(req,res,next){
+
 });
 
 

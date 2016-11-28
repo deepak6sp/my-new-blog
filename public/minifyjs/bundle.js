@@ -50705,7 +50705,7 @@
 	            _react2.default.createElement(
 	              _reactDotdotdot2.default,
 	              { clamp: 4 },
-	              _react2.default.createElement('p', { dangerouslySetInnerHTML: { __html: blog.content } })
+	              _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: blog.content } })
 	            ),
 	            _react2.default.createElement(
 	              'p',
@@ -52058,13 +52058,16 @@
 	
 	function postBlogContents(blogTitle, blogSlug, blogContents) {
 	  _axios2.default.post('/api/blogPostList', {
-	    blogTitle: blogTitle,
-	    blogSlug: blogSlug,
-	    blogContents: blogContents
+	    title: blogTitle,
+	    slug: blogSlug,
+	    content: blogContents
 	  }).then(function (response) {
 	    console.log("-----------");
 	    console.log(response);
 	    console.log("saved successfully");
+	  }).catch(function (error) {
+	    console.log("post error");
+	    console.log(error);
 	  });
 	  /*
 	  axios({

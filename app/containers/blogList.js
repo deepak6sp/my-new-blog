@@ -37,7 +37,7 @@ class Blog extends Component {
               return (<div className="blog-post" key={index}>
                         <h1>{blog.title}</h1>
                         <Dotdotdot clamp={4}>
-                          <p dangerouslySetInnerHTML={ {__html: blog.content} } ></p>
+                          <div dangerouslySetInnerHTML={ {__html: blog.content} } ></div>
                         </Dotdotdot>
                         <p><Button bsStyle="primary"><Link to={"/blog/"+blog.slug}> read more </Link></Button></p>
                       </div>);
